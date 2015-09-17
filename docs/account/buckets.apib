@@ -1,0 +1,197 @@
+# Group Buckets
+## Buckets [/bucket]
+### Create new bucket [POST]
+| Key           | Type     | Required |
+|:--------------|---------:|---------:|
+| name          | String   | yes      |
+| description   | String   | no       |
+| public (true) | Boolean  | no       |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
+    + Body
+
+            {
+                "name"        : "gps_bucket",
+                "description" : "gps on my car",
+                "public"      : true
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : {
+                "bucket" : "53d308d0c7f5f5dc052d5f1e"
+            }
+        }
+
+## Share Bucket [/bucket/{bucket_id}/share/invite]
+### Invite someone [POST]
+| Key        | Type                     | Required |
+|:-----------|-------------------------:|---------:|
+| email      | String                   | yes      |
+| permission | String (write,read,full) | yes      |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
+    + Body
+
+            {
+                "email" : "doc@tago.io",
+                "permission": "full"
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : {
+                "bucket" : "User invited"
+            }
+        }
+
+## Share Bucket [/bucket/{bucket_id}/share/change]
+### Change permission [PUT]
+| Key        | Type                             | Required |
+|:-----------|---------------------------------:|---------:|
+| email      | String                           | yes      |
+| permission | String (write,read,full,nothing) | yes      |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
+    + Body
+
+            {
+                "email" : "doc@tago.io",
+                "permission": "nothing"
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : {
+                "bucket" : "Permission changed"
+            }
+        }
+
+## Share Bucket [/bucket/{bucket_id}/share/list]
+### Get list shared [GET]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : {
+                "accounts": [
+                    {
+                        "email": "doc@tago.io",
+                        "permission": "full",
+                        "created_at": "2015-04-09T01:58:26.469Z",
+                        "name": "Documentation Tago" // If they doesn't have an account at Tago, it doesn't show this field
+                    }
+                ]
+            }
+        }
+
+## Variables Management [/bucket/{bucket_id}/variables]
+### Get list variables [GET]
+You can use subscribe_id instead bucket_id if you wanna.
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : [
+                { records: 1, variable: 'test_1', unit: ['km'] },
+                { records: 2, variable: 'test_2', unit: ['km', 'ml'] },
+                { records: 2, variable: 'test_3', unit: ['oz'] }
+            ]
+        }
+
+### Delete variable [DELETE]
+**Query String**
+
+* `variable` - Variable to remove.
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : '3 Variables removed'
+        }
+
+### Merge variable [PUT]
+| Key                                      | Type     | Required |
+|:-----------------------------------------|---------:|---------:|
+| variables                                | Array    | yes      |
+| name (new variable name)                 | String   | yes      |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
+    + Body
+
+            {
+                'variables' : ['test', 'test_2', 'test_3'],
+                'name'      : 'test_merged'
+            }
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : '3 Variables updated'
+        }
+
+### Rename variable [PUT]
+| Key                                      | Type     | Required |
+|:-----------------------------------------|---------:|---------:|
+| variable                                 | String   | yes      |
+| name (new variable name)                 | String   | yes      |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
+    + Body
+
+            {
+                'variable' : 'test',
+                'name'     : 'new_test_name'
+            }
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : '1 Variables updated'
+        }

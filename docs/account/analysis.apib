@@ -1,0 +1,113 @@
+# Group Analyze
+## Analyze [/analyze]
+### Add Analyze [POST]
+| Key         | Type     | Required |
+|:------------|:--------:|---------:|
+| name        | String   | yes      |
+| description | String   | no       |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
+    + Body
+
+            {
+                'name' : 'analyze test',
+                'description' : 'analyze test description'
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status"       : true,
+            "analyze" : "53db2348fa8435927eb6148A"
+        }
+
+### Get Analyze List [GET]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : [ {
+                "last_run"    : '2014-08-02T04:21:10.369Z',
+                "id"          : '53d6a4390e49632f0d7e198d',
+                "name"        : 'Test Analyze',
+                "description" : 'My analyze',
+                "status"      : 'running',
+                "interval"    : '1 day'
+            } ]
+        }
+
+## Analyze [/analyze/{analyze_id}]
+### Get Analyze Info [GET]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : {
+                "created_at"  : '2014-08-02T04:21:10.398Z',
+                "updated_at"  : '2014-08-02T04:21:10.398Z',
+                "last_run"    : '2014-08-02T04:21:10.369Z',
+                "id"          : '53d6a4390e49632f0d7e198d',
+                "name"        : 'Test Analyze',
+                "description" : 'My analyze',
+                "status"      : 'running',
+                "interval"    : '1 day',
+                "code"        : 'function () { "do something"; }'
+            }
+        }
+
+### Edit analyze [PUT]
+| Key           | Type     | Required |
+|:--------------|:--------:|---------:|
+| name          | String   | no       |
+| description   | String   | no       |
+| interval      | String   | no       |
+| code          | String   | no       |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
+    + Body
+
+            {
+                'name'     : 'new_analyze_name',
+                'code'     : 'function () { "doing something else"; }'
+            }
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : 'Updated'
+        }
+
+### Delete Analyze -*- [DELETE]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : "Deleted"
+        }

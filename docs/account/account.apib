@@ -1,0 +1,169 @@
+# Group Account
+## Create account [/account]
+### Create new account [POST]
+| Key           | Type     | Required |
+|:--------------|---------:|---------:|
+| name          | String   | yes      |
+| email         | String   | yes      |
+| password      | String   | yes      |
+| company       | String   | no       |
+| timezone      | String   | yes      |
+
++ Request (application/json)
+```javascript
+{
+    "name"        : "Silva S.",
+    "email"       : "silva@gmail.com",
+    "password"    : "pass@word",
+    "company"     : "Tago",
+    "timezone"    : "America/Sao_Paulo"
+}
+```
+
++ Response 201 (application/json)
+```javascript
+    {
+        "status" : true,
+        "result" : "Account created."
+    }
+```
+
+### Get account info [GET]
++ Request (application/json)
+    + Header
+        + Account-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+```javascript
+{
+    "status" : true,
+    "result" : {
+        "name"        : "Tago User",
+        "email"       : "tago@tago.io",
+        "company"     : "Tago",
+        "active"      : true,
+        "plan"        : "basic",
+        "type"        : "user",
+        "timezone"    : "America/Sao_Paulo"
+        "created_at"  : "Wed Jun 18 2014 03:00:21 GMT-0300 (BRT)",
+        "updated_at"  : "Wed Jun 18 2014 03:00:21 GMT-0300 (BRT)"
+    }
+}
+```
+
+### Update account [PUT]
+| Key           | Type     | Required |
+|:--------------|---------:|---------:|
+| name          | String   | no       |
+| email         | String   | no       |
+| password      | String   | no       |
+| company       | String   | no       |
++ Request
+    + Header
+        + Account-Token: XXXXXXXXX
+
++ Body
+
+```javascript
+{
+    "name"     : "Gustavo"
+}
+```
+
++ Response 200 (application/json)
+
+```javascript
+{
+    "status" : true,
+    "result" : "Updated"
+}
+```
+
+### Delete account [DELETE]
++ Request
+    + Header
+        + Account-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+```javascript
+{
+    "status" : true,
+    "result" : "Deleted"
+}
+```
+
+## Account token [/account/token]
+### Get account token -Authorization- [POST]
+| Key                                                  | Type     | Required |
+|:-----------------------------------------------------|---------:|---------:|
+| email                                                | String   | yes      |
+| password                                             | String   | yes      |
+| name (for identification purposes only)              | String   | yes      |
+| expire_time [Default: 1 day]                         | String   | no       |
+| permission (master, write or read) [Default: master] | String   | no       |
+
++ Request (application/json)
+```javascript
+{
+
+    "email"        : "silva",
+    "password"    : "pass@word",
+    "expire_time" : "1 year",
+    "name"        : "my token",
+    "permission"  : "master"
+}
+```
+
++ Response 200 (application/json)
+```javascript
+{
+    "status" : true,
+    "result" : {
+        "token"       : "b628f3a0-f4b2-11e3-a90e-a3719a361212",
+        "expire_date" : "Wed Jun 18 2014 03:00:21 GMT-0300 (BRT)"
+    }
+}
+```
+
+### List account token [GET]
++ Request
+    + Header
+        + Account-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+```javascript
+{
+    "status" : true,
+    "result" : [ {
+        "token"       : "90124050-fa5b-11e3-8cf6-3ff91eefaa44",
+        "type"        : "account",
+        "expire_time" : "Wed Jun 18 2015 03:00:21 GMT-0300 (BRT)",
+        "created_at"  : "Wed Jun 18 2014 03:00:21 GMT-0300 (BRT)"
+    },
+    {
+        "token"       : "9004abc0-fa5b-11e3-8cf6-3ff91eefaa55",
+        "type"        : "account",
+        "expire_time" : "Wed Jun 18 2015 04:00:21 GMT-0300 (BRT)",
+        "created_at"  : "Wed Jun 18 2014 04:00:21 GMT-0300 (BRT)"
+    }]
+}
+```
+
+### Delete token [DELETE]
++ Request
+    + Header
+        + Account-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+```javascript
+{
+    "status" : true,
+    "result" : "Account token removed"
+}
+```
+
+## Tips:
+```
+In field 'expire_time' is possible use relative time string, as:
+1 hour, 2 day, 3 month, 4 years, never, etc...
+```

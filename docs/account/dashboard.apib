@@ -1,0 +1,235 @@
+# Group Dashboard
+## Dashboard [/dashboard]
+### Add new dashboard [POST]
+| Key         | Type     | Required |
+|:------------|:--------:|---------:|
+| label       | String   | yes      |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
+    + Body
+
+            {
+                'label' : 'My power generator'
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status"       : true,
+            "dashboard"    : "53db2348fa8435927eb6148A"
+        }
+
+### Dashboard list [GET]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : [{
+                "label" : "Test dashboard",
+                "id"    : "53ee630a104fb1d859b7b6c2"
+            }]
+        }
+
+## Dashboard [/dashboard/{dashboard_id}]
+### Get Dashboard [GET]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : [{
+               "label"    : 'Widget test',
+               "width"    : 50,
+               "type"     : 'chart|control|map',
+               "realtime" : true,
+               "data"     : {Object},
+               "id"       : '53ee8f801c479ff7ebecc1d3'
+            }]
+        }
+
+### Edit dashboard [PUT]
+| Key         | Type     | Required |
+|:------------|:--------:|---------:|
+| label       | String   | no       |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
+    + Body
+
+            {
+                'label' : 'My new name for power generator'
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status"       : true,
+            "result"       : "Updated"
+        }
+
+### Delete dashboard and all widgets inside [DELETE]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
++ Response 201 (application/json)
+
+        {
+            "status"       : true,
+            "result"       : "Deleted"
+        }
+
+## Dashboard -OBSOLETE- [/dashboard/{dashboard_id}/data]
+### Get all data for widgets [GET]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
++ Response 201 (application/json)
+
+        {
+            "status"       : true,
+            "result"       : {Object with sub-objects named by widget name}
+        }
+
+## Dashboard [/dashboard/widget/data/{widget_id}]
+### Get all data for widget [GET]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : [
+                {
+                    "data": {
+                        "bucket": "54501cb8e03d101f305849d0",
+                        "query": "last_value",
+                        "variables": [
+                            "script",
+                            "sms"
+                        ]
+                    },
+                    "result": [
+                        {
+                            "id": "5498c3df243614cec5a36e57",
+                            "origin": "54501cb8e03d101f305849cf",
+                            "time": "2014-12-23T01:22:39.288Z",
+                            "value": "200",
+                            "variable": "sms"
+                        },
+                        {
+                            "id": "54de951df58dfb0048ac430e",
+                            "origin": "54501cb8e03d101f305849cf",
+                            "time": "2015-02-14T00:21:49.447Z",
+                            "value": "3",
+                            "variable": "script"
+                        }
+                    ]
+                }
+            ]
+        }
+
+## Widgets [/dashboard/{dashboard_id}/widget]
+### Add Widget [POST]
+| Key                        | Type   | Required |
+|:---------------------------|:------:|---------:|
+| label                      | String | yes      |
+| type [chart, control, map] | String | yes      |
+| data                       | JSON   | yes      |
+| realtime                   | bool   | no       |
+| width                      | number | no       |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
+    + Body
+
+            {
+                'label' : 'Power generator',
+                'type'  : 'chart',
+                'data'  : {
+                    'bucket'     : '545s4d5s4dada',
+                    'variables'  : ['temperature'],
+                    'start_date' : '2014-05-01',
+                    'end_date'   : '2014-08-01'
+                }
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status"       : true,
+            "widget"       : "53ee630a104fb1d859b7b6c2"
+        }
+
+## Widgets [/dashboard/{dashboard_id}/widget/{widget_id}]
+### Edit Widget [PUT]
+| Key                        | Type   | Required |
+|:---------------------------|:------:|---------:|
+| label                      | String | no       |
+| type [chart, control, map] | String | no       |
+| data                       | JSON   | no       |
+| realtime                   | bool   | no       |
+| width                      | number | no       |
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
+    + Body
+
+            {
+                'label' : 'Power generator renamed'
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status"       : true,
+            "widget"       : "Updated"
+        }
+
+### Delete Widget [DELETE]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: YYYYYYYYYYYY
+
+
++ Response 201 (application/json)
+
+        {
+            "status"       : true,
+            "widget"       : "Deleted"
+        }

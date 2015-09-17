@@ -1,0 +1,17 @@
+{
+  "name": "tago-documentation",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tago-io/tago-documentation.git"
+  },
+  "author": "Tago LLC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tago-io/tago-documentation/issues"
+  },
+  "homepage": "https://github.com/tago-io/tago-documentation#readme",
+  "dependencies": {
+    "aglio": "^2.1.1"
+  }
+}

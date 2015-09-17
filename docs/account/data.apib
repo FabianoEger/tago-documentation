@@ -1,0 +1,249 @@
+# Group Data
+## Data in Buckets [/data]
+### Add new data [POST]
+| Key      | Type              | Required |
+|:---------|:-----------------:|---------:|
+| variable | String            | yes      |
+| unit     | String            | yes      |
+| value    | String            | yes      |
+| type     | String            | no       |
+| time     | String            | no       |
+| location | String or GeoJson | no       |
+| serie    | String/Number     | no       |
+In location you can use simple string to point, like ```"42.014461287,-86.501970917"```
+Serie is to relate two or more variables, to make context, example variable speed, fuel, transmisson position, geolocation, all with serie "332", you can search all variable by this serie number.
+
+or GeoJson like:
+```
+{
+    "type" : "Point",
+    "coordinates" : [
+        42.014461287,
+        -86.501970917
+    ]
+}
+```
+Types allow is: Point, LineString, Polygon, MultiPoint, MultiLineString and MultiPolygon
++ Request (application/json)
+
+    + Header
+
+            Device-Token: XXXXXXXXX
+
+    + Body
+
+            {
+                'variable' : 'test',
+                'unit'     : 'km',
+                'value'    : '1'
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : "Added."
+        }
+
+The parameter `variable_name` in route is optional. If not used, it will return data from all variables.
+
+### Get data [GET]
+**Query String**
+
+* `variables` or `variable` - Array/String of variable(s).
+* `query`* - Query pre-defined by tago.
+* `qty` - Maximum number of register to be returned. [Default: 15]
+* `filter` - Fields to be returned. Array allowed.
+* `start_date` - Start date. [Default: 24 hours past]
+* `end_date` - End date. [Default: now]
+* `timezone` - Set query timezone. [Default: UTC] - (Example: 'America/New_York', 'America/Sao_Paulo', 'America/Chicago)
+
+**Query (pre-defined by tago)**
+
+* `count` - Count register numbers
+* `last_location` - Last location
+* `last_value` - Last Value
+
+```
+* When use 'query' other query string not work.
+* Nothing querystring is required.
+```
+
++ Request (application/json)
+
+    + Header
+
+            Device-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : {
+                "device_id" : "539f3aaf7587ac07076e1103",
+                "variable"  : "test",
+                "unit"      : "km",
+                "value"     : "1",
+                "time"      : "Wed Jun 18 2014 03:00:21 GMT-0300 (BRT)"
+            }
+        }
+
+## Querys [/data]
+The parameter `variable_name` in route is optional, this is specify one variable only.
+### Count [GET]
+`query` = `count` - Count register numbers
+
+**Query String**
+
+* `variable` - variable for get max value
+* `start_date` - Start date.
+* `end_date` - End date. [Default: now]
+
++ Request (application/json)
+
+    + Header
+
+            Device-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : 1773
+        }
+
+## Data in Buckets [/data/{variable|or|data_id}]
+If you don't put variable or data_id (only /data), the system use the last data put on.
+### Change any field in your bucket [PUT]
+| Key      | Type     | Required |
+|:---------|---------:|---------:|
+| unit     | String   | no       |
+| value    | String   | no       |
+| type     | String   | no       |
+| time     | String   | no       |
+| location | String   | no       |
++ Request (application/json)
+
+    + Header
+
+            Device-Token: XXXXXXXXX
+
+    + Body
+
+            {
+                'unit'     : 'km',
+                'value'    : '14'
+            }
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : "Updated id: 21321321312312312312"
+        }
+
+### Delete data on your bucket [DELETE]
++ Request (application/json)
+
+    + Header
+
+            Device-Token: XXXXXXXXX
+
++ Response 201 (application/json)
+
+        {
+            "status" : true,
+            "result" : "Deleted id: 21321321312312312312"
+        }
+
+### Last Location [GET]
+`query` = `lastlocation` - Last location
+
++ Request (application/json)
+
+    + Header
+
+            Device-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : "@41.8337329,-87.7321554,11z"
+        }
+
+### Max [GET]
+`query` = `max` - Value max for variable
+
+**Query String**
+
+* `variable` - variable for get max value
+* `start_date` - Start date. [Default: 24 hours past]
+* `end_date` - End date. [Default: now]
+
++ Request (application/json)
+
+    + Header
+
+            Device-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : [
+            {
+                "variable" : "temperatura",
+                "value": 22,
+                "unit": "c",
+                "time": "Wed Jun 18 2014 01:39:59 GMT-0300 (BRT)"
+            },
+            {
+                "variable" : "distancia",
+                "value": 23,
+                "unit": "km",
+                "time": "Wed Jun 18 2014 01:39:59 GMT-0300 (BRT)"
+            }]
+        }
+
+### Min [GET]
+`query` = `min` - Value max for variable
+
+**Query String**
+
+* `variable` - variable for get min value
+
++ Request (application/json)
+
+    + Header
+
+            Device-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : {
+                "value": 0.3,
+                "unit": "km"
+            }
+        }
+
+## Variables [/subscription/{subscription_id}/variables]
+### Get list variables [GET]
++ Request (application/json)
+
+    + Header
+
+            Account-Token: XXXXXXXXX
+
++ Response 200 (application/json)
+
+        {
+            "status" : true,
+            "result" : [
+                { records: 1, variable: 'test_1', unit: ['km'] },
+                { records: 2, variable: 'test_2', unit: ['km', 'ml'] },
+                { records: 2, variable: 'test_3', unit: ['oz'] }
+            ]
+        }
