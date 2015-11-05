@@ -1,3 +1,0 @@
-[submodule "wiki"]
-	path = wiki
-	url = git@github.com:tago-io/tago-documentation.wiki.git
