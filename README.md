@@ -1,5 +1,21 @@
 ### Tago Documentation
 
+#### Requirements
+
+* Python [website](https://www.python.org/)
+* Pip [website](https://pypi.python.org/pypi/pip)
+* Sphinx
+* sphinx-intl
+
+To install python on a Mac with `brew` (it comes with Pip)
+
+`$ brew install python`
+
+To install Sphinx and sphinx-intl
+
+`$ pip install Sphinx`
+`$ pip install sphinx-intl`
+
 #### Editing
 
 Every menu entry has a file matching it's name with the .rst extension. So to add or remove documentations just edit those files.
