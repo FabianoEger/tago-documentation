@@ -2,15 +2,76 @@ Getting Started
 ***************
 Welcome! Here is how to get started with Tago.io
 
-Step 1. Create a device
+Step 1. Add a device
 -----------------------
-mostra como criar um device....
+First, you need to add a device to your account. This will create a link between your data and the external world. In this example, let's send a room temperature data from your device.
+
+Go to the admin session in your account,  click on Devices on the left side bar. Then, click on Add Device blue button, enter with the name 'dev01' and click on 'Save'.
+
+.. raw:: html
+
+	<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600">
+You have the option to select where you want the data to be stored, we call this a bucket. By default, the bucket takes the same name as the device.
+
+For security, all external devices should use a valid token to gain access to Tago when sending or reading data. One token is automatically generated when a device is created.
+Later in this example, you will need the token for your device. Under 'General information' session of the device, click on 'QR Code' or 'Tokens' to get the one created for your device.
+
+.. raw:: html
+
+	<img src="https://tago.io/assets/img/screenshot/create_device_token_2.png" alt="" width="800" height="600">
+
+Step 2. Build a dashboard
+--------------------------
+All data can be visualized in realtime through dashboards. You can pick the widgets that best fit your needs.
+
+Click on '+ New Dashboard' on the left side bar, type the name of your dash board, and click on 'Create'.
+
+mostra tela create dashboard (adding name)
+
+For this example, let's add one widget to show the room temperature. Click on 'Add Widget' blue bottom and pick the Dial widget.
+
+mostra pegando um widget
+
+To configure this widget, first you need to add a variable. Type the variable name that will be sent by the device as 'temperature_1', click on 'add' below the name. Select your Bucket (dev01) and the device (dev01), click on 'OK'. Then, click on 'Create', and your widget is ready!
+
+Step 3. Send data
+-----------------
+You can start sending data to your account. You can send data in different ways, by now let's send the variable using **curl**. We will need the device token created in the earlier step.
+
+curl
+^^^^
+
+.. raw:: html
+
+	<img src="https://tago.io/assets/img/screenshot/sending_data_1.png" alt="" width="800" height="600">
+
+Step 4. Explore Tago.io
+----------------------------------
+This was very basic. Now, check out what else you can do with Tago.io!
+
+It is very easy to get data, and share your dashboard and buckets with others.
+
+You can use external source of data in your account and combine it with your own data.
+
+Create realtime analysis using our script capability in Java Script. And take actions based on your rules.
+
+Check out our tutorials to speed your development learning about the key concepts, and using our SDK's for several platforms.
+
+Visit our Marketplace. You will find dashboards ready for use in different applications.
+
+
+
+
+
+
+
+
 
 
 
 
 First Steps
-===========
+-----------
 
 Hi, to introduce you the Tago features, let’s start with a hands on example. In this example, let’s create a full ecosystem that communicates with an emergency power generator localized in Chicago, Il.
 
