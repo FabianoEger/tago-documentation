@@ -17,4 +17,5 @@ Contents:
    analysis
    actions
    tutorials
+   newmenuentry
    api

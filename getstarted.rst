@@ -1,6 +1,19 @@
 Getting Started
 ***************
+Welcome! Here is how to get started with Tago.io
 
+Step 1. Create a device
+-----------------------
+In order to allow the connection with Tago.io, you need to create a device that will be linked to your external source of data.
+In this example, let's send a room temperature data from an external device.
+
+mostra como criar um device....
+
+You have the option to select where you want the data to be stored, we call this a data bucket. By default, the bucket takes the same name as the same as the bucket.
+
+mostra como criar o bucket automaticamente.
+
+For security, a token should be 
 
 First Steps
 ===========

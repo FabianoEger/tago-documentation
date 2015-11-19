@@ -1,5 +1,12 @@
 Getting Started
 ***************
+Welcome! Here is how to get started with Tago.io
+
+Step 1. Create a device
+-----------------------
+mostra como criar um device....
+
+
 
 
 First Steps
