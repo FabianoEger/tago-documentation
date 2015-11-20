@@ -27,10 +27,16 @@ Dashboards are made of widgets. Tago provides a variety of widgets to handle you
 
 .. image:: _static/dashboard/widget_types.png
 
+.. _widget-data:
+
 Data Sources
 ------------
 
 The widgets that handles data (not all of them do it), needs a data source. The data source of your widgets are the variables created when you send data from your device to Tago's API. So you have to pick which variables, from which device & bucket, to use as data in your widgets.
+
+.. image:: _static/dashboard/widget_vars.png
+	:width: 50%
+	:align: center
 
 You'll notice that many widgets uses your variables name in order to identify, for example, a line of a chart or a device in a map. And we know that sometimes your variable name isn't appropriate to the end user. Because of that, every variable selected might have a **label**. A label is simply an alias that will be used by the widget whenever it needs to display your variable name. To add an alias to a variable, just click on top of it, and you'll see a little balloon with the alias field.
 
@@ -39,6 +45,8 @@ Along with the alias field, you'll see that you can change the bucket and/or the
 .. image:: _static/dashboard/widget_var_edit.png
 	:width: 30%
 	:align: center
+
+.. _widget-config:
 
 Configuration
 -------------
@@ -62,6 +70,8 @@ You will notice that some widgets are complex than others. While a dial only nee
 	:width: 50%
 	:align: center
 
+.. _widget-time:
+
 Time
 ----
 
@@ -72,31 +82,42 @@ When creating your widgets, you are goint to see that some of them works only sh
 	:align: center
 
 Dial
-^^^^
+----
+
+Dials are one of the simplest and useful widgets. They make easy to visualize how far/near a value is in between a range.
+
+Its configuration is very simple. You can pick as many :ref:`variables <widget-data>` as you need, each one of them will have its own dial chart inside a single widget. We set the default minimum and maximum values of the range to 0 and 100 for your convenience, but you can easily change it.
+
+Advanced Options
+^^^^^^^^^^^^^^^^
+
+In the advanced options you will see an option to change de format of the number to be show in regard to the number of decimal places.
+
+You will also see an option to set the unit of your value. You must be aware that even if your data contains a ``unit`` property, it will be overridden by this setting.
 
 Display
-^^^^^^^
+-------
 
 Chart
-^^^^^
+-----
 
 Map
-^^^
+---
 
 Table
-^^^^^
+-----
 
 Pie
-^^^
+---
 
 Input
-^^^^^
+-----
 
 Gauge
-^^^^^
+-----
 
 Note
-^^^^
+----
 
 Sending dashboards
 ==================
