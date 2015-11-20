@@ -19,3 +19,4 @@ Contents:
    tutorials
    newmenuentry
    api
+   old_getstarted
