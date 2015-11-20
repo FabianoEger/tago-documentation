@@ -85,21 +85,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#step-1-add-a-device">Step 1. Add a device</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-2-build-a-dashboard">Step 2. Build a dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-3-send-data">Step 3. Send data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#curl">curl</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-send-get-data">Step 3. Send/Get data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-4-explore-tago-io">Step 4. Explore Tago.io</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#first-steps">First Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-bucket">Creating Bucket</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-device">Creating Device</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-device-token">Creating Device Token</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sending-data">Sending data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">curl</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#httpie">httpie</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#reading-data">Reading Data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
@@ -109,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="newmenuentry.html">My brand new title</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="old_getstarted.html">First Steps</a></li>
 </ul>
 
             
@@ -155,122 +143,42 @@
             
   <div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>Welcome! Here is how to get started with Tago.io</p>
+<p>Here is how to get started with Tago.io</p>
+<p>Log in to Tago.io. If you haven&#8217;t created an account yet, register for free now.</p>
 <div class="section" id="step-1-add-a-device">
 <h2>Step 1. Add a device<a class="headerlink" href="#step-1-add-a-device" title="Permalink to this headline">¶</a></h2>
-<p>First, you need to add a device to your account. This will create a link between your data and the external world. In this example, let&#8217;s send a room temperature data from your device.</p>
-<p>Go to the admin session in your account,  click on Devices on the left side bar. Then, click on Add Device blue button, enter with the name &#8216;dev01&#8217; and click on &#8216;Save&#8217;.</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600"><p>You have the option to select where you want the data to be stored, we call this a bucket. By default, the bucket takes the same name as the device.</p>
-<p>For security, all external devices should use a valid token to gain access to Tago when sending or reading data. One token is automatically generated when a device is created.
-Later in this example, you will need the token for your device. Under &#8216;General information&#8217; session of the device, click on &#8216;QR Code&#8217; or &#8216;Tokens&#8217; to get the one created for your device.</p>
+<p>First, you need to add a <strong>device</strong> to your account. This will enable a link between your data and the external world. In this example, let&#8217;s send a room temperature data from your device.</p>
+<p>Go to the admin session in your account,  click on <strong>Devices</strong> on the left side bar. Then, click on <strong>Add Device</strong> blue button, enter with the name &#8216;dev01&#8217; and click on &#8216;Save&#8217;.</p>
+<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600"><p>For each device, you have the option to define a <strong>bucket</strong> that will store its data. You can pick a bucket with the same name as the device.</p>
+<p>For security, all devices should use a valid token when accessing Tago. One token is automatically generated when a device is created.
+Later in this example, you will need this token. Go to the &#8216;General information&#8217; session of the device, click on &#8216;QR Code&#8217; or &#8216;Tokens&#8217; and copy the token code that was created for your device.</p>
 <img src="https://tago.io/assets/img/screenshot/create_device_token_2.png" alt="" width="800" height="600"></div>
 <div class="section" id="step-2-build-a-dashboard">
 <h2>Step 2. Build a dashboard<a class="headerlink" href="#step-2-build-a-dashboard" title="Permalink to this headline">¶</a></h2>
-<p>All data can be visualized in realtime through dashboards. You can pick the widgets that best fit your needs.</p>
+<p>You can build great dashboards to visualize data, interact with your devices and share them with other users. You can pick the widgets that best fit your needs.</p>
 <p>Click on &#8216;+ New Dashboard&#8217; on the left side bar, type the name of your dash board, and click on &#8216;Create&#8217;.</p>
-<p>mostra tela create dashboard (adding name)</p>
+<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600"><p>mostra tela create dashboard (adding name)</p>
 <p>For this example, let&#8217;s add one widget to show the room temperature. Click on &#8216;Add Widget&#8217; blue bottom and pick the Dial widget.</p>
-<p>mostra pegando um widget</p>
-<p>To configure this widget, first you need to add a variable. Type the variable name that will be sent by the device as &#8216;temperature_1&#8217;, click on &#8216;add&#8217; below the name. Select your Bucket (dev01) and the device (dev01), click on &#8216;OK&#8217;. Then, click on &#8216;Create&#8217;, and your widget is ready!</p>
+<p>To configure this widget, first you need to add a variable. Type the variable name that will be sent by the device as &#8216;temperature_1&#8217;, click on &#8216;add&#8217; below the name. Select your Bucket (dev01) and the device (dev01), click on &#8216;OK&#8217;.
+Then, click on &#8216;Create&#8217;, and your widget is ready!</p>
+<p>As you don&#8217;t have any data yet, you should see something like this.</p>
 </div>
-<div class="section" id="step-3-send-data">
-<h2>Step 3. Send data<a class="headerlink" href="#step-3-send-data" title="Permalink to this headline">¶</a></h2>
-<p>You can start sending data to your account. You can send data in different ways, by now let&#8217;s send the variable using <strong>curl</strong>. We will need the device token created in the earlier step.</p>
-<div class="section" id="curl">
-<h3>curl<a class="headerlink" href="#curl" title="Permalink to this headline">¶</a></h3>
-<img src="https://tago.io/assets/img/screenshot/sending_data_1.png" alt="" width="800" height="600"></div>
+<div class="section" id="step-3-send-get-data">
+<h2>Step 3. Send/Get data<a class="headerlink" href="#step-3-send-get-data" title="Permalink to this headline">¶</a></h2>
+<p>Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our <strong>SDK&#8217;s</strong> for your platform.
+By now, to simulate your device, lets exchange data remotely with the bucket in your account by using <strong>curl</strong> (or <strong>blabla</strong> if you are using Windows).
+We will need to use the device <strong>token</strong> created in the earlier step.</p>
+<img src="https://tago.io/assets/img/screenshot/sending_data_1.png" alt="" width="800" height="600"><p>Try to send more data by changing the value of the &#8216;temperature_1&#8217; variable. Keep the eye on your dashboard. You should see something like this.</p>
+<p>...........ADD GIF Dial moving!!</p>
 </div>
 <div class="section" id="step-4-explore-tago-io">
 <h2>Step 4. Explore Tago.io<a class="headerlink" href="#step-4-explore-tago-io" title="Permalink to this headline">¶</a></h2>
-<p>This was very basic. Now, check out what else you can do with Tago.io!</p>
-<p>It is very easy to get data, and share your dashboard and buckets with others.</p>
-<p>You can use external source of data in your account and combine it with your own data.</p>
-<p>Create realtime analysis using our script capability in Java Script. And take actions based on your rules.</p>
-<p>Check out our tutorials to speed your development learning about the key concepts, and using our SDK&#8217;s for several platforms.</p>
+<p>This is just the beginning! Check out what else you can do with Tago.io.</p>
+<p>It is very easy to get data, and share your <em>dashboard</em> and <em>buckets</em>.</p>
+<p>Check external sources of data to combine it with your own data set.</p>
+<p>Create powerful realtime analysis using our script capabilities in Java Script. Take actions based on your rules.</p>
 <p>Visit our Marketplace. You will find dashboards ready for use in different applications.</p>
 </div>
-<div class="section" id="first-steps">
-<h2>First Steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h2>
-<p>Hi, to introduce you the Tago features, let’s start with a hands on example. In this example, let’s create a full ecosystem that communicates with an emergency power generator localized in Chicago, Il.</p>
-<p>The following real-time information will be obtained:</p>
-<ul class="simple">
-<li>Fuel level</li>
-<li>Oil pressure</li>
-<li>Battery level</li>
-<li>Running hours</li>
-<li>Location</li>
-</ul>
-<p>Also, we will setup actions that will be triggered when some variables reach a defined value. In this case, Tago will send an SMS to the operating manager when the Fuel level is lower than 10%.</p>
-<p>Let&#8217;s do this!</p>
-</div>
-<div class="section" id="creating-bucket">
-<h2>Creating Bucket<a class="headerlink" href="#creating-bucket" title="Permalink to this headline">¶</a></h2>
-<p>Bucket is your storage tool; all data received from your devices or subscriptions are stored here. You may create as many buckets as you wish. Let’s create one for the Power generator device.</p>
-<p>First, access the Tago Admin and click on <strong>Data</strong> on the sidebar. Then, click on <strong>Add new bucket</strong> blue button.</p>
-<img src="https://tago.io/assets/img/screenshot/create_bucket_1.png" alt="" width="800" height="600"><p>Now, enter with the bucket name and description. You can edit the fields later if needed.</p>
-<img src="https://tago.io/assets/img/screenshot/create_bucket_2.png" alt="" width="800" height="600"><p>Great! You created your bucket! It should be something like this:</p>
-<img src="https://tago.io/assets/img/screenshot/create_bucket_3.png" alt="" width="800" height="600"></div>
-<div class="section" id="creating-device">
-<h2>Creating Device<a class="headerlink" href="#creating-device" title="Permalink to this headline">¶</a></h2>
-<p>Device is your I/O; you need to create a device in order to establish communication with your source of data. Let’s create one device!</p>
-<p>First, in the Tago Admin, click on Devices on the side bar. Then, click on Add new device blue button.</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_1.png" alt="" width="800" height="600"><p>Now, enter with the device name and description, and select the bucket. Again, you can edit the field later at any time.</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600"><p>After clicking on Save, you should see something like this:</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_3.png" alt="" width="800" height="600"></div>
-<div class="section" id="creating-device-token">
-<h2>Creating Device Token<a class="headerlink" href="#creating-device-token" title="Permalink to this headline">¶</a></h2>
-<p>Device Token is the secret key used between Tago and your device. You will use this token to build scripts to send or receive data from Tago. It doesn’t hurt to say that this token should be kept in secret or only be shared with those you trust.</p>
-<p>To generate a device token, click on your list of devices.</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_token_1.png" alt="" width="800" height="600"><p>Scroll down and you will see the token section. Click on New blue button.</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_token_2.png" alt="" width="800" height="600"><p>Enter the name for this token, select the permission type and expiration time.</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_token_3.png" alt="" width="800" height="600"><p>Click on Save, and you should see something like this:</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_token_4.png" alt="" width="800" height="600"><small>Tip: We have APIs to create devices and anything else that is shown here. You may check the full API documentation if you want to build automated scripts. <br><br></small></div>
-<div class="section" id="sending-data">
-<h2>Sending data<a class="headerlink" href="#sending-data" title="Permalink to this headline">¶</a></h2>
-<p>Sending data from a device to Tago system is very easy. Tago API is RESTful.</p>
-<p>Basically, when you are sending data to Tago, you are writing on its database. So, you only need to POST the data in the route <a class="reference external" href="https://api.tago.io/data">https://api.tago.io/data</a> and use a device token in the header.</p>
-<p>All API responses are in JSON format. Also, you can send your data in the JSON format. Some types of data are available.</p>
-<p>The variable structure is:</p>
-<ul class="simple">
-<li>variable - string - required</li>
-<li>value - string/int/float - required</li>
-<li>unit - string - required</li>
-<li>type - string</li>
-<li>time - string/js_dateformat</li>
-<li>location - string/geojson</li>
-<li>Here is one example:</li>
-</ul>
-<div class="highlight-json"><div class="highlight"><pre>{ &#39;value&#39;: 32, &#39;variable&#39;: &#39;fuel_level&#39;, &#39;unit&#39;: &#39;%&#39; }
-</pre></div>
-</div>
-<p>Now, let’s send this variable using <strong>curl</strong> and <strong>httpie</strong>. We will need the device token created in the earlier step.</p>
-<div class="section" id="id1">
-<h3>curl<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<img src="https://tago.io/assets/img/screenshot/sending_data_1.png" alt="" width="800" height="600"></div>
-<div class="section" id="httpie">
-<h3>httpie<a class="headerlink" href="#httpie" title="Permalink to this headline">¶</a></h3>
-<img src="https://tago.io/assets/img/screenshot/sending_data_2.png" alt="" width="800" height="600"><p>It was very easy, right? We may even have an SDK for your language for simple plug-and-play. Check out our <a class="reference external" href="https://github.com/tago-io">Github page</a>.</p>
-<p>This is an example using node.js. You can copy the code from our github page.</p>
-<img src="https://tago.io/assets/img/screenshot/sending_data_3.png" alt="" width="800" height="600"><p>Just to contiue the tutorial, let&#8217;s add some data:</p>
-<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">http</span> <span class="pre">-f</span> <span class="pre">POST</span> <span class="pre">api.tago.io/data</span> <span class="pre">Device-Token:972cdc70-7a66-11e4-95c1-295f66956ea3</span> <span class="pre">variable=fuel_level</span> <span class="pre">unit=&quot;%&quot;</span> <span class="pre">value=32</span></code></p>
-<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">http</span> <span class="pre">-f</span> <span class="pre">POST</span> <span class="pre">api.tago.io/data</span> <span class="pre">Device-Token:972cdc70-7a66-11e4-95c1-295f66956ea3</span> <span class="pre">variable=oil_pressure</span> <span class="pre">unit=&quot;psi&quot;</span> <span class="pre">value=25</span></code></p>
-<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">http</span> <span class="pre">-f</span> <span class="pre">POST</span> <span class="pre">api.tago.io/data</span> <span class="pre">Device-Token:972cdc70-7a66-11e4-95c1-295f66956ea3</span> <span class="pre">variable=battery_level</span> <span class="pre">unit=&quot;%&quot;</span> <span class="pre">value=9.2</span></code></p>
-<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">http</span> <span class="pre">-f</span> <span class="pre">POST</span> <span class="pre">api.tago.io/data</span> <span class="pre">Device-Token:972cdc70-7a66-11e4-95c1-295f66956ea3</span> <span class="pre">variable=&quot;location&quot;</span> <span class="pre">location=&quot;41.878876,-87.635915&quot;</span></code></p>
-<p>You can add all data using only one request by sending an array of objects.</p>
-<p>Note: All string locations are automatically transformed into geojson. You will see more details in the next step.</p>
-</div>
-</div>
-<div class="section" id="reading-data">
-<h2>Reading Data<a class="headerlink" href="#reading-data" title="Permalink to this headline">¶</a></h2>
-<p>Read data from Tago is also very easy. Tago API is RESTful.</p>
-<p>For reading data, you need to perform a GET method adding the device token in the header, and use the route <strong>https://api.tago.io/data</strong>.</p>
-<p>All responses are in JSON format. As showed below, we have several options to read the data.</p>
-<p>Without using params, the default will show the last 15 records.</p>
-<img src="https://tago.io/assets/img/screenshot/reading_data_1.png" alt="" width="800" height="600"><p>You can use params to change the default. For example, by using qty=2 in the query string, the response will be:</p>
-<img src="https://tago.io/assets/img/screenshot/reading_data_2.png" alt="" width="800" height="600"><p>You may want to specify the variables to be returned. If you use variable=fuel_level or variables=[&#8216;fuel_level&#8217;, ‘oil_pressure&#8217;]</p>
-<img src="https://tago.io/assets/img/screenshot/reading_data_3.png" alt="" width="800" height="600"><p>Also, you can count on some predefined queries from Tago. There are several query options available, check out our complete API documentation. For this example, let’s use count and last_value.</p>
-<img src="https://tago.io/assets/img/screenshot/reading_data_4.png" alt="" width="800" height="600">
-<img src="https://tago.io/assets/img/screenshot/reading_data_5.png" alt="" width="800" height="600"></div>
 </div>
 
 
