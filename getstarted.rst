@@ -2,13 +2,13 @@ Getting Started
 ***************
 Here is how to get started with Tago.io
 
-Log in to Tago.io. If you haven't created an account yet, register for free now.
+Log in to Tago.io. If you haven't created an account yet, signup for free now.
 
 Step 1. Add a device
 -----------------------
-First, you need to add a **device** to your account. This will enable a link between your data and the external world. In this example, let's send a room temperature data from your device.
+You can start by adding a **device** to your account. This will enable a link between your data and the external world. In this example, let's send a variable called *temperature* from your device.
 
-Go to the admin session in your account,  click on **Devices** on the left side bar. Then, click on **Add Device** blue button, enter with the name 'dev01' and click on 'Save'.
+On the left side bar, click on **Devices**. Then, click on **Add Device** blue button, enter with the name 'dev01' and click on 'Save'.
 
 .. raw:: html
 
@@ -24,56 +24,58 @@ Later in this example, you will need this token. Go to the 'General information'
 
 Step 2. Build a dashboard
 --------------------------
-You can build great dashboards to visualize data, interact with your devices and share them with other users. You can pick the widgets that best fit your needs.
+You can build great dashboards to visualize data, interact with your devices and share them with others. You can pick the widgets that best fit your needs.
 
 Click on '+ New Dashboard' on the left side bar, type the name of your dash board, and click on 'Create'.
 
-.. raw:: html
-
-	<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600">
-mostra tela create dashboard (adding name)
-
-For this example, let's add one widget to show the room temperature. Click on 'Add Widget' blue bottom and pick the Dial widget.
-
-.. image:: widgets1.png
-	:height: 200
-	:width: 400
+.. image:: _static/getstarted/newdash.png
+	:height: 360
+	:width: 360
 
 
-To configure this widget, first you need to add a variable. Type the variable name that will be sent by the device as 'temperature_1', click on 'add' below the name. Select your Bucket (dev01) and the device (dev01), click on 'OK'.
+.. image:: _static/getstarted/mydash.png
+		:height: 260
+		:width: 260
+Let's add one widget to show the variable *temperature*. Click on 'Add Widget' blue bottom and pick the widget *Dial*.
+
+To configure this widget, first you need to add a variable to be displayed.
+Type the variable name that will be sent by the device as 'temperature', click on 'add' below the name.
+Select your bucket [dev01], your device [dev01], click on 'OK'.
 Then, click on 'Create', and your widget is ready!
 
-.. image:: variable_input.gif
-	:height: 200
-	:width: 400
+.. image:: _static/getstarted/variable_input.gif
+	:height: 300
+	:width: 600
+		:align: center
 
-
-As you don't have any data yet, you should see something like this.
+Good! As soon as your device start to send data, the values will be showed on this dial.
 
 Step 3. Send/Get data
 ---------------------
-Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our **SDK's** for your platform.
-By now, to simulate your device, lets exchange data remotely with the bucket in your account by using **curl** (or **blabla** if you are using Windows).
-We will need to use the device **token** created in the earlier step.
+Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our **SDK's** designed for your platform.
+Or we can simulate your device, by exchanging data remotely with your bucket using **curl** (use **wget**  or **Postman** if you are using Windows).
+Here, you will need to use that **token** created earlier for your device.
 
 .. raw:: html
 
 	<img src="https://tago.io/assets/img/screenshot/sending_data_1.png" alt="" width="800" height="600">
 
-Try to send more data by changing the value of the 'temperature_1' variable. Keep the eye on your dashboard. You should see something like this.
+Try to send more data by changing the value of the 'temperature' variable. Keep an eye on your dashboard. You should see something like this.
 
-...........ADD GIF Dial moving!!
+.. image:: _static/getstarted/dial.gif
+	:align: center
 
 
 
-Step 4. Explore Tago.io
+
+Explore Tago.io
 ----------------------------------
-This is just the beginning! Check out what else you can do with Tago.io.
+This is just the beginning! Check out how powerful the Tago platform is.
 
-It is very easy to get data, and share your *dashboard* and *buckets*.
+It is very easy to get data from your buckets, and share your *dashboards* and *buckets*.
 
-Check external sources of data to combine it with your own data set.
+Check out the external sources of data that can be combined with your own data set.
 
 Create powerful realtime analysis using our script capabilities in Java Script. Take actions based on your rules.
 
-Visit our Marketplace. You will find dashboards ready for use in different applications.
+Visit our Marketplace! [beta] You will find dashboards ready to use in interesting applications.
