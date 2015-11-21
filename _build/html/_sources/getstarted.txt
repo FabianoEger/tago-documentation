@@ -6,16 +6,16 @@ Log in to Tago.io. If you haven't created an account yet, signup for free now.
 
 Step 1. Add a device
 -----------------------
-You can start by adding a **device** to your account. This will enable a link between your data and the external world. In this example, let's send a variable called *temperature* from your device.
+You can start by adding a :ref:`ref_concepts_device` to your account. This will enable a link between your data and the external world. In this example, let's send a variable called *temperature* from your device.
 
 On the left side bar, click on **Devices**. Then, click on **Add Device** blue button, enter with the name 'dev01' and click on 'Save'.
 
 .. raw:: html
 
 	<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600">
-For each device, you have the option to define a **bucket** that will store its data. You can pick a bucket with the same name as the device.
+For each device, you have the option to define a :ref:`ref_concepts_bucket` that will store its data. You can pick a bucket with the same name as the device.
 
-For security, all devices should use a valid token when accessing Tago. One token is automatically generated when a device is created.
+For security, all devices should use a valid :ref:`ref_concepts_token` when accessing Tago. One token is automatically generated when a device is created.
 Later in this example, you will need this token. Go to the 'General information' session of the device, click on 'QR Code' or 'Tokens' and copy the token code that was created for your device.
 
 .. raw:: html
@@ -24,9 +24,9 @@ Later in this example, you will need this token. Go to the 'General information'
 
 Step 2. Build a dashboard
 --------------------------
-You can build great dashboards to visualize data, interact with your devices and share them with others. You can pick the widgets that best fit your needs.
+You can build great :ref:`ref_dashboard_dashboard` to visualize data, interact with your devices and share with others. You can pick the widgets that best fit your needs.
 
-Click on '+ New Dashboard' on the left side bar, type the name of your dash board, and click on 'Create'.
+Click on '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
 
 .. image:: _static/getstarted/newdash.png
 	:height: 360
@@ -36,6 +36,7 @@ Click on '+ New Dashboard' on the left side bar, type the name of your dash boar
 .. image:: _static/getstarted/mydash.png
 		:height: 260
 		:width: 260
+
 Let's add one widget to show the variable *temperature*. Click on 'Add Widget' blue bottom and pick the widget *Dial*.
 
 To configure this widget, first you need to add a variable to be displayed.
@@ -67,15 +68,14 @@ Try to send more data by changing the value of the 'temperature' variable. Keep 
 
 
 
-
 Explore Tago.io
 ----------------------------------
 This is just the beginning! Check out how powerful the Tago platform is.
 
-It is very easy to get data from your buckets, and share your *dashboards* and *buckets*.
+Learn how to :ref:`dashboard_share_dashboards` and :ref:`ref_concepts_sharing_bucket`.
 
-Check out the external sources of data that can be combined with your own data set.
+Check out the :ref:`ref_tutorial_intro` prepared for different boards and applications.
 
-Create powerful realtime analysis using our script capabilities in Java Script. Take actions based on your rules.
+Create powerful :ref:`ref_analysis_analysis` in realtime using our script capabilities in Java Script. Take :ref:`ref_actions_actions` based on your rules.
 
-Visit our Marketplace! [beta] You will find dashboards ready to use in interesting applications.
+Visit our Marketplace! [beta] You will find dashboards ready to be used in interesting applications.

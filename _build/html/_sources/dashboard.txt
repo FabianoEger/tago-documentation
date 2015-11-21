@@ -1,11 +1,14 @@
+
+.. _ref_dashboard_dashboard:
+
 Dashboard
 *********
 
-A dashboard is where you place your widgets to visualize and interact with data, in realtime. All of your dashboards are listed on the sidebar of Tago.
+A dashboard is where you place your widgets to visualize and interact with data, in realtime. All your dashboards are listed on the sidebar of Tago.
 
 .. image:: _static/dashboard/dashboard_list.png
 
-You can organize them in a way that best fit your needs by moving and resizing your widgets.
+You can organize them in the way that best fit your needs by moving and resizing your widgets.
 
 .. raw:: html
 
@@ -98,13 +101,15 @@ Gauge
 Note
 ^^^^
 
-Sending dashboards
+.. _dashboard_share_dashboards:
+
+Share dashboards
 ==================
 
 Sometimes a dashboard can become an entire feature that you want to share. Now there are two ways of sending a dashboard to someone:
 
 * :ref:`dashboard-share`
-* :ref:`dashboard-copy`
+* :ref:`dashboard-clone`
 
 .. _dashboard-share:
 
@@ -131,14 +136,14 @@ In that screen you can also visualize the list of people which you already share
 
 	<video style="max-width: 100%;" src="_static/dashboard/dashboard_share_3.mp4" autobuffer controls></video><br><br>
 
-.. _dashboard-copy:
+.. _dashboard-clone:
 
-Copy
+Clone
 ----
 
-When you send a copy of your dashboard, others will only receive the dashboard without having any access to your data. They are able to edit the dashboard and its widgets without impacting yours.
+When you create a clone of your dashboard, others will only receive the dashboard without having any access to your data. They are able to edit the dashboard and its widgets without impacting yours.
 
-To **copy** a dashboard to someone, you must access that dashboard and then, trough the **Dashboard options** menu, click in **Share**.
+To **clone** a dashboard and send it to someone, you must access that dashboard and then, trough the **Dashboard options** menu, click in **Share**.
 
 .. raw:: html
 
@@ -149,5 +154,3 @@ To complete the action, fill the email of whom you want to copy your dashboard t
 .. raw:: html
 
 	<video style="max-width: 100%;" src="_static/dashboard/dashboard_copy_2.mp4" autobuffer controls></video><br><br>
-
-
