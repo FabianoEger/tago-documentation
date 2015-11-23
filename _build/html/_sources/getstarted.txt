@@ -54,7 +54,7 @@ Good! As soon as your device start to send data, the values will be showed on th
 Step 3. Send data
 -----------------
 Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our **SDK's** designed for your platform.
-Or we can simulate your device, by exchanging data remotely with your bucket using **curl** in a Mac (for Windows, you may use another program, such as **Postman** ).
+Or we can simulate your device, by exchanging data remotely with your bucket using **curl** in a Mac or Linux.
 Here, you will need to use that **token** created earlier for your device.
 
 .. raw:: html
@@ -84,8 +84,8 @@ The response should looks like this.
 		:height: 300
 		:width: 600
 
-Explore Tago.io
-----------------------------------
+Step 4. Explore Tago.io
+-----------------------
 This is just the beginning! Check out how powerful the Tago platform is.
 
 Learn how to :ref:`dashboard_share_dashboards` and :ref:`ref_concepts_sharing_bucket`.
