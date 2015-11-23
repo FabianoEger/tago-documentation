@@ -65,7 +65,7 @@ The **help text** allows you to add a little help text that will be placed on th
 	:width: 50%
 	:align: center
 
-The second one gives you tha ability of hiding the variables name in the widget. It can be useful if you don't want to show names at all in your widgets. We recommend you to add a descriptive title in such cases though.
+The second one gives you the ability of hiding the variables name in the widget. It can be useful if you don't want to show names at all in your widgets. We recommend you to add a descriptive title in such cases though.
 
 You will notice that some widgets are complex than others. While a dial only need a miminum and maximum value, a **multiple axis chart** needs a little bit more configuration related to each one of the variables, in this particular case you'll have to define the type (bar, line, etc) of each data source. This kind of customization, while it takes a little more time to get done, offers you a lot of flexibility.
 

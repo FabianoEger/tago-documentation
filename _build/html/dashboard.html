@@ -89,18 +89,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#widgets">Widgets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#data-sources">Data Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#time">Time</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dial">Dial</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#display">Display</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#chart">Chart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#map">Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#table">Table</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pie">Pie</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#input">Input</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gauge">Gauge</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#note">Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time">Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dial">Dial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-options">Advanced Options</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#display">Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chart">Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map">Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pie">Pie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input">Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gauge">Gauge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#note">Note</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#share-dashboards">Share dashboards</a><ul>
@@ -174,14 +175,15 @@
 <img alt="_images/widget_types.png" src="_images/widget_types.png" />
 </div>
 <div class="section" id="data-sources">
-<h3>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h3>
+<span id="widget-data"></span><h3>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h3>
 <p>The widgets that handles data (not all of them do it), needs a data source. The data source of your widgets are the variables created when you send data from your device to Tago&#8217;s API. So you have to pick which variables, from which device &amp; bucket, to use as data in your widgets.</p>
+<a class="reference internal image-reference" href="_images/widget_vars.png"><img alt="_images/widget_vars.png" class="align-center" src="_images/widget_vars.png" style="width: 50%;" /></a>
 <p>You&#8217;ll notice that many widgets uses your variables name in order to identify, for example, a line of a chart or a device in a map. And we know that sometimes your variable name isn&#8217;t appropriate to the end user. Because of that, every variable selected might have a <strong>label</strong>. A label is simply an alias that will be used by the widget whenever it needs to display your variable name. To add an alias to a variable, just click on top of it, and you&#8217;ll see a little balloon with the alias field.</p>
 <p>Along with the alias field, you&#8217;ll see that you can change the bucket and/or the device of this variable. Well, sometimes our needs changes or a new device is now responsible for sending an specific data. Whatever the reason, you&#8217;re covered. You can change your variable settings if you need.</p>
 <a class="reference internal image-reference" href="_images/widget_var_edit.png"><img alt="_images/widget_var_edit.png" class="align-center" src="_images/widget_var_edit.png" style="width: 30%;" /></a>
 </div>
 <div class="section" id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<span id="widget-config"></span><h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
 <p>Besides the data sources, every kind of widget has its own particular configurations in regard how to display the data. So when creating a widget, you&#8217;re going to find <strong>basic</strong> options - generally these are critical to the algorithm that builds your widget - and <strong>advanced</strong> options, which allows you to give your personal touch to each widget and also provides advanced features you might need. Two advanced features included in every widget are:</p>
 <ul class="simple">
 <li>Help text</li>
@@ -189,41 +191,48 @@
 </ul>
 <p>The <strong>help text</strong> allows you to add a little help text that will be placed on the top-right corner of your widget, under a interrogation sign.</p>
 <a class="reference internal image-reference" href="_images/widget_help.png"><img alt="_images/widget_help.png" class="align-center" src="_images/widget_help.png" style="width: 50%;" /></a>
-<p>The second one gives you tha ability of hiding the variables name in the widget. It can be useful if you don&#8217;t want to show names at all in your widgets. We recommend you to add a descriptive title in such cases though.</p>
+<p>The second one gives you the ability of hiding the variables name in the widget. It can be useful if you don&#8217;t want to show names at all in your widgets. We recommend you to add a descriptive title in such cases though.</p>
 <p>You will notice that some widgets are complex than others. While a dial only need a miminum and maximum value, a <strong>multiple axis chart</strong> needs a little bit more configuration related to each one of the variables, in this particular case you&#8217;ll have to define the type (bar, line, etc) of each data source. This kind of customization, while it takes a little more time to get done, offers you a lot of flexibility.</p>
 <a class="reference internal image-reference" href="_images/widget_var_configuration.png"><img alt="_images/widget_var_configuration.png" class="align-center" src="_images/widget_var_configuration.png" style="width: 50%;" /></a>
 </div>
 <div class="section" id="time">
-<h3>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>
+<span id="widget-time"></span><h3>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>
 <p>When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through realtime updates, others can exhibit a range of time while keeping it updated through realtime updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. And don&#8217;t worry, because you can choose in which time zone that time will be related to.</p>
 <a class="reference internal image-reference" href="_images/widget_time.png"><img alt="_images/widget_time.png" class="align-center" src="_images/widget_time.png" style="width: 100%;" /></a>
+</div>
 <div class="section" id="dial">
-<h4>Dial<a class="headerlink" href="#dial" title="Permalink to this headline">¶</a></h4>
+<h3>Dial<a class="headerlink" href="#dial" title="Permalink to this headline">¶</a></h3>
+<p>Dials are one of the simplest and useful widgets. They make easy to visualize how far/near a value is in between a range.</p>
+<p>Its configuration is very simple. You can pick as many <a class="reference internal" href="#widget-data"><span>variables</span></a> as you need, each one of them will have its own dial chart inside a single widget. We set the default minimum and maximum values of the range to 0 and 100 for your convenience, but you can easily change it.</p>
+<div class="section" id="advanced-options">
+<h4>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this headline">¶</a></h4>
+<p>In the advanced options you will see an option to change de format of the number to be show in regard to the number of decimal places.</p>
+<p>You will also see an option to set the unit of your value. You must be aware that even if your data contains a <code class="docutils literal"><span class="pre">unit</span></code> property, it will be overridden by this setting.</p>
+</div>
 </div>
 <div class="section" id="display">
-<h4>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h4>
+<h3>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="chart">
-<h4>Chart<a class="headerlink" href="#chart" title="Permalink to this headline">¶</a></h4>
+<h3>Chart<a class="headerlink" href="#chart" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="map">
-<h4>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h4>
+<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="table">
-<h4>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h4>
+<h3>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="pie">
-<h4>Pie<a class="headerlink" href="#pie" title="Permalink to this headline">¶</a></h4>
+<h3>Pie<a class="headerlink" href="#pie" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="input">
-<h4>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+<h3>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="gauge">
-<h4>Gauge<a class="headerlink" href="#gauge" title="Permalink to this headline">¶</a></h4>
+<h3>Gauge<a class="headerlink" href="#gauge" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="note">
-<h4>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h4>
-</div>
+<h3>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="share-dashboards">

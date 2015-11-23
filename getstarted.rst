@@ -51,10 +51,10 @@ Then, click on 'Create', and your widget is ready!
 
 Good! As soon as your device start to send data, the values will be showed on this dial.
 
-Step 3. Send/Get data
----------------------
+Step 3. Send data
+-----------------
 Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our **SDK's** designed for your platform.
-Or we can simulate your device, by exchanging data remotely with your bucket using **curl** (use **wget**  or **Postman** if you are using Windows).
+Or we can simulate your device, by exchanging data remotely with your bucket using **curl** in a Mac (for Windows, you may use another program, such as **Postman** ).
 Here, you will need to use that **token** created earlier for your device.
 
 .. raw:: html
@@ -66,7 +66,23 @@ Try to send more data by changing the value of the 'temperature' variable. Keep 
 .. image:: _static/getstarted/dial.gif
 	:align: center
 
+If you are using Windows, you can send data with Postman (https://www.getpostman.com/). Considering the same inputs as above, you will can make a POST using the url, Device-Token in the Postman like this:
 
+.. image:: _static/getstarted/postman1.png
+		:height: 300
+		:width: 600
+
+Then, input the variable information in the JSON body. Make sure you select the same configuration as showed in the picture below.
+
+.. image:: _static/getstarted/postman2.png
+				:height: 300
+				:width: 600
+
+The response should looks like this.
+
+.. image:: _static/getstarted/postman3.png
+		:height: 300
+		:width: 600
 
 Explore Tago.io
 ----------------------------------
@@ -74,8 +90,8 @@ This is just the beginning! Check out how powerful the Tago platform is.
 
 Learn how to :ref:`dashboard_share_dashboards` and :ref:`ref_concepts_sharing_bucket`.
 
-Check out the :ref:`ref_tutorial_intro` prepared for different boards and applications.
-
 Create powerful :ref:`ref_analysis_analysis` in realtime using our script capabilities in Java Script. Take :ref:`ref_actions_actions` based on your rules.
+
+Learn more about our powerful :ref:`ref_API_API`. And check out the :ref:`ref_tutorial_intro` prepared for different boards and applications.
 
 Visit our Marketplace! [beta] You will find dashboards ready to be used in interesting applications.

@@ -85,7 +85,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#step-1-add-a-device">Step 1. Add a device</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#step-2-build-a-dashboard">Step 2. Build a dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#step-3-send-get-data">Step 3. Send/Get data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-send-data">Step 3. Send data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#explore-tago-io">Explore Tago.io</a></li>
 </ul>
 </li>
@@ -94,9 +94,8 @@
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="actions.html">Actions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newmenuentry.html">My brand new title</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newmenuentry.html">SDK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="old_getstarted.html">First Steps</a></li>
 </ul>
 
             
@@ -166,20 +165,26 @@ Select your bucket [dev01], your device [dev01], click on &#8216;OK&#8217;.
 Then, click on &#8216;Create&#8217;, and your widget is ready!</p>
 <p>Good! As soon as your device start to send data, the values will be showed on this dial.</p>
 </div>
-<div class="section" id="step-3-send-get-data">
-<h2>Step 3. Send/Get data<a class="headerlink" href="#step-3-send-get-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-3-send-data">
+<h2>Step 3. Send data<a class="headerlink" href="#step-3-send-data" title="Permalink to this headline">¶</a></h2>
 <p>Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our <strong>SDK&#8217;s</strong> designed for your platform.
-Or we can simulate your device, by exchanging data remotely with your bucket using <strong>curl</strong> (use <strong>wget</strong>  or <strong>Postman</strong> if you are using Windows).
+Or we can simulate your device, by exchanging data remotely with your bucket using <strong>curl</strong> in a Mac (for Windows, you may use another program, such as <strong>Postman</strong> ).
 Here, you will need to use that <strong>token</strong> created earlier for your device.</p>
 <img src="https://tago.io/assets/img/screenshot/sending_data_1.png" alt="" width="800" height="600"><p>Try to send more data by changing the value of the &#8216;temperature&#8217; variable. Keep an eye on your dashboard. You should see something like this.</p>
 <img alt="_static/getstarted/dial.gif" class="align-center" src="_static/getstarted/dial.gif" />
+<p>If you are using Windows, you can send data with Postman (<a class="reference external" href="https://www.getpostman.com/">https://www.getpostman.com/</a>). Considering the same inputs as above, you will can make a POST using the url, Device-Token in the Postman like this:</p>
+<a class="reference internal image-reference" href="_static/getstarted/postman1.png"><img alt="_static/getstarted/postman1.png" src="_static/getstarted/postman1.png" style="width: 600px; height: 300px;" /></a>
+<p>Then, input the variable information in the JSON body. Make sure you select the same configuration as showed in the picture below.</p>
+<a class="reference internal image-reference" href="_static/getstarted/postman2.png"><img alt="_static/getstarted/postman2.png" src="_static/getstarted/postman2.png" style="width: 600px; height: 300px;" /></a>
+<p>The response should looks like this.</p>
+<a class="reference internal image-reference" href="_static/getstarted/postman3.png"><img alt="_static/getstarted/postman3.png" src="_static/getstarted/postman3.png" style="width: 600px; height: 300px;" /></a>
 </div>
 <div class="section" id="explore-tago-io">
 <h2>Explore Tago.io<a class="headerlink" href="#explore-tago-io" title="Permalink to this headline">¶</a></h2>
 <p>This is just the beginning! Check out how powerful the Tago platform is.</p>
 <p>Learn how to <a class="reference internal" href="dashboard.html#dashboard-share-dashboards"><span>Share dashboards</span></a> and <a class="reference internal" href="concepts.html#ref-concepts-sharing-bucket"><span>Share Buckets</span></a>.</p>
-<p>Check out the <a class="reference internal" href="tutorials.html#ref-tutorial-intro"><span>Tutorials</span></a> prepared for different boards and applications.</p>
 <p>Create powerful <a class="reference internal" href="analysis.html#ref-analysis-analysis"><span>Analysis</span></a> in realtime using our script capabilities in Java Script. Take <a class="reference internal" href="actions.html#ref-actions-actions"><span>Actions</span></a> based on your rules.</p>
+<p>Learn more about our powerful <span class="xref std std-ref">ref_API_API</span>. And check out the <a class="reference internal" href="tutorials.html#ref-tutorial-intro"><span>Tutorials</span></a> prepared for different boards and applications.</p>
 <p>Visit our Marketplace! [beta] You will find dashboards ready to be used in interesting applications.</p>
 </div>
 </div>
