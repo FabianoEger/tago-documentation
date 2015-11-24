@@ -78,7 +78,13 @@ You will notice that some widgets are complex than others. While a dial only nee
 Time
 ----
 
-When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through realtime updates, others can exhibit a range of time while keeping it updated through realtime updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. And don't worry, because you'll find an option under **Advanced Options** to choose in which time zone that time will be related to.
+When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through realtime updates, others can exhibit a range of time while keeping it updated through realtime updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. These options may be like the following:
+
+* Only the last value
+* Realtime
+* Fixed time
+
+And don't worry, because you'll find an option under **Advanced Options** to choose in which time zone that time will be related to.
 
 .. image:: _static/dashboard/widget_time.png
 	:width: 100%
@@ -132,7 +138,9 @@ Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` se
 Multiple Axis
 ^^^^^^^^^^^^^
 
+This kind of chart allows you to plot your data using bars, lines, columns and area in the same chart. Which is why you have to set the type of your chart for each variable you add.
 
+.. image:: _static/dashboard/widget_multiple_axis.png
 
 Map
 ---
