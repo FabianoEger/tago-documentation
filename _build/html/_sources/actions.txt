@@ -78,15 +78,19 @@ Some costs may occur when using the SMS service, which varies based on the count
 Send to Device
 --------------
 
-Data can be sent directly to your device by using the Socket.io realtime capability. The action is similar to a Push Notification, where the information is sent to a device without the need of a GET command being issued from its side.
+Data can be sent directly to your device by using the Socket.io realtime capability.
+Of course, you can program your device to get data from the buckets using the GET method, but it may not know when to try to get data if it doesn't know if the value of the variable change.
+This action is similar to a push notification, where the information is sent to a device without the need of a GET command being issued from its side.
 Every time the condition defined in the **Trigger Setup** is met, that variable is sent to all the devices connected to the bucket where the variable is stored.
-In the example below, the variable 'setpoint' is sent to all devices in the bucket, every time a new value arrives.
-Although the variable can be sent by another device, it is common to send variables that are originated by the scripts that are running in the Analysis or from a Form in the Dashboard.
+In the example below, the variable 'setpoint' is sent to all devices connected to the bucket Python, every time a new value arrives.
 
 .. image:: _static/actions/send_to_device.png
 	:width: 100%
 
-**Note:** When using socket.io to receive data, the device should be in the *listening* mode. Check our out :ref:`ref_sdk_sdk` to get code example to quickly implement this function.
+Although the variable can be sent by another device, it is common to send variables that are originated by the scripts that are running in the Analysis or from a Form in the Dashboard.
+
+
+**Note:** When using socket.io to receive data, the device should be in the *listening* mode. Check our out :ref:`ref_sdk_sdk` to get code example to quickly implement this function in your platform.
 
 Run Analysis Script
 -------------------
