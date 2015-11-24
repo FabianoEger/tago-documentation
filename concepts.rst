@@ -19,15 +19,11 @@ Bucket creation
 
 To create a bucket, click on **Data Buckets** on the sidebar. Then, click on **Add data bucket** blue button.
 
-.. raw:: html
-
-	<img src="https://tago.io/assets/img/screenshot/create_bucket_1.png" alt="" width="800" height="600">
-
 Enter with the bucket name and a short description. You can edit these fields later if needed.
 
 .. raw:: html
 
-	<img src="https://tago.io/assets/img/screenshot/create_bucket_2.png" alt="" width="800" height="600">
+	<video style="max-width: 100%;" src="_static/concepts/create_bucket.mp4" autobuffer controls></video><br><br>
 
 Bucket structure
 ----------------
@@ -54,10 +50,11 @@ Visible
 ^^^^^^^
 With this option is possible to hide the bucket from the list, which is helpful when you create a bucket for special proposal and don't want the final user to worry about it.
 Sometimes you may want to create an hidden bucket for special scripts purposes (like a temporary bucket in the Analysis).
-Not visible buckets can be showed back in the list by checking the box 'Show internal buckets'.
+Not visible buckets can be showed back in the list by checking the box 'Show hidden buckets'.
 
-/// add a picture with a zoom at  'Show hidden buckets'  //////
-
+.. image:: _static/concepts/hiddenicon.png
+	:width: 70%
+	:align: center
 
 Bucket ID
 ^^^^^^^^^
@@ -72,7 +69,9 @@ Variables
 ^^^^^^^^^
 Additional information about the variables contained in a bucket is showed under 'Variables'
 
-///// MOSTRAR A TELA COM O ICON LARANJA E VARIABLES /////
+.. image:: _static/concepts/variableicon.png
+	:width: 70%
+	:align: center
 
 The list shows the name of the variables, the number of records and the units for each one.
 
@@ -80,13 +79,22 @@ Some additional features are included to deal with the variables. Here the varia
 
 .. _ref_concepts_sharing_bucket:
 
-Share Buckets
--------------
+Sharing Buckets
+---------------
 Your data can be shared with others through the option 'Share' in the General Information session.
+When the other user receives your bucket, he or she can visualize and work with your data based on the type of access granted.
+Others can use your data to complement their data analysis as long as you allow the access. You can stop sharing any time.
 
-///// MOSTRAR TELA DE SHARE BUCKET EMAIL   //////
+.. image:: _static/concepts/bucketshareicon.png
+	:width: 70%
+	:align: center
 
 To share a bucket, simply add the e-mail of the user that will receive the access to the bucket, and define the type of access.
+
+.. image:: _static/concepts/bucket_share_email.png
+	:width: 70%
+	:align: center
+
 There are 4 types of access:
 
 1. **FULL**- the user will be able to write and read data from the bucket (send and get data)
@@ -101,7 +109,7 @@ There are 4 types of access:
 
 *[1]* You can only share your data (the buckets that you own). If someone shared a bucket with you, you are not able to share it with others.
 
-*[2]* The user who received access to your bucket will not be able to delete your bucket. When he tries to do so, he is in fact just removing it from his own list.
+*[2]* The user who received access to your bucket will not be able to delete your bucket. When he or she tries to do so, he is in fact just removing it from his own list.
 
 .. _ref_concepts_device:
 
@@ -109,28 +117,19 @@ Device
 ======
 
 *Device* is the link between your external things and the data in your account. You need to create a device in order to allow anything to send or receive data from your buckets.
-The communication between the external devices and Tago is done through HTTP methods using the JSON format. Detailed information can be found in the API documentation.
+The communication between the external devices and Tago is done through HTTP methods using the JSON format.
+Detailed information about how to interface with the devices can be found in the :ref:`API <ref_api_api>` documentation.
 
 Device creation
 ---------------
 
 To add a device, click on Devices on the side bar. Then, click on 'Add new device' blue button.
 
-.. raw:: html
-
-	<img src="https://tago.io/assets/img/screenshot/create_device_1.png" alt="" width="800" height="600">
-
-Enter with a device name and description, and select the bucket. Again, you can edit the field later at any time.
+Enter with a name for the device and a description, and select the bucket. Again, you can edit the field later at any time.
 
 .. raw:: html
 
-	<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600">
-
-After clicking on Save, you should see something like this:
-
-.. raw:: html
-
-	<img src="https://tago.io/assets/img/screenshot/create_device_3.png" alt="" width="800" height="600">
+	<video style="max-width: 100%;" src="_static/concepts/add_device.mp4" autobuffer controls></video><br><br>
 
 Device management
 -----------------

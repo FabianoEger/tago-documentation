@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Analysis &mdash; tago-documentation 1.11.56 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="tago-documentation 1.11.56 documentation" href="index.html"/>
+        <link rel="next" title="Actions" href="actions.html"/>
+        <link rel="prev" title="Dashboard" href="dashboard.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> tago-documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.11.56
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dashboard.html">Dashboard</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-analysis">Setting Up Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#widgets">Widgets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#internal-functions">Internal Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lodash">lodash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moment-js">moment.js</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#async">async</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bucket">bucket</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#query">.query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#value">.value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#qty">.qty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-date">.start_date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#end-date">.end_date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run">.run</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#insert">.insert</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#service">service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#devices">devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#internal-variables">Internal Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scope">scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#var">##var##</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="actions.html">Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">tago-documentation</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Analysis</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/analysis.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="analysis">
+<span id="ref-analysis-analysis"></span><h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h1>
+<p>The analysis is a powerful tool where developers and enthusiasts can automate processes , calculations and manipulate your data in real time.</p>
+<p><strong>space for gif</strong></p>
+<p>All code writed here is in javascript, node.js to be more exactly. You will have access to all data inside your buckets, all your devices and we provide some other librarys like lodash and async to improve your code.</p>
+<div class="section" id="setting-up-analysis">
+<h2>Setting Up Analysis<a class="headerlink" href="#setting-up-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="widgets">
+<h3>Widgets<a class="headerlink" href="#widgets" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="internal-functions">
+<h2>Internal Functions<a class="headerlink" href="#internal-functions" title="Permalink to this headline">¶</a></h2>
+<p>Our Analysis have a lot of functions to help you in order to manipulate buckets and devices, and some services you can use to send sms and get informations about your account. Is possible to configure and setup almost everything in tago through analysis.</p>
+<div class="section" id="lodash">
+<h3>lodash<a class="headerlink" href="#lodash" title="Permalink to this headline">¶</a></h3>
+<p>You can call lodash (<strong>_</strong>) as a native function in analysis, without need to set it up. Lodash is a powerful library to manipulate data and compare values, you can read more about how to use it in the follow documentation: <a class="reference external" href="https://lodash.com/docs">https://lodash.com/docs</a></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">my_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="nx">_</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">my_array</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">//-&gt; Will return 1, 2, 3 in each line respectively.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="moment-js">
+<h3>moment.js<a class="headerlink" href="#moment-js" title="Permalink to this headline">¶</a></h3>
+<p>You can call Moment.js (<strong>moment_tz</strong>) as a native function in analysis whitout need to set it up. With Moment.js you will be able to do more complex calculations about time and date through analysis. You can read more about how to use it in the follow documentation: <a class="reference external" href="http://momentjs.com/docs/">http://momentjs.com/docs/</a></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">moment_tz</span><span class="p">(</span><span class="s2">&quot;12-25-1995&quot;</span><span class="p">,</span> <span class="s2">&quot;MM-DD-YYYY&quot;</span><span class="p">);</span>
+<span class="c1">//-&gt; Will return a date object</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="async">
+<h3>async<a class="headerlink" href="#async" title="Permalink to this headline">¶</a></h3>
+<p>You can call async as a native function in analysis whitout need to set it up. This Library allows you to organize your functions soo you can get all performance you need. You can read more about how to use it in the follow documentation: <a class="reference external" href="https://github.com/caolan/async">https://github.com/caolan/async</a></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">async</span><span class="p">.</span><span class="nx">parallel</span><span class="p">([</span><span class="nx">functions</span><span class="p">(...)],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//-&gt; Force an asynchronous functions to wait for another in order to complet a task.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bucket">
+<h3>bucket<a class="headerlink" href="#bucket" title="Permalink to this headline">¶</a></h3>
+<p>Bucket is the most valuable function in all analysis. You will need to use it always when you want to get, insert, update or delete variables from your bucket. The first pass is to select your bucket by your ID. After that, you will be able to use a lot of child functions which will allow you to manipulate your data.</p>
+<p><strong>Arguments</strong></p>
+<p><em>(String) You need to pass a bucket ID. Only one ID is possible.</em></p>
+<p><strong>Returns</strong></p>
+<p><em>(*) Returns an object which you can use to do a CRUD.</em></p>
+<p><strong>Examples</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">my_bucket</span> <span class="o">=</span> <span class="nx">bucket</span><span class="p">(</span><span class="s2">&quot;15787a4s15s4d799as&quot;</span><span class="p">);</span>
+<span class="nx">my_bucket</span><span class="p">(</span><span class="s2">&quot;variable&quot;</span><span class="p">).</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;last_value&quot;</span><span class="p">).</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//-&gt; The first line declares what bucket you will access by ID</span>
+<span class="c1">//-&gt; The following line do a search for variable &quot;variable&quot; inside that bucket</span>
+</pre></div>
+</div>
+<div class="section" id="query">
+<h4>.query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="value">
+<h4>.value<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h4>
+<p>Can pass a value to find in your bucket, and the API will return to you the location, date and other datas related to that value.</p>
+<p><strong>Arguments</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>(String/Integer) You will need to pass a value.</p>
+<p><strong>Returns</strong></p>
+<p><em>(Array) Return an Array with corresponding times which this value was inserted in bucket. You can use *</em>.query(&#8220;last_value&#8221;)** to get the last one.</p>
+<p><strong>Examples</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">my_bucket</span> <span class="o">=</span> <span class="nx">bucket</span><span class="p">(</span><span class="s2">&quot;15787a4s15s4d799as&quot;</span><span class="p">);</span>
+<span class="nx">my_bucket</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">).</span><span class="nx">value</span><span class="p">(</span><span class="s2">&quot;blue&quot;</span><span class="p">).</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;last_value&quot;</span><span class="p">).</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//-&gt;  [[{&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-25T19:01:22.000Z&quot;,&quot;serie&quot;:1448132464126,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.822224,35.7469741]},&quot;value&quot;:&quot;blue&quot;,&quot;id&quot;:&quot;5650bf843644b39f35a8e108&quot;}]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="qty">
+<h4>.qty<a class="headerlink" href="#qty" title="Permalink to this headline">¶</a></h4>
+<p>Limit the number of results that will come from a query in a array. The default value is 15.</p>
+<p><strong>Arguments</strong></p>
+<p><em>(Integer) Number of querys to return.</em></p>
+<p><strong>Returns</strong></p>
+<p><em>(*) Don&#8217;t let the query exceed the limit previously determinated</em></p>
+<p><strong>Examples</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">my_bucket</span> <span class="o">=</span> <span class="nx">bucket</span><span class="p">(</span><span class="s2">&quot;15787a4s15s4d799as&quot;</span><span class="p">);</span>
+<span class="nx">my_bucket</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">).</span><span class="nx">qty</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//-&gt;  [{&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-25T19:01:22.000Z&quot;,&quot;serie&quot;:1448132464126,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.822224,35.7469741]},&quot;value&quot;:&quot;blue&quot;,&quot;id&quot;:&quot;5650bf843644b39f35a8e108&quot;},</span>
+<span class="c1">//-&gt;  {&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-25T18:47:18.000Z&quot;,&quot;serie&quot;:1448131620070,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.761717,35.7722995]},&quot;value&quot;:&quot;red&quot;,&quot;id&quot;:&quot;5650bc3758f890b23427c976&quot;},</span>
+<span class="c1">//-&gt;  {&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-24T18:25:43.000Z&quot;,&quot;serie&quot;:1448130323366,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.7617483,35.772326]},&quot;value&quot;:&quot;blue&quot;,&quot;id&quot;:&quot;5650b72658f890b23427c87b&quot;}(...)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-date">
+<h4>.start_date<a class="headerlink" href="#start-date" title="Permalink to this headline">¶</a></h4>
+<p>Don&#8217;t let the query return any result before a date. You can combine this function with end_date to create a period. Can pass a lot of types of argument, like a moment.js, a Date, a string formated date or even a string date like &#8220;1 day&#8221;, &#8220;2 years&#8221;.</p>
+<p><strong>Arguments</strong></p>
+<p><em>(String/Date) Pass a string date / moment.js Date.</em></p>
+<p><strong>Examples</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">my_bucket</span> <span class="o">=</span> <span class="nx">bucket</span><span class="p">(</span><span class="s2">&quot;15787a4s15s4d799as&quot;</span><span class="p">);</span>
+<span class="nx">my_bucket</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">).</span><span class="nx">start_date</span><span class="p">(</span><span class="s2">&quot;2 day&quot;</span><span class="p">).</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;last_value&quot;</span><span class="p">).</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//-&gt;  [{&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-25T18:25:43.000Z&quot;,&quot;serie&quot;:1448130323366,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.7617483,35.772326]},&quot;value&quot;:&quot;blue&quot;,&quot;id&quot;:&quot;5650b72658f890b23427c87b&quot;},</span>
+<span class="c1">//-&gt;  {&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-25T17:01:45.000Z&quot;,&quot;serie&quot;:1448125287014,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.6379951,35.7788033]},&quot;value&quot;:&quot;yellow&quot;,&quot;id&quot;:&quot;5650a37a58f890b23427c138&quot;},</span>
+<span class="c1">//-&gt;  {&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-24T16:25:25.000Z&quot;,&quot;serie&quot;:1448123105311,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.8221858,35.7469293]},&quot;value&quot;:&quot;red&quot;,&quot;id&quot;:&quot;56509af53644b39f35a8d54c&quot;}]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="end-date">
+<h4>.end_date<a class="headerlink" href="#end-date" title="Permalink to this headline">¶</a></h4>
+<p>Don&#8217;t let the query return any result after a date. You can combine this function with start_date to create a period. Can pass a lot of types of argument, like a moment.js, a Date, a string formated date or even a string date like &#8220;yesterday&#8221;, &#8220;1 day&#8221;, &#8220;2 years&#8221;.</p>
+<p><strong>Arguments</strong></p>
+<p><em>(String/Date) Pass a string date / moment.js Date.</em></p>
+<p><strong>Examples</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">my_bucket</span> <span class="o">=</span> <span class="nx">bucket</span><span class="p">(</span><span class="s2">&quot;15787a4s15s4d799as&quot;</span><span class="p">);</span>
+<span class="nx">my_bucket</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">).</span><span class="nx">start_date</span><span class="p">(</span><span class="s2">&quot;2 day&quot;</span><span class="p">).</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;last_value&quot;</span><span class="p">).</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//-&gt;  [{&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-24T18:25:43.000Z&quot;,&quot;serie&quot;:1448130323366,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.7617483,35.772326]},&quot;value&quot;:&quot;blue&quot;,&quot;id&quot;:&quot;5650b72658f890b23427c87b&quot;},</span>
+<span class="c1">//-&gt;  {&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-24T17:01:45.000Z&quot;,&quot;serie&quot;:1448125287014,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.6379951,35.7788033]},&quot;value&quot;:&quot;yellow&quot;,&quot;id&quot;:&quot;5650a37a58f890b23427c138&quot;},</span>
+<span class="c1">//-&gt;  {&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-23T16:25:25.000Z&quot;,&quot;serie&quot;:1448123105311,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.8221858,35.7469293]},&quot;value&quot;:&quot;red&quot;,&quot;id&quot;:&quot;56509af53644b39f35a8d54c&quot;}]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run">
+<h4>.run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h4>
+<p>Everytime you need to query any data from bucket, &#8220;run&#8221; is needed in order to work with the results. This functions is not useful when using insert or clear.</p>
+<p><strong>Arguments</strong></p>
+<p><em>(Function): The function invoked per iteration.</em></p>
+<p><strong>Returns</strong></p>
+<p><em>(*) An error and result of the iteration</em></p>
+<p><strong>Examples</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">my_bucket</span> <span class="o">=</span> <span class="nx">bucket</span><span class="p">(</span><span class="s2">&quot;15787a4s15s4d799as&quot;</span><span class="p">);</span>
+<span class="nx">my_bucket</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">).</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//-&gt;  [{&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-24T19:01:22.000Z&quot;,&quot;serie&quot;:1448132464126,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.822224,35.7469741]},&quot;value&quot;:&quot;blue&quot;,&quot;id&quot;:&quot;5650bf843644b39f35a8e108&quot;},</span>
+<span class="c1">//-&gt;  {&quot;variable&quot;:&quot;color&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;time&quot;:&quot;2015-11-24T18:47:18.000Z&quot;,&quot;serie&quot;:1448131620070,&quot;location&quot;:{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-78.761717,35.7722995]},&quot;value&quot;:&quot;red&quot;,&quot;id&quot;:&quot;5650bc3758f890b23427c976&quot;}(...)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="insert">
+<h4>.insert<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h4>
+<p>Insert some data in your bucket. Different of the other functions of bucket, this function don&#8217;t need &#8220;run&#8221; function to work.</p>
+<p><strong>Arguments</strong></p>
+<p><em>(JSON): JSON with all possible datas to insert {&#8220;value&#8221;=}</em></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span><span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span>
+<span class="s2">&quot;serie&quot;</span> <span class="o">:</span><span class="s2">&quot;1448132464126&quot;</span><span class="p">,</span>
+<span class="s2">&quot;time&quot;</span>  <span class="o">:</span><span class="s2">&quot;2015-11-24T18:47:18.000Z&quot;</span><span class="p">,</span>
+<span class="s2">&quot;unit&quot;</span>  <span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">(...)}</span>
+</pre></div>
+</div>
+<p><em>(String): A String with ID of the origin. Default is the script analysis ID.</em>
+<em>(Function): The function invoked per iteration.</em></p>
+<p><strong>Returns</strong></p>
+<p><em>(*) An error and result of the iteration</em></p>
+<p><strong>Examples</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">my_bucket</span>    <span class="o">=</span> <span class="nx">bucket</span><span class="p">(</span><span class="s2">&quot;15787a4s15s4d799as&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">insert_model</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="s2">&quot;red&quot;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">origin_id</span>    <span class="o">=</span> <span class="s2">&quot;54ab3ee59a56af7a067b7b89&quot;</span><span class="p">;</span>
+
+<span class="nx">my_bucket</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">).</span><span class="nx">insert</span><span class="p">(</span><span class="nx">insert_model</span><span class="p">,</span> <span class="nx">origin_id</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//-&gt;  {&quot;message&quot;:&quot;1 Data Added, 0 Errors&quot;,&quot;added&quot;:[{&quot;data&quot;:{&quot;bucket&quot;:&quot;54ab3ee59a56af7a067b7b8a&quot;,&quot;variable&quot;:&quot;color&quot;,&quot;created_at&quot;:&quot;2015-11-24T01:03:30.754Z&quot;,&quot;updated_at&quot;:&quot;2015-11-24T01:03:30.754Z&quot;,&quot;origin&quot;:&quot;54ab3ee59a56af7a067b7b89&quot;,&quot;origin_type&quot;:&quot;custom&quot;,&quot;time&quot;:&quot;2015-11-24T01:03:30.754Z&quot;,&quot;value&quot;:&quot;red&quot;,&quot;id&quot;:&quot;5653b76296cbc40f16222c90&quot;}}],&quot;errors&quot;:[]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="service">
+<h3>service<a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="devices">
+<h4>devices<a class="headerlink" href="#devices" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="internal-variables">
+<h2>Internal Variables<a class="headerlink" href="#internal-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scope">
+<h3>scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h3>
+<p>Every time a action triggers a script, the variable <strong>scope</strong> will be generated. For example, if you do submit in a form, with a variable that have an action which will trigger any script, scope will receive a list with all values of that form. This allows you to manipulate in real time, and more easily, any new value wich are inserted in your bucket.</p>
+<p><strong>Contents</strong></p>
+<p><em>(Array): Always an array with all variables inserted in that moment</em></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+<span class="c1">//-&gt; Will return a date object</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="var">
+<h3>##var##<a class="headerlink" href="#var" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="actions.html" class="btn btn-neutral float-right" title="Actions" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dashboard.html" class="btn btn-neutral" title="Dashboard" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Tago LLC.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.11.56',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
