@@ -6,27 +6,24 @@ Log in to Tago.io. If you haven't created an account yet, signup for free now.
 
 Step 1. Add a device
 -----------------------
-You can start by adding a :ref:`ref_concepts_device` to your account. This will enable a link between your data and the external world. In this example, let's send a variable called *temperature* from your device.
+You can start by adding a  :ref:`device <ref_concepts_device>` to your account. This will enable a link between your data and the external world. In this example, let's send a variable called *temperature* from your device.
 
 On the left side bar, click on **Devices**. Then, click on **Add Device** blue button, enter with the name 'dev01' and click on 'Save'.
 
-.. raw:: html
+For each device, you have to define a :ref:`bucket <ref_concepts_bucket>` to store its data. You can let Tago to create a new bucket with the same name as the device.
 
-	<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600">
-For each device, you have the option to define a :ref:`ref_concepts_bucket` that will store its data. You can pick a bucket with the same name as the device.
-
-For security, all devices should use a valid :ref:`ref_concepts_token` when accessing Tago. One token is automatically generated when a device is created.
+For security, all devices should use a valid :ref:`token <ref_concepts_token>` when accessing Tago. One token is automatically generated when a device is created.
 Later in this example, you will need this token. Go to the 'General information' session of the device, click on 'QR Code' or 'Tokens' and copy the token code that was created for your device.
 
 .. raw:: html
 
-	<img src="https://tago.io/assets/img/screenshot/create_device_token_2.png" alt="" width="800" height="600">
+	<video style="max-width: 100%;" src="_static/getstarted/add_device.mp4" autobuffer controls></video><br><br>
 
 Step 2. Build a dashboard
 --------------------------
-You can build great :ref:`ref_dashboard_dashboard` to visualize data, interact with your devices and share with others. You can pick the widgets that best fit your needs.
+You can build great :ref:`dashboards <ref_dashboard_dashboard>` to visualize data, interact with your devices and share with others. You can pick the widgets that best fit your needs.
 
-Click on '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
+Click '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
 
 .. image:: _static/getstarted/newdash.png
 	:height: 360

@@ -94,7 +94,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#variables">Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#share-buckets">Share Buckets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-buckets">Sharing Buckets</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#device">Device</a><ul>
@@ -123,8 +123,10 @@
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="actions.html">Actions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newmenuentry.html">SDK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#tokens">Tokens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#sending-data">Sending Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html#reading-data">Reading Data</a></li>
 </ul>
 
             
@@ -179,8 +181,8 @@ Watch this short video to learn about the bucket/device/token concepts.</p>
 <div class="section" id="bucket-creation">
 <h3>Bucket creation<a class="headerlink" href="#bucket-creation" title="Permalink to this headline">¶</a></h3>
 <p>To create a bucket, click on <strong>Data Buckets</strong> on the sidebar. Then, click on <strong>Add data bucket</strong> blue button.</p>
-<img src="https://tago.io/assets/img/screenshot/create_bucket_1.png" alt="" width="800" height="600"><p>Enter with the bucket name and a short description. You can edit these fields later if needed.</p>
-<img src="https://tago.io/assets/img/screenshot/create_bucket_2.png" alt="" width="800" height="600"></div>
+<p>Enter with the bucket name and a short description. You can edit these fields later if needed.</p>
+<video style="max-width: 100%;" src="_static/concepts/create_bucket.mp4" autobuffer controls></video><br><br></div>
 <div class="section" id="bucket-structure">
 <h3>Bucket structure<a class="headerlink" href="#bucket-structure" title="Permalink to this headline">¶</a></h3>
 <p>Each device can be connected to only one bucket. It means that the device will be filling (sending data to) only one bucket,
@@ -200,8 +202,8 @@ In your list of buckets, select one to get more information, and click on MORE t
 <h4>Visible<a class="headerlink" href="#visible" title="Permalink to this headline">¶</a></h4>
 <p>With this option is possible to hide the bucket from the list, which is helpful when you create a bucket for special proposal and don&#8217;t want the final user to worry about it.
 Sometimes you may want to create an hidden bucket for special scripts purposes (like a temporary bucket in the Analysis).
-Not visible buckets can be showed back in the list by checking the box &#8216;Show internal buckets&#8217;.</p>
-<p>/// add a picture with a zoom at  &#8216;Show hidden buckets&#8217;  //////</p>
+Not visible buckets can be showed back in the list by checking the box &#8216;Show hidden buckets&#8217;.</p>
+<a class="reference internal image-reference" href="_images/hiddenicon.png"><img alt="_images/hiddenicon.png" class="align-center" src="_images/hiddenicon.png" style="width: 70%;" /></a>
 </div>
 <div class="section" id="bucket-id">
 <h4>Bucket ID<a class="headerlink" href="#bucket-id" title="Permalink to this headline">¶</a></h4>
@@ -215,17 +217,20 @@ The bucket ID can be found under the bucket general information. This is an uniq
 <div class="section" id="variables">
 <h4>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h4>
 <p>Additional information about the variables contained in a bucket is showed under &#8216;Variables&#8217;</p>
-<p>///// MOSTRAR A TELA COM O ICON LARANJA E VARIABLES /////</p>
+<a class="reference internal image-reference" href="_images/variableicon.png"><img alt="_images/variableicon.png" class="align-center" src="_images/variableicon.png" style="width: 70%;" /></a>
 <p>The list shows the name of the variables, the number of records and the units for each one.</p>
 <p>Some additional features are included to deal with the variables. Here the variables can be merged, renamed, or deleted. Just select the desired variables from the list, and click on the action to be taken.</p>
 </div>
 </div>
-<div class="section" id="share-buckets">
-<span id="ref-concepts-sharing-bucket"></span><h3>Share Buckets<a class="headerlink" href="#share-buckets" title="Permalink to this headline">¶</a></h3>
-<p>Your data can be shared with others through the option &#8216;Share&#8217; in the General Information session.</p>
-<p>///// MOSTRAR TELA DE SHARE BUCKET EMAIL   //////</p>
-<p>To share a bucket, simply add the e-mail of the user that will receive the access to the bucket, and define the type of access.
-There are 4 types of access:</p>
+<div class="section" id="sharing-buckets">
+<span id="ref-concepts-sharing-bucket"></span><h3>Sharing Buckets<a class="headerlink" href="#sharing-buckets" title="Permalink to this headline">¶</a></h3>
+<p>Your data can be shared with others through the option &#8216;Share&#8217; in the General Information session.
+When the other user receives your bucket, he or she can visualize and work with your data based on the type of access granted.
+Others can use your data to complement their data analysis as long as you allow the access. You can stop sharing any time.</p>
+<a class="reference internal image-reference" href="_images/bucketshareicon.png"><img alt="_images/bucketshareicon.png" class="align-center" src="_images/bucketshareicon.png" style="width: 70%;" /></a>
+<p>To share a bucket, simply add the e-mail of the user that will receive the access to the bucket, and define the type of access.</p>
+<a class="reference internal image-reference" href="_images/bucket_share_email.png"><img alt="_images/bucket_share_email.png" class="align-center" src="_images/bucket_share_email.png" style="width: 70%;" /></a>
+<p>There are 4 types of access:</p>
 <ol class="arabic simple">
 <li><strong>FULL</strong>- the user will be able to write and read data from the bucket (send and get data)</li>
 <li><strong>WRITE only</strong> - the user will be able to write only (only send data to the bucket)</li>
@@ -234,19 +239,19 @@ There are 4 types of access:</p>
 </ol>
 <p><strong>Note:</strong></p>
 <p><em>[1]</em> You can only share your data (the buckets that you own). If someone shared a bucket with you, you are not able to share it with others.</p>
-<p><em>[2]</em> The user who received access to your bucket will not be able to delete your bucket. When he tries to do so, he is in fact just removing it from his own list.</p>
+<p><em>[2]</em> The user who received access to your bucket will not be able to delete your bucket. When he or she tries to do so, he is in fact just removing it from his own list.</p>
 </div>
 </div>
 <div class="section" id="device">
 <span id="ref-concepts-device"></span><h2>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h2>
 <p><em>Device</em> is the link between your external things and the data in your account. You need to create a device in order to allow anything to send or receive data from your buckets.
-The communication between the external devices and Tago is done through HTTP methods using the JSON format. Detailed information can be found in the API documentation.</p>
+The communication between the external devices and Tago is done through HTTP methods using the JSON format.
+Detailed information about how to interface with the devices can be found in the <span class="xref std std-ref">API</span> documentation.</p>
 <div class="section" id="device-creation">
 <h3>Device creation<a class="headerlink" href="#device-creation" title="Permalink to this headline">¶</a></h3>
 <p>To add a device, click on Devices on the side bar. Then, click on &#8216;Add new device&#8217; blue button.</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_1.png" alt="" width="800" height="600"><p>Enter with a device name and description, and select the bucket. Again, you can edit the field later at any time.</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_2.png" alt="" width="800" height="600"><p>After clicking on Save, you should see something like this:</p>
-<img src="https://tago.io/assets/img/screenshot/create_device_3.png" alt="" width="800" height="600"></div>
+<p>Enter with a name for the device and a description, and select the bucket. Again, you can edit the field later at any time.</p>
+<video style="max-width: 100%;" src="_static/concepts/add_device.mp4" autobuffer controls></video><br><br></div>
 <div class="section" id="device-management">
 <h3>Device management<a class="headerlink" href="#device-management" title="Permalink to this headline">¶</a></h3>
 <p>Under the General Information session, you can find detailed information about the device.
