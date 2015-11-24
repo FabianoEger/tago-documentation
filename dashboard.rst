@@ -32,7 +32,7 @@ Dashboards are made of widgets. Tago provides a variety of widgets to handle you
 
 .. _widget-data:
 
-Data Sources
+Variables
 ------------
 
 The widgets that handles data (not all of them do it), needs a data source. The data source of your widgets are the variables created when you send data from your device to Tago's API. So you have to pick which variables, from which device & bucket, to use as data in your widgets.
@@ -78,7 +78,7 @@ You will notice that some widgets are complex than others. While a dial only nee
 Time
 ----
 
-When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through realtime updates, others can exhibit a range of time while keeping it updated through realtime updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. And don't worry, because you can choose in which time zone that time will be related to.
+When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through realtime updates, others can exhibit a range of time while keeping it updated through realtime updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. And don't worry, because you'll find an option under **Advanced Options** to choose in which time zone that time will be related to.
 
 .. image:: _static/dashboard/widget_time.png
 	:width: 100%
@@ -101,10 +101,38 @@ You will also see an option to set the unit of your value. You must be aware tha
 Display
 -------
 
-a
+As the name says, this is a widget that displays the last value of its :ref:`variables <widget-data>`, regardless of the type (text or number) of the value. You can pick as many :ref:`variables <widget-data>` as you want, each one of them will have its own box and the values will be shown simultaneously.
+
+Advanced Options
+^^^^^^^^^^^^^^^^
+
+This widget only have general advanced options, as mentioned earlier in the :ref:`configuration section<widget-config>`.
 
 Chart
 -----
+
+Charts are a very powerful way of visualizing your data and have insights. At Tago you'll find a variety of charts to use.
+
+Line / Area / Bar
+^^^^^^^^^^^^^^^^^
+
+Easier to configurate, these charts only need you to pick some :ref:`variables <widget-data>` and to choose which :ref:`time <widget-time>` settings to use.
+
+Advanced Options
+````````````````
+
+Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` selector and a few specific options:
+
+**Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps the mostly recent.
+
+**Stack graphics**: this option determines whether to stack the values of each series on top of each other.
+
+**Show device name associated with each variable**: this option tell the chart to show the device name near the variable name. It's useful when you have variables with the same name in the chart.
+
+Multiple Axis
+^^^^^^^^^^^^^
+
+
 
 Map
 ---
