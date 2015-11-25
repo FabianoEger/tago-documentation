@@ -1,8 +1,9 @@
 
 .. _ref_dashboard_dashboard:
 
+#########
 Dashboard
-*********
+#########
 
 A dashboard is where you place your widgets to visualize and interact with data, in realtime. All your dashboards are listed on the sidebar of Tago.
 
@@ -14,8 +15,9 @@ You can organize them in the way that best fit your needs by moving and resizing
 
 	<video style="max-width: 100%;" src="_static/dashboard/dashboard_1.mp4" autobuffer controls></video><br><br>
 
+*******************
 Building dashboards
-===================
+*******************
 
 To create a new dashboard, just click the button below your dashboards list **+ New Dashboard**, give a name to your new dashboard and click on **Create**.
 
@@ -24,7 +26,7 @@ To create a new dashboard, just click the button below your dashboards list **+ 
 	<video style="max-width: 100%;" src="_static/dashboard/dashboard_create.mp4" autobuffer controls></video><br><br>
 
 Widgets
--------
+*******
 
 Dashboards are made of widgets. Tago provides a variety of widgets to handle your data in realtime. From simple **dials** to **tables**, **maps** and even **forms** that you can use to create new data.
 
@@ -33,7 +35,7 @@ Dashboards are made of widgets. Tago provides a variety of widgets to handle you
 .. _widget-data:
 
 Variables
-------------
+*********
 
 The widgets that handles data (not all of them do it), needs a data source. The data source of your widgets are the variables created when you send data from your device to Tago's API. So you have to pick which variables, from which device & bucket, to use as data in your widgets.
 
@@ -52,7 +54,7 @@ Along with the alias field, you'll see that you can change the bucket and/or the
 .. _widget-config:
 
 Configuration
--------------
+*************
 
 Besides the data sources, every kind of widget has its own particular configurations in regard how to display the data. So when creating a widget, you're going to find **basic** options - generally these are critical to the algorithm that builds your widget - and **advanced** options, which allows you to give your personal touch to each widget and also provides advanced features you might need. Two advanced features included in every widget are:
 
@@ -76,7 +78,7 @@ You will notice that some widgets are complex than others. While a dial only nee
 .. _widget-time:
 
 Time
-----
+****
 
 When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through realtime updates, others can exhibit a range of time while keeping it updated through realtime updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. These options may be like the following:
 
@@ -91,41 +93,41 @@ And don't worry, because you'll find an option under **Advanced Options** to cho
 	:align: center
 
 Dial
-----
+****
 
 Dials are one of the simplest and useful widgets. They make easy to visualize how far/near a value is in between a range.
 
 Its configuration is very simple. You can pick as many :ref:`variables <widget-data>` as you need, each one of them will have its own dial chart inside a single widget. We set the default minimum and maximum values of the range to 0 and 100 for your convenience, but you can easily change it.
 
 Advanced Options
-^^^^^^^^^^^^^^^^
+================
 
 In the advanced options you will see an option to change de format of the number to be show in regard to the number of decimal places.
 
 You will also see an option to set the unit of your value. You must be aware that even if your data contains a ``unit`` property, it will be overridden by this setting.
 
 Display
--------
+*******
 
 As the name says, this is a widget that displays the last value of its :ref:`variables <widget-data>`, regardless of the type (text or number) of the value. You can pick as many :ref:`variables <widget-data>` as you want, each one of them will have its own box and the values will be shown simultaneously.
 
 Advanced Options
-^^^^^^^^^^^^^^^^
+================
 
 This widget only have general advanced options, as mentioned earlier in the :ref:`configuration section<widget-config>`.
 
 Chart
------
+*****
 
 Charts are a very powerful way of visualizing your data and have insights. At Tago you'll find a variety of charts to use.
 
 Line / Area / Bar
-^^^^^^^^^^^^^^^^^
+=================
 
 Easier to configurate, these charts only need you to pick some :ref:`variables <widget-data>` and to choose which :ref:`time <widget-time>` settings to use.
 
 Advanced Options
-````````````````
+----------------
 
 Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` selector and a few specific options:
 
@@ -136,34 +138,48 @@ Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` se
 **Show device name associated with each variable**: this option tell the chart to show the device name near the variable name. It's useful when you have variables with the same name in the chart.
 
 Multiple Axis
-^^^^^^^^^^^^^
+=============
 
-This kind of chart allows you to plot your data using bars, lines, columns and area in the same chart. Which is why you have to set the type of your chart for each variable you add.
+This kind of chart allows you to plot your data using bars, lines, columns and areas in the same chart. Which is why you have to set the type of your chart for each variable you add. Besides that, you will also have to choose which :ref:`time <widget-time>` settings to use.
 
 .. image:: _static/dashboard/widget_multiple_axis.png
 
+Advanced Options
+----------------
+
+Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` selector and a few specific options:
+
+**Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps the mostly recent.
+
+**Group the samples by**: by default, the X axis of the chart will be the time of the values. But, sometimes you need to group your data through the X axis even if they don't have the exactly same time, in that cases you must make use of :ref:`series <concepts-serie>`.
+
+**Stack graphics**: this option determines whether to stack the values of each series on top of each other.
+
+**Show device name associated with each variable**: this option tell the chart to show the device name near the variable name. It's useful when you have variables with the same name in the chart.
+
 Map
----
+***
 
 Table
------
+*****
 
 Pie
----
+***
 
 Input
------
+*****
 
 Gauge
------
+*****
 
 Note
-----
+****
 
 .. _dashboard_share_dashboards:
 
+****************
 Share dashboards
-==================
+****************
 
 Sometimes a dashboard can become an entire feature that you want to share. Now there are two ways of sending a dashboard to someone:
 
@@ -173,7 +189,7 @@ Sometimes a dashboard can become an entire feature that you want to share. Now t
 .. _dashboard-share:
 
 Share
------
+*****
 
 When you share your dashboard, others can only visualize it. They will not be able to move, resize, or even edit widgets. They will also have access only to the variables that you added on it.
 
@@ -198,7 +214,7 @@ In that screen you can also visualize the list of people which you already share
 .. _dashboard-clone:
 
 Clone
-----
+*****
 
 When you create a clone of your dashboard, others will only receive the dashboard without having any access to your data. They are able to edit the dashboard and its widgets without impacting yours.
 
