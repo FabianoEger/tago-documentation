@@ -4,7 +4,7 @@
 Dashboard
 #########
 
-A dashboard is where you place your widgets to visualize and interact with data, in realtime. All your dashboards are listed on the sidebar of Tago.
+A dashboard is where you place your widgets to visualize and interact with data, in real time. All your dashboards are listed on the sidebar of Tago.
 
 .. image:: _static/dashboard/dashboard_list.png
 
@@ -27,7 +27,7 @@ To create a new dashboard, just click the button below your dashboards list **+ 
 Widgets
 *******
 
-Dashboards are made of widgets. Tago provides a variety of widgets to handle your data in realtime. From simple **dials** to **tables**, **maps** and even **forms** that you can use to create new data.
+Dashboards are made of widgets. Tago provides a variety of widgets to handle your data in real time. From simple **dials** to **tables**, **maps** and even **forms** that you can use to create new data.
 
 .. image:: _static/dashboard/widget_types.png
 
@@ -79,7 +79,7 @@ You will notice that some widgets are complex than others. While a dial only nee
 Time
 ****
 
-When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through realtime updates, others can exhibit a range of time while keeping it updated through realtime updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. These options may be like the following:
+When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through real time updates, others can exhibit a range of time while keeping it updated through real time updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. These options may be like the following:
 
 * Only the last value
 * Realtime
@@ -150,7 +150,7 @@ Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` se
 
 **Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps the mostly recent.
 
-**Group the samples by**: by default, the X axis of the chart will be the time of the values. But, sometimes you need to group your data through the X axis even if they don't have the exactly same time, in that cases you must make use of :ref:`serie <concepts-serie>`.
+**Group the samples by**: by default, the X axis of the chart will be the time of the values. But, sometimes you need to group your data through the X axis even if they don't have the exactly same time, in that cases you must make use of a :ref:`serie <concepts-serie>`.
 
 **Stack graphics**: this option determines whether to stack the values of each series on top of each other.
 
@@ -159,8 +159,52 @@ Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` se
 Map
 ***
 
+If your data have location information [#f1]_ about the device of origin attached, you can visualize it in a map. This is easy as choosing one or more :ref:`variables <widget-data>` and selecting which :ref:`time filters<widget-time>` to use.
+
+As you pick variables to your map, you'll have two more options to optionally fill about its device of origin:
+
+**Icon**: choose an icon and color to represent that device on the map.
+
+**Label**: give that device an alias to be shown inside the information window. This is useful to diffentiate devices with the same icon and color on the map.
+
+.. image:: _static/dashboard/widget_map_variables.png
+
+.. rubric:: Notes:
+
+.. [#f1] If you don't know how to send location coordinates within your data, please read our :ref:`API docs<ref_api_api>`
+
+Advanced Options
+================
+
+Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` selector and a few specific options:
+
+**Connect markers with lines**: this option makes every point of the same device to be connected through a line, as a route.
+
+**Ignore heading direction from variable**: if checked, the `heading` property of your location data will be ignoring during the build of the map. So, instead of having an arrow pointing exactly to your heading direction in each point of your route, you'll have automatically generated arrows placed all over your route.
+
+**Do not open info windows automatically**: if checked, the window with the data values won't automatically open when the widget is shown or when new points are plotted in real time.
+
+**Show icons for all values**: this option will make the device icon appear for every point of his route in the map.
+
+**Do not display (0, 0) coordinates**: sometimes GPS devices send locations with latitude 0 and longitude 0 by mistake, affecting the routes on your map. Check this option if you are having this kind of problem.
+
+**Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps the mostly recent.
+
+**Group the samples by**: sometimes only one of your variables has the location information, but there are other variables related to it that you would like to display together on the map, in this case you must make use of a :ref:`serie <concepts-serie>`. Otherwise it will be grouped using the ``time`` and ``location`` of each data.
+
 Table
 *****
+
+Tables are one of the special kind of widgets. Unlike the others, you won't find the traditional variable selector, initially there's only two fields to fill: how many **rows** and **columns**. After selecting these two values, you'll have a scheme of how the table is going to look like with all your rows and cells.
+
+To finish, you just need to fill your cells either with text or with the value of a variable. To do that, click on a cell, select the type and fill the value (a text or a variable).
+
+Cells with variables will always display the last value of the variable and it will be updated in real time as soon as a new value arrive.
+
+.. image:: _static/dashboard/widget_table.png
+
+Dynamic Table
+*************
 
 Pie
 ***
