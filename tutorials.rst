@@ -1,13 +1,14 @@
 
 .. _ref_tutorial_intro:
 
+#########
 Tutorials
-*********
+#########
 
 
-
+******************
 Basic with Arduino
-==================
+******************
 
 .. image:: _static/tutorials/arduinozero_wifi101.png
 	:width: 70%
@@ -75,7 +76,7 @@ Building the Dashboard
 ----------------------
 
 
-Sending e-mail 
+Sending e-mail
 --------------
 
 Advanced tutorial
@@ -86,10 +87,21 @@ send and receive data from Tago, run a script in the analysis and combine data.
 
 .. _ref_tutorials_advanced_arduino:
 
+*********************
 Advanced with Arduino
-=====================
-
-** COMING SOON **
+*********************
 
 Diagram
 -------
+
+** COMING SOON **
+
+
+*****************
+Beagle Bone Black
+*****************
+
+Diagram
+-------
+
+** COMING SOON **

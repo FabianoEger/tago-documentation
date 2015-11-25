@@ -8,7 +8,7 @@ Watch this short video to learn about the bucket/device/token concepts.
 	<video style="max-width: 100%;" src="_static/concepts/Tago_Tech_Concept.mp4" autobuffer controls></video><br><br>
 
 
-.. _ref_concepts_bucket:
+.. _ref_concepts_bucket: 
 
 Bucket
 ======
