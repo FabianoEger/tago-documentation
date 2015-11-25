@@ -1,11 +1,13 @@
+###############
 Getting Started
-***************
+###############
 Here is how to get started with Tago.io
 
 Log in to Tago.io. If you haven't created an account yet, signup for free now.
 
+********************
 Step 1. Add a device
------------------------
+********************
 You can start by adding a  :ref:`device <ref_concepts_device>` to your account. This will enable a link between your data and the external world. In this example, let's send a variable called *temperature* from your device.
 
 On the left side bar, click on **Devices**. Then, click on **Add Device** blue button, enter with the name 'dev01' and click on 'Save'.
@@ -19,8 +21,10 @@ Later in this example, you will need this token. Go to the 'General information'
 
 	<video style="max-width: 100%;" src="_static/getstarted/add_device.mp4" autobuffer controls></video><br><br>
 
+*************************
 Step 2. Build a dashboard
---------------------------
+*************************
+
 You can build great :ref:`dashboards <ref_dashboard_dashboard>` to visualize data, interact with your devices and share with others. You can pick the widgets that best fit your needs.
 
 Click '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
@@ -39,8 +43,10 @@ Then, click on 'Create', and your widget is ready!
 
 Good! As soon as your device start to send data, the values will be showed on this dial.
 
+*****************
 Step 3. Send data
------------------
+*****************
+
 Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our :ref:`SDKs <ref_sdk_sdk>` designed for your platform.
 Or we can simulate your device, by exchanging data remotely with your bucket using **curl** in a **Mac** or **Linux**.
 Here, you will need to use that **token** created earlier for your device.
@@ -71,8 +77,10 @@ The response should looks like this.
 		:height: 300
 		:width: 600
 
+***********************
 Step 4. Explore Tago.io
------------------------
+***********************
+
 This is just the beginning! Check out how powerful the Tago platform is.
 
 Learn how to :ref:`share dash boards <dashboard_share_dashboards>` and :ref:`data buckets <ref_concepts_sharing_bucket>`.
