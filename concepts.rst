@@ -190,6 +190,8 @@ Look for the setup instructions coming with the specific hardware device that yo
 Additional tips
 ===============
 
+.. _concepts-serie:
+
 Grouping variables by 'serie'
 ----------------------------
 
