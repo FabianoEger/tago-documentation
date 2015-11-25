@@ -6,10 +6,9 @@
 Welcome to Tago's documentation!
 ==============================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
    getstarted
    concepts
@@ -19,3 +18,4 @@ Contents:
    tutorials
    sdk
    api
+   Forum <https://community.tago.io/>

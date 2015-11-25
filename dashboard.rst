@@ -1,4 +1,3 @@
-
 .. _ref_dashboard_dashboard:
 
 #########
@@ -151,7 +150,7 @@ Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` se
 
 **Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps the mostly recent.
 
-**Group the samples by**: by default, the X axis of the chart will be the time of the values. But, sometimes you need to group your data through the X axis even if they don't have the exactly same time, in that cases you must make use of :ref:`series <concepts-serie>`.
+**Group the samples by**: by default, the X axis of the chart will be the time of the values. But, sometimes you need to group your data through the X axis even if they don't have the exactly same time, in that cases you must make use of :ref:`serie <concepts-serie>`.
 
 **Stack graphics**: this option determines whether to stack the values of each series on top of each other.
 
