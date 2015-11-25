@@ -203,23 +203,96 @@ Cells with variables will always display the last value of the variable and it w
 Dynamic Table
 *************
 
+Dynamic tables, as the name says, are tables generated dynamically using you data. Its configuration is easy, just pick your :ref:`variables<widget-data>`, choose a time span and you are ready to go. Make sure that the data you want to display in the table is grouped using a :ref:`serie number<concepts-serie>`, otherwise the values will appear each one in its own rows, with all the other cells left in blank.
+
+Each one of the variables you selected will become a column and the rows will contain the values, from the most recent to the oldest data. As soon as new values of the selected variables arrives, they are added to the table.
+
+By default the column title will be the variable name, but you can change it by adding a label to your variables.
+
+Advanced options
+================
+
+Under **advanced options** you will find some specific options:
+
+**Maximum number of rows**: if the time span isn't enough, you can also filter the exactly amount of data that will appear in your table using this option.
+
+**Only display rows with all values**: this option guarantees that only rows with values in all of its cells will appear.
+
+**Display date and time**: if you check this options, a column named "Time" will be added to the table and will show the ``time`` of one of the values of that row.
+
 Pie
 ***
 
-Input
-*****
+Not available yet.
+
+Control input
+**************
+
+Not available yet.
+
+Form input
+***********
+
+The form input is a powerful widget among the others that Tago offers. It allows you to build complex forms to create new data.
+
+For this widget, select the :ref:`variables<widget-data>` that will hold the values sent through the form, each one of them will have its own field in the form so you can set a value. Every time you submit the form widget, the values set in each field will be created in the API using the variables of each field. They will also be grouped together through a :ref:`serie number<concepts-serie>`, so you can use them grouped in maps, dynamic tables, charts, etc.
+
+There are a variety of field types that you can use:
+
+Checkbox
+	A traditional checkbox will appear and the value will be set as true (checked) or false (not checked).
+
+Radio
+	A traditional radio input will appear. Once selected you will be able to define its options with their labels and values. The value of the field will be the one of the selected option.
+
+Text
+	A typical text input will appear and the value will be anything that was typed into it.
+
+Dropdown
+	It displays a dropdown menu with options that you define. The value of the field will be the one of the selected option.
+
+Hidden
+	Unlike the others, this field type doesn't display anything on the form. It will be there as an invisible field and you won't be able to change its value unless you edit this widget.
+
+Address
+	It will display a text field integrated with Google Maps to look for an address. The value for this field will be the complete address selected and it will also have the location coordinates within it.
+
+Device
+	It will display a dropdown menu in which options will be your devices. The value of the field will be the id of the selected device.
+
+Validation
+	This field is the only one that doesn't represent a value to be sent with the form. The variable set to this field type expect to receive data (text) to show as a message above the form. Besides the text, you can also define the type of message that will appear. There are four types: *warning*, *info*, *danger* and *success*. You do this by sending a property ``type`` in the metadata [#metadata]_ object of your data.
+
+.. rubric:: Notes
+
+.. [#metadata] If you don't know about the metadata object, read our :ref:`API docs<ref_api_api>`
+
+Advanced options
+================
+
+Under **advanced options** you will find some specific options:
+
+**Display a "Clear" button to reset fields**: this option makes a "Reset" button in the end of the form. When clicked, all fields will return to its **default values**.
+
+**Confirm before submit**: this option will make a confirmation window appear everytime you try to submit the form.
+
+**Display a map to visualize address**: this option will display a map at the end of the form, and this map will display the last address selected in a address field.
 
 Gauge
 *****
 
+Not available yet.
+
 Note
 ****
 
+Not available yet.
+
 .. _dashboard_share_dashboards:
 
-****************
-Share dashboards
-****************
+******************
+Sharing dashboards
+******************
 
 Sometimes a dashboard can become an entire feature that you want to share. Now there are two ways of sending a dashboard to someone:
 
