@@ -115,7 +115,7 @@ Running the application
 
 Open your dashboard, and run the code in your Arduino board. Note the widget display the value in realtime.
 Try to heat the sensor to reach the 50C. You should then receive an e-mail from Tago. Cool down the sensor below 30C, and try again!
-If you have any issue or question about this application, access our :ref:`forum <ref_forum_forum>`
+If you have any issue or question about this application, access our `Forum <http://community.tago.io/>`_ .
 
 
 Conclusion

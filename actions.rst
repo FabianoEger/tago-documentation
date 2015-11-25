@@ -1,30 +1,33 @@
 
 .. _ref_actions_actions:
 
+#######
 Actions
-*******
+#######
 
 **Actions** is a very powerful feature that gives you the total control over your devices based on events determined by you.
 More than sending e-mail or SMS based on certain conditions, with Actions, it is also possible to send data back to the device, run scripts in the Analysis, and make a HTTP Post end-point.
-With these capabilities combined, there a limitless possibilities to create any event condition, not limited to simple an if/else condition.
+With these capabilities combined, there a limitless possibilities to create any event condition, not limited to a simple if/else condition.
 
-Create Actions
-==============
+****************
+Creating Actions
+****************
 
-To create a new Action, just click on the button 'Actions' located at the sidebar, give a name to your new action and click on **Save**.
+To create a new Action, just click on the button 'Actions' located at the sidebar, then click 'Add action' blue button. Give a name for your action and click **Save**.
 
-// DEPOIS MUDAR PARA UM VIDEO COM ACTIONS.
+.. image:: _static/actions/create_action.png
+	:width: 100%
 
-.. raw:: html
+.. _ref_actions_define_actions:
 
-	<video style="max-width: 100%;" src="_static/dashboard/dashboard_create.mp4" autobuffer controls></video><br><br>
+****************
+Defining Actions
+****************
 
-Define Actions
-==============
 First thing to do when configuring an Action, is to define which action it will should be taken. Each type of action is described in the sessions below.
 
 Send e-mail
------------
+***********
 
 An e-mail will be sent when the condition :ref:`actions_set_trigger` is met.
 To create an action, select the *Action to be taken* as: **Send e-mail**, enter with the e-mail address, and a subject.
@@ -50,14 +53,14 @@ E-mails can be sent directly from scripts in the Analysis. For such action, you 
 Check the terms of use, and your plan before using the E-mail service.
 
 Send SMS
---------
+********
 
 An SMS will be sent when the condition :ref:`actions_set_trigger` is met.
 To create an action, select the *Action to be taken* as: **Send SMS**, and enter with the phone number, including the country code. If there is no country code, the system will assume the USA code (+1).
 
 The message body can be as simple as a text: 'Hi, your car is over the speed limit'.
-Or you can special fields on the message to personalize it with real-time data from your bucket and devices.
-You can use most of the JSON field from our API:
+Or you can specify fields in the message to personalize it with real-time data from your bucket and devices.
+You can use most of the JSON fields from our API:
 
 1. $VARIABLE$
 2. $BUCKET$
@@ -67,16 +70,16 @@ You can use most of the JSON field from our API:
 6. $LOCATION$
 7. $DEVICE$
 
-For example, a personalized message like this:  'Hi, your $DEVICE$ reached $VALUE$ $UNIT$ at $LOCATION$',
-would text: 'Hi, you Passat reached 73 mph at 43.0533,-86.4534'
+For example, a personalized message like this:  'Hi, your $DEVICE$ reached $VALUE$ $UNIT$ at the coordinates $LOCATION$',
+would text: 'Hi, you Passat reached 73 mph at the coordinates 43.05334,-86.45340'
 
-To prevent from sending SMS's continuously when a trigger condition is met, you may have to define a reset trigger condition.
-Check :ref:`actions_reset_trigger` to avoid issues with your logic and even with your account.
+To prevent from sending SMS's continuously when a trigger condition is met, you can define a reset trigger condition.
+Check :ref:`actions_reset_trigger` to avoid issues with your logic and even with your account (high number of SMSs, for example).
 
 Some costs may occur when using the SMS service, which varies based on the country of operation. Check pricing, terms of use, and your plan before using the SMS service.
 
 Send to Device
---------------
+**************
 
 Data can be sent directly to your device by using the Socket.io realtime capability.
 Of course, you can program your device to get data from the buckets using the GET method, but it may not know when to try to get data if it doesn't know if the value of the variable change.
@@ -93,19 +96,21 @@ Although the variable can be sent by another device, it is common to send variab
 **Note:** When using socket.io to receive data, the device should be in the *listening* mode. Check our out :ref:`ref_sdk_sdk` to get code example to quickly implement this function in your platform.
 
 Run Analysis Script
--------------------
+*******************
 
 HTTP Post End-Point
--------------------
+*******************
 
 .. _actions_set_trigger:
 
-Define condition
-================
+******************
+Defining condition
+******************
+
 In order to initiate an action process, certain conditions should be met. Internally, Tago uses a *trigger* as the flag to monitor this process.
 
 Set Trigger
------------
+***********
 One condition to start the action is when the selected variable meets the criteria defined in **Set Trigger**.
 Enter with the variable to be tested (it is tested every time a new value arrives), the Condition, and the value to be compared against.
 
@@ -138,7 +143,8 @@ the new temperature variable arrives, and just write a simple script to make the
 .. _actions_reset_trigger:
 
 Reset Trigger
--------------
+*************
+
 Each time a **Set Trigger** condition is met, the trigger is locked if the *Define Reset Trigger Condition* switch is set **YES**.
 In this case, the **Set Trigger** condition will only be tested again when the **Reset Trigger** condition is met. This is helpful to create an hysteresis for example.
 
