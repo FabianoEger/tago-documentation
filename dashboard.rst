@@ -190,7 +190,7 @@ In that screen you can also visualize the list of people which you already share
 .. _dashboard-clone:
 
 Clone
-----
+-----
 
 When you create a clone of your dashboard, others will only receive the dashboard without having any access to your data. They are able to edit the dashboard and its widgets without impacting yours.
 
