@@ -25,15 +25,6 @@ You can build great :ref:`dashboards <ref_dashboard_dashboard>` to visualize dat
 
 Click '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
 
-.. image:: _static/getstarted/newdash.png
-	:height: 360
-	:width: 360
-
-
-.. image:: _static/getstarted/mydash.png
-		:height: 260
-		:width: 260
-
 Let's add one widget to show the variable *temperature*. Click on 'Add Widget' blue bottom and pick the widget *Dial*.
 
 To configure this widget, first you need to add a variable to be displayed.
@@ -50,8 +41,8 @@ Good! As soon as your device start to send data, the values will be showed on th
 
 Step 3. Send data
 -----------------
-Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our **SDK's** designed for your platform.
-Or we can simulate your device, by exchanging data remotely with your bucket using **curl** in a Mac or Linux.
+Now you are ready to integrate Tago system with your electronic devices or apps. You can use one of our :ref:`SDKs <ref_sdk_sdk>` designed for your platform.
+Or we can simulate your device, by exchanging data remotely with your bucket using **curl** in a **Mac** or **Linux**.
 Here, you will need to use that **token** created earlier for your device.
 
 .. raw:: html
@@ -60,10 +51,9 @@ Here, you will need to use that **token** created earlier for your device.
 
 Try to send more data by changing the value of the 'temperature' variable. Keep an eye on your dashboard. You should see something like this.
 
-.. image:: _static/getstarted/dial.gif
-	:align: center
+add GIF here !!! ////
 
-If you are using Windows, you can send data with Postman (https://www.getpostman.com/). Considering the same inputs as above, you will can make a POST using the url, Device-Token in the Postman like this:
+If you are using **Windows**, you can send data with Postman (https://www.getpostman.com/). Considering the same inputs as above, you will can make a POST using the url, Device-Token in the Postman like this:
 
 .. image:: _static/getstarted/postman1.png
 		:height: 300
@@ -85,10 +75,10 @@ Step 4. Explore Tago.io
 -----------------------
 This is just the beginning! Check out how powerful the Tago platform is.
 
-Learn how to :ref:`dashboard_share_dashboards` and :ref:`ref_concepts_sharing_bucket`.
+Learn how to :ref:`share dash boards <dashboard_share_dashboards>` and :ref:`data buckets <ref_concepts_sharing_bucket>`.
 
-Create powerful :ref:`ref_analysis_analysis` in realtime using our script capabilities in Java Script. Take :ref:`ref_actions_actions` based on your rules.
+Create powerful :ref:`data analysis <ref_analysis_analysis>` in realtime using our script capabilities in Java Script. Program :ref:`actions <ref_actions_actions>` to be taken based on your rules.
 
-Learn more about our powerful :ref:`ref_API_API`. And check out the :ref:`ref_tutorial_intro` prepared for different boards and applications.
+Learn more about our powerful :ref:`API's <ref_api_api>`. And check out the :ref:`tutorials <ref_tutorial_intro>` and :ref:`SDKs <ref_sdk_sdk>` prepared for different boards and applications.
 
 Visit our Marketplace! [beta] You will find dashboards ready to be used in interesting applications.
