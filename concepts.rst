@@ -8,7 +8,7 @@ Watch this short video to learn about the bucket/device/token concepts.
 	<video style="max-width: 100%;" src="_static/concepts/Tago_Tech_Concept.mp4" autobuffer controls></video><br><br>
 
 
-.. _ref_concepts_bucket: 
+.. _ref_concepts_bucket:
 
 Bucket
 ======
@@ -215,8 +215,10 @@ Look for the setup instructions coming with the specific hardware device that yo
 Additional tips
 ===============
 
+.. _concepts-serie:
+
 Grouping variables by 'serie'
-----------------------------
+-----------------------------
 
 It is expected that most devices will send more than one variable at a certain time. And when visualizing the data, the user may want to see them synchronized at each sample period. For example, a device sends a GPS location, speed and voltage variables at certain frequency. If they are acquired and sent with exactly the same time stamp the user can visualize the 3 variables together at each time sample.
 However, if there is any delay between them (time stamps of the three variables not matching exactly), the system will not be able to group them correctly 'by time'.
