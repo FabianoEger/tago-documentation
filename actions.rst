@@ -111,6 +111,8 @@ Although the variable can be sent by another device, it is common to send variab
 
 **Note:** When using socket.io to receive data, the device should be in the *listening* mode. Check our out :ref:`ref_sdk_sdk` to get code example to quickly implement this function in your platform.
 
+.. _ref_actions_run_analysis:
+
 Run Analysis Script
 *******************
 Actions can also initiate scripts that runs in the Analysis.
@@ -124,6 +126,14 @@ To create this action, you need to select the *Action to be taken* as: **Run ana
 
 HTTP Post End-Point
 *******************
+
+This action can post a data directly to an end point defined by you. When the action is initiated, it will POST the JSON data received (as defined by the variable in the Set Trigger) to HTTP address defined.
+
+To create this action, you just need to select the *Action to be taken* as: *HTTP Post end-point*. Then, in the *HTTP Post End-point* field, enter with the HTTP address. Below, we show one example.
+
+
+.. image:: _static/actions/config_endpoint.png
+	:width: 100%
 
 .. _actions_set_trigger:
 
@@ -139,6 +149,7 @@ One condition to start the action is when the selected variable meets the criter
 
 To configure how the event will be initiated, you need to configure the triggers.
 Enter with the variable to be tested (it is tested every time a new value arrives), the Condition, and the value to be compared against.
+When the condition is true, the trigger is set. Same thing for the condition defined to reset trigger.
 
 .. image:: _static/actions/set_trigger.png
 	:width: 100%
@@ -175,7 +186,6 @@ In this case, the **Set Trigger** condition will only be tested again when the *
 However, if the *Define Reset Trigger Condition* switch is set **NO**, the trigger will never be locked, and any time that the **Set Trigger** condition is met, it will take the defined action.
 Depending on your logic, it may be undesirable.
 
-One example of undesirable situation would be if you would want to receive an SMS when the temperature is above 95 C.
-After reaching >95C the system will send a SMS. But, if the device continue sending more values above 95C the system would send another SMS for each value received!
+One example of undesirable situation could occur when you want to receive only one SMS when the temperature crosses above 95 C, but instead you receive one SMS for each time a new value of temperature above 95 C is sent (unnecessary and costly).
 You may want to implement an hysteresis using a **Reset Trigger** condition. If you define the condition to reset when temperature < 90 C for example, it would prevent this issue.
 Only one SMS would be sent, and the system would be locked until the temperature goes below 90 C. Which seems much more reasonable in this example.

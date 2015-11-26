@@ -144,18 +144,4 @@ Beagle Bone Black
 Diagram
 *******
 
-Adding the Device
-*****************
-
-Log in your account, click on Devices (side bar), then click on 'Add Device'.
-
-On the left side bar, click on **Devices**. Then, click on **Add Device** blue button, enter with the name 'dev01' and click on 'Save'.
-
-For each device, you have to define a :ref:`bucket <ref_concepts_bucket>` to store its data. You can let Tago to create a new bucket with the same name as the device.
-
-All devices should use a valid :ref:`token <ref_concepts_token>` when accessing Tago. This token is automatically generated when a device is created.
-Go to the 'General information' session of the device, click on 'QR Code' or 'Tokens' and copy the token to be added in the Arduino code later.
-
-.. raw:: html
-
-	<video style="max-width: 100%;" src="_static/getstarted/add_device.mp4" autobuffer controls></video><br><br>
+** Coming soon **
