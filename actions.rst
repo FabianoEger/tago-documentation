@@ -6,7 +6,7 @@ Actions
 #######
 
 **Actions** is a very powerful feature that gives you the total control over your devices based on events determined by you.
-More than sending e-mail or SMS based on certain conditions, with Actions, it is also possible to send data back to the device, run scripts in the Analysis, and make a HTTP Post end-point.
+More than sending e-mail or SMS based on certain conditions, with Actions, it is also possible to send data back to the device, run scripts in the Analysis, and make a HTTP Post endpoint.
 With these capabilities combined, there a limitless possibilities to create any event condition, not limited to a simple if/else condition.
 
 ****************
@@ -36,7 +36,7 @@ To create this action, select the *Action to be taken* as: **Send e-mail**, ente
 	:width: 100%
 
 The message body can be as simple as a text: 'Hi, your car is over the speed limit'.
-Or you can special fields on the message to personalize it with real-time data from your bucket and devices.
+Or you can use special fields on the message to personalize it with real-time data from your bucket and devices.
 You can use most of the JSON field from our API:
 
 1. $VARIABLE$

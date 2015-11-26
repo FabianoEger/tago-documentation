@@ -37,7 +37,7 @@ Each device can be connected to only one bucket. It means that the device will b
 and that the device is able to read variables from only one bucket. To make the same variable available to different devices, it is recommended to
 connect more devices in the same bucket, or use scripts in the :ref:`ref_analysis_analysis` to copy certain variables from one bucket to another.
 
-Note that when selecting variables in a dashboard or in the analysis, you will be requested to select the *bucket* and the device of *origin* that sent the variable [ADD REFERENCE].
+Note that when selecting variables in a dashboard or in the analysis, you will be requested to select the *bucket* and the device of *origin* that sent the :ref:`variable<widget-data>`.
 In case a bucket received data from different devices with the same variable name, it is easy to separate them by defining its origin.
 For example, Device01 and Device02 are sending both the variable 'temperature' to the bucket MySensors.
 To display the temperature from one specific device, just add the name of the device in the *origin* field.
@@ -139,7 +139,7 @@ Device
 ******
 
 *Device* is the link between your external things and the data in your account. You need to create a device in order to allow anything to send or receive data from your buckets.
-The communication between the external devices and Tago is done through HTTP methods using the JSON format (HTPPS in fact).
+The communication between the external devices and Tago is done through HTTP methods using the JSON format (HTTP in fact).
 Detailed information about how to interface with the devices can be found in the :ref:`API <ref_api_api>` documentation.
 
 Adding Devices
@@ -169,7 +169,7 @@ Visible
 =======
 
 With this option is possible to hide the device from the list.
-It may be helpful when creating a Dashboard and using the widget *Form* that has a field type called 'Device'.
+It may be helpful when creating a Dashboard and using the widget :ref:`*Form*<widget-form>` that has a field type called 'Device'.
 When configured with a device, the form will show the list of all visible devices connected to that bucket.
 
 .. _ref_concepts_token:

@@ -3,7 +3,7 @@ Getting Started
 ###############
 Here is how to get started with Tago.
 
-Log in to www.tago.io. If you haven't created an account yet, signup for free now.
+Log in to `www.tago.io <https://tago.io/>`_. If you haven't created an account yet, signup for free now.
 
 ********************
 Step 1. Add a device
@@ -61,7 +61,7 @@ Mac or Linux
 ************
 
 Let's use **cURL** to post the data.
-Enter with the following command replacing the YOUR_TOKEN_HERE by that **token** created earlier for your device.
+Enter with the following command replacing the *YOUR_TOKEN_HERE* by that **token** created earlier for your device.
 
 .. code-block:: text
 

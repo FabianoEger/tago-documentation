@@ -230,6 +230,8 @@ Control input
 
 Not available yet.
 
+.. _widget-form:
+
 Form input
 ***********
 
