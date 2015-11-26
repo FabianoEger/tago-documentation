@@ -4,7 +4,7 @@
 Dashboard
 #########
 
-A dashboard is where you place your widgets to visualize and interact with data, in real time. All your dashboards are listed on the sidebar of Tago.
+A dashboard is where you place your widgets to visualize and interact with data, everything in real time. All your dashboards are listed on the sidebar of Tago.
 
 .. image:: _static/dashboard/dashboard_list.png
 
@@ -36,7 +36,7 @@ Dashboards are made of widgets. Tago provides a variety of widgets to handle you
 Variables
 *********
 
-The widgets that handles data (not all of them do it), needs a data source. The data source of your widgets are the variables created when you send data from your device to Tago's API. So you have to pick which variables, from which device & bucket, to use as data in your widgets.
+As most widgets handle data, they need a data source. The data source of your widgets are the variables created when you send data from your device to Tago's API. So you have to pick which variables, from which device & bucket, to use as data in your widgets.
 
 .. image:: _static/dashboard/widget_vars.png
 	:width: 50%
@@ -55,7 +55,7 @@ Along with the alias field, you'll see that you can change the bucket and/or the
 Configuration
 *************
 
-Besides the data sources, every kind of widget has its own particular configurations in regard how to display the data. So when creating a widget, you're going to find **basic** options - generally these are critical to the algorithm that builds your widget - and **advanced** options, which allows you to give your personal touch to each widget and also provides advanced features you might need. Two advanced features included in every widget are:
+Besides the data sources, every kind of widget has its own particular configurations in regard to how to display the data. So when creating a widget, you're going to find **basic** options - generally these are critical to the algorithm that builds your widget - and **advanced** options, which allows you to give your personal touch to each widget and also provides advanced features you might need. Two advanced features included in every widget are:
 
 * Help text
 * Hide variables name
@@ -68,7 +68,7 @@ The **help text** allows you to add a little help text that will be placed on th
 
 The second one gives you the ability of hiding the variables name in the widget. It can be useful if you don't want to show names at all in your widgets. We recommend you to add a descriptive title in such cases though.
 
-You will notice that some widgets are complex than others. While a dial only need a miminum and maximum value, a **multiple axis chart** needs a little bit more configuration related to each one of the variables, in this particular case you'll have to define the type (bar, line, etc) of each data source. This kind of customization, while it takes a little more time to get done, offers you a lot of flexibility.
+You will notice that some widgets are more complex than others. While a dial only need a mininum and maximum value, a **multiple axis chart** needs more configuration related to each variable, in this particular case you'll have to define the type (bar, line, etc) of each data source. This kind of customization, while it takes a little more time to get done, offers you a lot of flexibility.
 
 .. image:: _static/dashboard/widget_var_configuration.png
 	:width: 50%
@@ -79,7 +79,7 @@ You will notice that some widgets are complex than others. While a dial only nee
 Time
 ****
 
-When creating your widgets, you are goint to see that some of them works only showing the latest value added of your variable and keeps it updated through real time updates, others can exhibit a range of time while keeping it updated through real time updates, and others just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. These options may be like the following:
+When creating your widgets, you are going to see that some of them works only showing the latest value added of your variable and keeps it updated through real time updates. Others can exhibit a range of time while keeping it updated through real time updates, and some widgets just show some data in a particular period of time. When more than one of the previous options is available in a widget, its up to you to choose the best one that fits your needs. These options may be like the following:
 
 * Only the last value
 * Realtime
@@ -120,14 +120,14 @@ Line / Area / Bar charts
 
 Charts are a very powerful way of visualizing your data and have insights. At Tago you'll find a variety of charts to use.
 
-Easier to configurate, these charts only need you to pick some :ref:`variables <widget-data>` and to choose which :ref:`time <widget-time>` settings to use.
+Easy to configure, these charts only need you to pick some :ref:`variables <widget-data>` and to choose which :ref:`time <widget-time>` settings to use.
 
 Advanced Options
 ================
 
 Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` selector and a few specific options:
 
-**Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps the mostly recent.
+**Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps showing the most recent ones.
 
 **Stack graphics**: this option determines whether to stack the values of each series on top of each other.
 
@@ -145,7 +145,7 @@ Advanced Options
 
 Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` selector and a few specific options:
 
-**Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps the mostly recent.
+**Maximum number of points to be displayed**: this option will help you to filter exactly the amount of data you need, while it still keeps showing the most recent ones.
 
 **Group the samples by**: by default, the X axis of the chart will be the time of the values. But, sometimes you need to group your data through the X axis even if they don't have the exactly same time, in that cases you must make use of a :ref:`serie <concepts-serie>`.
 
@@ -158,11 +158,11 @@ Map
 
 If your data have location information [#f1]_ about the device of origin attached, you can visualize it in a map. This is easy as choosing one or more :ref:`variables <widget-data>` and selecting which :ref:`time filters<widget-time>` to use.
 
-As you pick variables to your map, you'll have two more options to optionally fill about its device of origin:
+As you pick variables for your map, you'll have two more options to fill about its device of origin:
 
 **Icon**: choose an icon and color to represent that device on the map.
 
-**Label**: give that device an alias to be shown inside the information window. This is useful to diffentiate devices with the same icon and color on the map.
+**Label**: give that device an alias to be shown inside the information window. This is useful to differentiate devices with the same icon and color on the map.
 
 .. image:: _static/dashboard/widget_map_variables.png
 
@@ -192,7 +192,7 @@ Under the **advanced options**, you'll find the :ref:`timezone <widget-time>` se
 Table
 *****
 
-Table widgets presents your data in a tabular way. It is one of the special kinds of widgets. Unlike the others, you won't find the traditional variable selector, initially there's only two fields to fill: how many **rows** and **columns**. After selecting these two values, you'll have a scheme of how the table is going to look like with all your rows and cells.
+Table widgets presents your data in a tabular way. It is one of the special kinds of widgets. Unlike the others, you won't find the traditional variable selector, initially there's only two fields to fill: the number of **rows** and **columns**. After selecting these two values, you'll have a scheme of how the table is going to look like with all your rows and cells.
 
 To finish, you just need to fill your cells either with text or with the value of a variable. To do that, click on a cell, select the type and fill the value (a text or a variable).
 

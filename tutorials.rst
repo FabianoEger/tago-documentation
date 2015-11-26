@@ -31,9 +31,8 @@ Diagram
 Adding the Device
 *****************
 
-Log in your account, click on Devices (side bar), then click on 'Add Device'.
-
-On the left side bar, click on **Devices**. Then, click on **Add Device** blue button, enter with the name 'dev01' and click on 'Save'.
+Log in your account, click on Devices (side bar), then click on 'Add Device' blue button.
+The Arduino board will be the device to be added, we will give it the name 'dev01'. Therefore, enter with the name 'dev01' and click on 'Save'.
 
 For each device, you have to define a :ref:`bucket <ref_concepts_bucket>` to store its data. You can let Tago to create a new bucket with the same name as the device.
 
@@ -83,9 +82,9 @@ Enter with your e-mail in the 'To' field.
 Sending Data
 ************
 
-Your setup is ready at Tago! Now, you just need to put your device to send data to Tago.
+Your setup is ready at Tago! Now, you just need to code your Arduino to send the data to Tago.
 
-When communicating with devices, Tago uses JSON format. For example, to send the temperature @ 26.5C, the device just need to POST the data like:
+When communicating with devices, Tago uses the JSON format. For example, to send the temperature @ 26.5C, the device just need to POST the data like:
 
 .. code-block:: json
 
@@ -115,13 +114,13 @@ Running the application
 
 Open your dashboard, and run the code in your Arduino board. Note the widget display the value in realtime.
 Try to heat the sensor to reach the 50C. You should then receive an e-mail from Tago. Cool down the sensor below 30C, and try again!
-If you have any issue or question about this application, access our `Forum <http://community.tago.io/>`_ .
+If you have any issue or question about this application, access our `Forum <https://community.tago.io/>`_ .
 
 
 Conclusion
 **********
 
-That was a very simple example that shows how easy and quick is to set the ecosystem around Tago and your device.
+That was a very simple example that showed how easy and quick is to set the ecosystem around Tago and your device.
 To extract more from Tago, check out this :ref:`tutorial <ref_tutorials_advanced_arduino>` . Here you will be able to
 send and receive data from Tago, run scripts in the Analysis and combine data.
 
