@@ -55,6 +55,8 @@ Check :ref:`actions_reset_trigger` to avoid issues with your logic and even your
 E-mails can be sent directly from scripts in the Analysis. For such action, you can use the :ref:`e-mail service <function_service_email>` .
 Check the terms of use, and your plan before using the e-mail service.
 
+.. _actions_send_sms:
+
 Send SMS
 ********
 

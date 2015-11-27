@@ -7,8 +7,6 @@ Analysis
 
 The **analysis** is a powerful feature where software developers and data scientists can use to implement scripts to analyze and manipulate the data sent by the devices in real time.
 
-**space for gif**
-
 Analysis is programmed using Javascript language, node.js to be more exactly. Here, you have access to all data inside your buckets, your devices, and several services provide by Tago.  We also provide some  libraries like lodash and async to optmize your code.
 
 *******************
@@ -167,7 +165,7 @@ Query Function allows you to do a lot of requests to your data bucket wich, in o
  |
  | **Examples**
 
- .. code-block:: javascript
+.. code-block:: javascript
 
  var my_bucket = bucket("15787a4s15s4d799as");
  my_bucket("color").origin("54ab3ee59a56af7a067b7b89").query("last_value").run(function(error, result) {
@@ -190,11 +188,13 @@ Sometimes you will need to get value of one variable by its serie. Series allows
 |
 | **Examples**
 
-var my_bucket = bucket("15787a4s15s4d799as");
-my_bucket("color").serie("1448132464126").query("last_value").run(function(error, result) {
-  console.log(result);
-});
-//->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"},
+.. code-block:: javascript
+
+  var my_bucket = bucket("15787a4s15s4d799as");
+  my_bucket("color").serie("1448132464126").query("last_value").run(function(error, result) {
+    console.log(result);
+  });
+  //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"},
 
 
 .value
@@ -367,18 +367,18 @@ Service function expands your analysis limits, allowing you to use external reso
 
 devices
 =======
-When you need to list your devices, or anything related to that, you should use devices service.
+When you need to obtain detailed information your the configuration of your devices, or other data about their operations, you can use *devices* service.
 
 .list
 -----
-Get a list of all devices of current account.
+Get a list of all devices added in the user account.
 
 | **Arguments**
 | devices.list([thisArg])2
 | *[thisArg](Function): The function invoked per iteration.*
 |
 | **Returns**
-| *(\*) A list, with informations, of all devices in current account*
+| *(\*) A list of all devices and their detailed information in the account*
 |
 | **Examples**
 
@@ -393,7 +393,7 @@ Get a list of all devices of current account.
 
 .info
 -----
-Get informations about determined device using its ID.
+Get detailed information about a specific device by using its ID. The information is the same as showed in the :ref:`Device\General information <ref_concepts_manag_device>`.
 
 | **Arguments**
 | devices.info("id", [thisArg])
@@ -401,7 +401,7 @@ Get informations about determined device using its ID.
 | *[thisArg](Function): The function invoked per iteration.*
 |
 | **Returns**
-| *(JSON) A single JSON with result of the request*
+| *(JSON) Detailed information of the device *
 |
 | **Examples**
 
@@ -413,13 +413,13 @@ Get informations about determined device using its ID.
  });
  //->{"name":"Device_Config","description":null,"active":true,"visible":true,"created_at":"2015-10-15T21:46:37.871Z","updated_at":"2015-10-15T21:46:37.871Z","id":"56201ebd45674bf049a9f7a2","bucket":{"name":"Configuration","id":"55d2759e2425065b22f2d6b8"}}
 
-.. code-block:: javascript
 
 .. _function_service_sms:
 
 sms
 ===
-Tago allows you to use sms service when is needed to send sms through analysis. Keep in mind that you will need to pay for every sms send, so use carefully.
+You can configure the system to send sms directly from your analysis. Another option is to use the Actions to :ref:`send SMS <actions_send_sms>`.
+Some costs may occur when using the SMS service, which varies based on the country of operation. Check pricing, terms of use, and your plan before using the SMS service.
 
 .send
 -----
@@ -427,12 +427,12 @@ Whenever you need to send a sms, use .send function.
 
 | **Arguments**
 | sms.send("cel_number", "message", [thisArg])
-| *cel_number(String): A string with a phone number. If not in USA, you should puta prefix +IC (+55 for brazil, example)*
-| *message(String): Message of the sms. Use "\n" for break line.
+| *cel_number(String): A string with a phone number. If not sending to the USA, you have to add the country code, (+55) for Brazil, for example.*
+| *message(String): Message of the sms. Use "\n" to break line.*
 | *[thisArg](Function): The function invoked per iteration.*
 |
 | **Returns**
-| *(\*) An error and result of the iteration*
+| *(\*) An error and the result of the request*
 |
 | **Examples**
 
@@ -448,7 +448,7 @@ Whenever you need to send a sms, use .send function.
 
 email
 =====
-Email service allows you to send email through analysis, using smtp.
+Email service allows you to send email through your analysis.
 
 .send
 -----
@@ -472,10 +472,10 @@ Whenever you need to send an email, use .send function.
 
  var email = service("email");
  let email_scope = {
-  "to": "someone@tago.com.br",
+  "to": "mary@gmail.com",
   "from": "Tago Report",
-  "subject": "Tago Report",
-  "message": "This is a Tago Report message.<br>Whe are showing to our costumers how to use our Tago service Email."
+  "subject": "Time to refill the tank!",
+  "message": "Good morning, Mary!<br> Time to fill the tank! Your car tank is almost empty, Shell gas station at Niles has the best price today."
  };
  email.send(email_scope, function(error, result){
   console.log(result);
@@ -488,7 +488,7 @@ Internal Variables
 
 scope
 *****
-Every time an action triggers a script, the variable **scope** will be generated. For example, if you do submit in a form, with a variable that have an action which will trigger any script, scope will receive a list with all values of that form. This allows you to manipulate in real time, and more easily, any new value which are inserted in your bucket.
+Every time an action triggers a script, the variable **scope** will be generated. This scope will bring all others variables generated at the same time by the same event. For example, if you submit a :ref:`form <widget-form>`, together with the variable that the script is reading, the scope will return a list of all values/variable input in that form. This allows you to manipulate in real time, and more easily, any new value inserted in your bucket.
 
 | **Contents**
 | *(Array): Always an array with all variables inserted in that moment*

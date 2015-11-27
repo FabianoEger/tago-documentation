@@ -75,8 +75,8 @@ Try to send more data by changing the value of the 'temperature'. Keep an eye on
 
 Windows
 *******
-To send data, there are several tools that support HTTP like the `Wget <http://gnuwin32.sourceforge.net/packages/wget.htm>`_ or `Postman <https://www.getpostman.com/>`_.
-Considering the same inputs as used above, you can make a POST using the url, Device-Token, and configuration in the **Postman** like this:
+To send data, there are some tools that support HTTP communication like the `Postman <https://www.getpostman.com/>`_.
+Considering the same inputs as used above, you can make a POST by entering the url, Device-Token, and configuration in the **Postman** like this:
 
 .. image:: _static/getstarted/postman1.png
 		:height: 300

@@ -153,6 +153,8 @@ Enter with a name for the device and a description, and select the bucket. Again
 
 	<video style="max-width: 100%;" src="_static/concepts/add_device.mp4" autobuffer controls></video><br><br>
 
+.. _ref_concepts_manag_device:
+
 Managing Devices
 ****************
 
