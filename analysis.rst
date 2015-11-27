@@ -153,6 +153,49 @@ Query Function allows you to do a lot of requests to your data bucket wich, in o
  });
  //->
 
+.origin
+=======
+ Since you can have more than one device, or even a script analysis, inserting values to a bucket, origin function allows you to filter possible results by ID.
+
+ | **Arguments**
+ | bucket_var("variable").origin("id").run([thisArg])
+ | *\*id(String) Device or Analysis ID.*
+ |
+ | **Returns**
+ | *(Array) Return an Array with values only originated by one ID.
+ |
+ |
+ | **Examples**
+
+ .. code-block:: javascript
+
+ var my_bucket = bucket("15787a4s15s4d799as");
+ my_bucket("color").origin("54ab3ee59a56af7a067b7b89").query("last_value").run(function(error, result) {
+   console.log(result);
+ });
+ //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"},
+
+
+.serie
+======
+Sometimes you will need to get value of one variable by its serie. Series allows you to do a lot of thing, so of course we have a filter for that.
+
+| **Arguments**
+| bucket_var("variable").serie("serie").run([thisArg])
+| *\*serie(String) Serie of the value.*
+|
+| **Returns**
+| *(Array) Return an Array with values of this serie.
+|
+|
+| **Examples**
+
+var my_bucket = bucket("15787a4s15s4d799as");
+my_bucket("color").serie("1448132464126").query("last_value").run(function(error, result) {
+  console.log(result);
+});
+//->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"},
+
 
 .value
 ======
@@ -266,9 +309,11 @@ Every time you query any data from a bucket, "run" need to be included to add th
 Insert data in the bucket. Different from other functions of bucket, this function don't need "run" function to work.
 
 | **Arguments**
-| bucket_var("variable").insert(JSON, "serie", [thisArg])
-| *(JSON): JSON with all possible datas to insert {"value"=};*
-| *\*serie(String): optional origin serie;*
+| bucket_var("variable").insert(JSON, "origin_id", [thisArg])
+| *(JSON): JSON with all possible datas to insert. I will mention some important ones;*
+|   **\*value**: *value of the variable to be inserted;*
+|   **\*serie**: *serie of the variable. The serie is randomly generated if not referred. If referred a already existed serie, the insert will update that item instead;*
+|   **\*unit**: *A unit will be automatically inserted to widgets on dashboard if referred;*
 
 .. code-block:: javascript
 
@@ -278,8 +323,8 @@ Insert data in the bucket. Different from other functions of bucket, this functi
   "unit"  :"",
   (...)}
 
-| *(String): A String with ID of the origin. Default is the script analysis ID.*
-| *(Function): The function invoked per iteration.*
+| *origin_id(String): A String with ID of the origin. Default is the script analysis ID.*
+| *[thisArg](Function): The function invoked per iteration.*
 |
 | **Returns**
 | *(\*) An error and result of the iteration*
@@ -322,19 +367,120 @@ Service function expands your analysis limits, allowing you to use external reso
 
 devices
 =======
+When you need to list your devices, or anything related to that, you should use devices service.
+
+.list
+-----
+Get a list of all devices of current account.
+
+| **Arguments**
+| devices.list([thisArg])2
+| *[thisArg](Function): The function invoked per iteration.*
+|
+| **Returns**
+| *(\*) A list, with informations, of all devices in current account*
+|
+| **Examples**
+
+.. code-block:: javascript
+
+ var devices = service("devices");
+ devices.list(function(error, result) {
+  console.log(result);
+ });
+ //->[{"name":"Device_Config","description":null,"active":true,"visible":true,"bucket":{"id":"5605d8e2147c6f2837f82b90","name":"CB 20"}(...)}(...)]
+
+
+.info
+-----
+Get informations about determined device using its ID.
+
+| **Arguments**
+| devices.info("id", [thisArg])
+| *id(String): A String with ID of the origin. Default is the script analysis ID.*
+| *[thisArg](Function): The function invoked per iteration.*
+|
+| **Returns**
+| *(JSON) A single JSON with result of the request*
+|
+| **Examples**
+
+.. code-block:: javascript
+
+ var devices = service("devices");
+ devices.info("54ab3ee59a56af7a067b7b89", function(error, result) {
+  console.log(result);
+ });
+ //->{"name":"Device_Config","description":null,"active":true,"visible":true,"created_at":"2015-10-15T21:46:37.871Z","updated_at":"2015-10-15T21:46:37.871Z","id":"56201ebd45674bf049a9f7a2","bucket":{"name":"Configuration","id":"55d2759e2425065b22f2d6b8"}}
+
+.. code-block:: javascript
 
 .. _function_service_sms:
 
 sms
 ===
+Tago allows you to use sms service when is needed to send sms through analysis. Keep in mind that you will need to pay for every sms send, so use carefully.
+
+.send
+-----
+Whenever you need to send a sms, use .send function.
+
+| **Arguments**
+| sms.send("cel_number", "message", [thisArg])
+| *cel_number(String): A string with a phone number. If not in USA, you should puta prefix +IC (+55 for brazil, example)*
+| *message(String): Message of the sms. Use "\n" for break line.
+| *[thisArg](Function): The function invoked per iteration.*
+|
+| **Returns**
+| *(\*) An error and result of the iteration*
+|
+| **Examples**
+
+.. code-block:: javascript
+
+ var sms = service("sms");
+ sms.send({'to': phone_number.value, 'message': message_to_send_backend.value}, function(error, result){
+  console.log(result);
+ });
+ //-> Will return success or failure of the sms send.
 
 .. _function_service_email:
 
 email
 =====
+Email service allows you to send email through analysis, using smtp.
 
-account
-=======
+.send
+-----
+Whenever you need to send an email, use .send function.
+
+| **Arguments**
+| email.send(email_scope, [thisArg])
+| *email_scope(JSON): All email items inside a JSON. You should use follow items:*
+|   **\*to**: *Email which will receive the email;*
+|   **\*from**: *Name of who send the email;*
+|   **\*subject**: *Subject of the email;*
+|   **\*message**: *Message of the email. Use "<br>" to break a line.;*
+| *[thisArg](Function): The function invoked per iteration.*
+|
+| **Returns**
+| *(\*) An error and result of the iteration*
+|
+| **Examples**
+
+.. code-block:: javascript
+
+ var email = service("email");
+ let email_scope = {
+  "to": "someone@tago.com.br",
+  "from": "Tago Report",
+  "subject": "Tago Report",
+  "message": "This is a Tago Report message.<br>Whe are showing to our costumers how to use our Tago service Email."
+ };
+ email.send(email_scope, function(error, result){
+  console.log(result);
+ });
+ //-> Will return success or failure of the email send.
 
 *******************
 Internal Variables
