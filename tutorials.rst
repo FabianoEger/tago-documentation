@@ -8,7 +8,7 @@ Tutorials
 
 *******
 Arduino
-******* 
+*******
 
 .. image:: _static/tutorials/arduinozero_wifi101.png
 	:width: 70%
@@ -156,7 +156,7 @@ Beagle Bone Black
 
 This simple tutorial using the **Beagle Bone Black - BBB** board will show you some principles to integrate your solution with Tago. More than just connect the BBB to the cloud, you will learn how to easily reuse this code into your own application later.
 
-In this example, let's send the status of a switch connected to a digital input from a BBB board. We will visualize its status in the dashboard. By using the Actions capability, we will configure the system to send out an e-mail whenever the switch changes to the *open* state.
+In this example, let's send the status of a digital input from a BBB board. We will visualize its status in the dashboard. By using the Actions capability, we will configure the system to send out an e-mail whenever the switch changes to the *open* state.
 
 Diagram
 *******
@@ -203,13 +203,13 @@ Your dashboard will look like this one:
 	:width: 50%
 	:align: center
 
-Great! As soon as your device start to send data, the values will be showed on this display.
+Great! As soon as your device starts to send data, the values will be showed on this display.
 
 Sending e-mail
 **************
 
 Now, let's add an :ref:`action <ref_actions_define_actions>` to send an e-mail notification when the switch state changes to closed.
-First, create an action for the device:
+First, add an action to be executed:
 
 
 .. image:: _static/tutorials/create_actions.png
@@ -235,29 +235,34 @@ Let's **Set trigger** to send an e-mail when the sensor is *closed* and **Reset 
 	:width: 70%
 	:align: center
 
+Your setup at Tago is ready! Now, you just need to code your BBB to send the data.
+
 Sending data from BBB
 *********************
 
-Your setup at Tago is ready! Now, you just need to code your BBB to send the data.
-
-When communicating with devices, Tago uses the `JSON <http://json-schema.org/example1.html>`_  format. For example, to send the information that the switch is closed, the device just needs to make a POST in HTTP using the data like:
+When communicating with the devices, Tago uses the `JSON <http://json-schema.org/example1.html>`_  format. For example, to send the information that the switch is closed, the device just needs to make a POST in HTTP using the data like:
 
 	.. code-block:: json
 
 		{
 		    "variable": "switch",
-		    "value": "closed",
+		    "value": "closed"
 		}
 
-Yep! That is all!  You can add a lot of more information with the variable, like its location, time, and unit. Several fields can be added with the data when using our :ref:`API's <ref_api_api>`.
+Yep! That is all!  You can add a lot of more information with the variable, like its location, time, and unit. Several fields can be added when more features of our :ref:`API's <ref_api_api>`.
 
 Python Code
 ===========
 
-The code developed for this example was done in `Python <https://www.python.org/>`_. You can code in other languages, such as C, C# or Node.js. Using Debian distribution installed in the BBB, and Python 2.7.9, we wrote and tested the code below. You should have no problem with a different linux distributions or Python versions.
+The code developed for this example was done in `Python <https://www.python.org/>`_. But, you can also code in other languages, such as C, C# or Node.js. Using Debian distribution installed in the BBB, and Python 2.7.9, we wrote and tested the code below. You should have no problem with a different linux distributions or Python versions.
 
 In case you need some background about how to instal and run Python on a BBB, visit these sites from `beaglebone.org <http://beagleboard.org/getting-started>`_ and `adafruit <https://learn.adafruit.com/setting-up-io-python-library-on-beaglebone-black>`_ .
 
+Before running the code, you will need to install Tago library for Python. In your BBB, type the follow command:
+
+``$ sudo pip install -U tago``
+
+Then, create a file .py with the code below. Make sure you replace the token with that one created for your device.
 
 .. code-block:: python
 
@@ -325,4 +330,8 @@ Wait few seconds for the Python to start the program and press the button on the
 If you have any issue or question about this application, access our `Forum <https://community.tago.io/>`_ .
 
 Right, we know... you can do much more with the BBB and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
-Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <>` to get the full potential of Tago in your system!
+Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <>` to bring the full potential of Tago to your system!
+ 
+.. raw:: html
+
+	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mov" autobuffer controls></video><br><br>
