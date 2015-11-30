@@ -118,7 +118,7 @@ Arduino Code
 	.. code-block:: javascript
 
 	  {
-	    console.log(meu teste)
+	    console.log(we are reviewing our library for Arduino!  As soon as we finalize the tests we will show it here!)
 	  }
 
 Running the application
@@ -156,12 +156,12 @@ Beagle Bone Black
 
 This simple tutorial using the **Beagle Bone Black - BBB** board will show you some principles to integrate your solution with Tago. More than just connect the BBB to the cloud, you will learn how to easily reuse this code into your own application later.
 
-In this example, let's send the status of a switch (open/closed) connected to a digital input from a BBB board. We will visualize its status in the dashboard. And through the Actions capability, we will configure the system to send out an e-mail whenever the status changes to *open*.
+In this example, let's send the status of a switch connected to a digital input from a BBB board. We will visualize its status in the dashboard. By using the Actions capability, we will configure the system to send out an e-mail whenever the switch changes to the *open* state.
 
 Diagram
 *******
 
-The circuit is pretty simple as we are using only one digital input connected to a normally open switch (connector P8, pin 19). A 2.2k Ohm resistor keeps the signal at state low when the switch is open.
+The circuit is pretty simple as we are using only one digital input connected to a normally open switch (connector P8, pin 19). A 2.2k Ohm resistor keeps the signal in state low (0) when the switch is open.
 
 .. image:: _static/tutorials/bbb_switch.png
 	:width: 50%
@@ -186,11 +186,11 @@ Go to the 'General information' session of the device, click on 'QR Code' or 'To
 Building the Dashboard
 **********************
 
-Let's build a simple :ref:`dashboard <ref_dashboard_dashboard>` to visualize the data sent by BBB. Click '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
-Let's add one widget to show the variable *switch* (open/closed). Click on 'Add Widget' blue bottom and pick the widget *Display*.
+Let's build a simple :ref:`dashboard <ref_dashboard_dashboard>` to visualize the data sent by your BBB. Click '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
+Let's add one widget to show the variable *switch* status (open/closed). Click on 'Add Widget' blue bottom and pick the widget *Display*.
 
 Start the configuration of this widget by adding the variable to be displayed.
-Type the variable name that will be sent by the device as 'switch', click on 'add' below the name. Select your bucket [dev01], your device [dev01], and click 'OK'.
+Type the variable name that will be sent by the device as 'switch', click on 'add' below the name. Select your bucket [dev01], your device [dev01], and click 'OK'. As there is no data yet, it will display *N/A*.
 Then, click 'Create', and your widget will be ready!
 
 .. raw:: html
@@ -208,7 +208,7 @@ Great! As soon as your device start to send data, the values will be showed on t
 Sending e-mail
 **************
 
-Now, let's add an :ref:`action <ref_actions_define_actions>` to send an e-mail notification when the switch sensor is opened.
+Now, let's add an :ref:`action <ref_actions_define_actions>` to send an e-mail notification when the switch state changes to closed.
 First, create an action for the device:
 
 
@@ -220,7 +220,7 @@ First, create an action for the device:
 	:width: 50%
 	:align: center
 
-Configure the action to *send e-mail*, enter with the destination e-mail address in the *To* field, and the *Subject*. You can enter with a message that will say something like: ``Hi, the switch on your BBB is open!``.
+Configure the action to *send e-mail*, enter with the destination e-mail address and the subject. You can enter with a message that will say something like: ``Hi, the switch on your BBB is closed!``.
 
 .. image:: _static/tutorials/bbb_email_config.png
 	:width: 70%
@@ -228,7 +228,7 @@ Configure the action to *send e-mail*, enter with the destination e-mail address
 
 To make sure that you will receive only one notification each time the switch changes status, we will define values to **Set** and **Reset** the trigger. It will create a hysteresis function to prevent the system from sending e-mails continuously.
 Basically, we just need to configure Set Trigger and Reset Trigger as showed below.
-Let's **Set trigger** to send an e-mail when the sensor is *open* and **Reset trigger** when it goes back to *closed*. So, if another data with *open* status is sent before it goes back to *closed*, it will not send the e-mail.
+Let's **Set trigger** to send an e-mail when the sensor is *closed* and **Reset trigger** when it goes back to *open*. So, if another data with *closed* status is sent before it goes back to *open*, it will not send the e-mail.
 
 
 .. image:: _static/tutorials/trigger_bbb.png
@@ -240,13 +240,13 @@ Sending data from BBB
 
 Your setup at Tago is ready! Now, you just need to code your BBB to send the data.
 
-When communicating with devices, Tago uses the `JSON <http://json-schema.org/example1.html>`_  format. For example, to send the information that the switch is open, the device just needs to make a POST in HTTP using the data like:
+When communicating with devices, Tago uses the `JSON <http://json-schema.org/example1.html>`_  format. For example, to send the information that the switch is closed, the device just needs to make a POST in HTTP using the data like:
 
 	.. code-block:: json
 
 		{
 		    "variable": "switch",
-		    "value": "open",
+		    "value": "closed",
 		}
 
 Yep! That is all!  You can add a lot of more information with the variable, like its location, time, and unit. Several fields can be added with the data when using our :ref:`API's <ref_api_api>`.
@@ -261,76 +261,61 @@ In case you need some background about how to instal and run Python on a BBB, vi
 
 .. code-block:: python
 
-	from tago import Tago
-	import Adafruit_BBIO.GPIO as GPIO
+ from tago import Tago
+ import Adafruit_BBIO.GPIO as GPIO
 
-	MY_DEVICE_TOKEN = ' ###  PLACE THE TOKEN FOR YOUR DEVICE HERE ###'
-	my_device = Tago(MY_DEVICE_TOKEN).device
+ PIN = "P8_19"
+ GPIO.setup(PIN, GPIO.IN)
+ LOW = 0
+ HIGH = 1
+ Level = GPIO.input(PIN) and HIGH or LOW
 
-	send_close = {
-	    'variable' : 'switch',
-	    'value'    : 'closed'
-	}
+ MY_DEVICE_TOKEN = '### INSERT YOU TOKEN HERE ###'
+ my_device = Tago(MY_DEVICE_TOKEN).device
 
-	send_open = {
-	    'variable' : 'switch',
-	    'value'    : 'open'
-	}
+ send_close = {
+    'variable' : 'switch',
+    'value'    : 'closed'
+ }
 
-	event_detected = False
-	LOW = 0
-	HIGH = 1
+ send_open = {
+    'variable' : 'switch',
+    'value'    : 'open'
+ }
 
-	GPIO.setup("P9_12", GPIO.IN)
-	if GPIO.input("P9_12"): Level = HIGH
-	else:   Level = LOW
+ def send_data(data_to_insert):
+    response = my_device.insert(data_to_insert)
+    print data_to_insert
+    print response
 
-	while True:
-	        if Level == LOW:
-	                if GPIO.input("P9_12"):
-	                        data_to_insert = send_close
-	                        Level = HIGH
-	                        event_detected = True
-
-	        else:
-	                if GPIO.input("P9_12") == LOW :
-	                        data_to_insert = send_open
-	                        Level = LOW
-	                        event_detected = True
-
-	        if event_detected :
-	                event_detected = False
-	                result = my_device.insert(data_to_insert)
-	                if result['status']:
-	                        print 'Response: ', result
-	                else:
-	                        print result['result']
+ while True:
+    if Level == LOW:
+        if GPIO.input(PIN):
+            send_data(send_close)
+            Level = HIGH
+    elif GPIO.input(PIN) == LOW:
+        send_data(send_open)
+        Level = LOW
 
 As we know that you will want to apply this in your own application later, here goes some tips for your code:
 
  | 1. import the Tago lib for Python. Also, we have libs for several languages to simplify your code, check out ours :ref:`SDKs <ref_sdk_sdk>`
  		``from tago import Tago``
  | 2. replace MY_DEVICE_TOKEN with the token created for your device
-		``MY_DEVICE_TOKEN = ###  PLACE THE TOKEN FOR YOUR DEVICE HERE ###``
+		``MY_DEVICE_TOKEN = ###  INSER THE TOKEN FOR YOUR DEVICE HERE ###``
  | 3. prepare a JSON with the data to be sent
 
 	.. code-block:: python
 
-		send_open = {
+		data_to_insert = {
 		 	'variable' : 'switch',
-		 	'value'    : 'open'
+		 	'value'    : 'closed'
  		}
 
  | 4. send your data to Tago
  	``result = my_device.insert(data_to_insert)``
- | 5. treat the API response to check for success or error.
+ | 5. read the API response to treat any error and check the success of the request.
 
-	.. code-block:: python
-
-		if result['status']:
-			print 'Response: ', result
-		else:
-			print result['result']
 
 Running the application
 ***********************
@@ -339,6 +324,5 @@ Look at your dashboard at Tago, and run the code in your BBB. Note the widget wi
 Wait few seconds for the Python to start the program and press the button on the switch. You should then receive an e-mail from Tago. Release the button, and you will see the status on the display. Press again, and receive another e-mail ;-)
 If you have any issue or question about this application, access our `Forum <https://community.tago.io/>`_ .
 
-Right, we know... it was not a very exciting application for a good use of a BBB and Tago. But at least, we hope it gave you a good idea about how to set the ecosystem around Tago and your device easily.
-To get more from Tago and your BBB, check out the new :ref:`tutorial <ref_tutorials_advanced_bbb> soon` . There you will be able to
-send and receive data from Tago, run scripts in the Analysis and combine data.
+Right, we know... you can do much more with the BBB and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
+Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <>` to get the full potential of Tago in your system!
