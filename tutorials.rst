@@ -8,7 +8,7 @@ Tutorials
 
 *******
 Arduino
-*******
+******* 
 
 .. image:: _static/tutorials/arduinozero_wifi101.png
 	:width: 70%
