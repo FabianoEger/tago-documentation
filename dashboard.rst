@@ -4,7 +4,7 @@
 Dashboard
 #########
 
-A dashboard is where you place your widgets to visualize and interact with data, everything in real time. All your dashboards are listed on the sidebar of Tago.
+A dashboard is where you place your widgets to visualize and interact with data, everything in real time. All your dashboards are listed on the sidebar of Tago. On the top right you will find the **Dashboard options** menu. From there you will have access to other dashboard functionalities such as **rename**, **share** and **delete**.
 
 .. image:: _static/dashboard/dashboard_list.png
 
@@ -344,3 +344,8 @@ To complete the action, fill the email of whom you want to copy your dashboard t
 .. raw:: html
 
 	<video style="max-width: 100%;" src="_static/dashboard/dashboard_copy_2.mp4" autobuffer controls></video><br><br>
+
+*******************
+Renaming dashboards
+*******************
+
