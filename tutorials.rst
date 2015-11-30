@@ -156,7 +156,7 @@ Beagle Bone Black
 
 This simple tutorial using the **Beagle Bone Black - BBB** board will show you some principles to integrate your solution with Tago. More than just connect the BBB to the cloud, you will learn how to easily reuse this code into your own application later.
 
-In this example, let's send the status of a digital input from a BBB board. We will visualize its status in the dashboard. By using the Actions capability, we will configure the system to send out an e-mail whenever the switch changes to the *open* state.
+In this example, let's send the status of a digital input from a BBB board. We will visualize its status in the dashboard. By using the Actions capability, we will configure the system to send out an e-mail whenever the switch changes to the *closed* state.
 
 Diagram
 *******
@@ -331,7 +331,7 @@ If you have any issue or question about this application, access our `Forum <htt
 
 Right, we know... you can do much more with the BBB and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
 Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <>` to bring the full potential of Tago to your system!
- 
+
 .. raw:: html
 
 	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mov" autobuffer controls></video><br><br>
