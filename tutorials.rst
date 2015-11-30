@@ -163,7 +163,7 @@ Diagram
 
 The circuit is pretty simple as we are using only one digital input connected to a normally open switch (connector P8, pin 19). A 2.2k Ohm resistor keeps the signal in state low (0) when the switch is open.
 
-.. image:: _static/tutorials/bbb_switch.png
+.. image:: _static/tutorials/bbboard_switch.png
 	:width: 50%
 	:align: center
 
@@ -331,7 +331,7 @@ If you have any issue or question about this application, access our `Forum <htt
 
 Right, we know... you can do much more with the BBB and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
 Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <>` to bring the full potential of Tago to your system!
- 
+
 .. raw:: html
 
 	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mov" autobuffer controls></video><br><br>
