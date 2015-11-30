@@ -14,11 +14,30 @@ All responses from Tago API have a pattern, and you will always receive somethin
 
 .. code-block:: javascript
 
-	{ status: ok||false, result: []||{}||''||0 }
+	// For success:
+	{
+		'status': true,
+		'result': [...]
+	}
+
+	// For warning:
+	{
+		'status': true,
+		'result': {...},
+		'message': 'Warning message'
+	}
+
+	// For failed:
+	{
+		'status': false,
+		'message': 'Error message'
+	}
 
 **status**: it is always boolean. If your request is successful the response will be **true**, otherwise it will be **false**.
 
-**result**: it has no type; it depends on the function you called. If its status is **false**, the result will show the type of the error.
+**result**: can be any object type (that is dynamic object), depends what api endpoint you called for.
+
+**message**: it is message from the server. Usually it is used when has any error or warning.
 
 Security
 ========
@@ -64,12 +83,22 @@ POST - ``https://api.tago.io/data``
 +----------------------+----------------------+----------------------+
 | value                | string               | no                   |
 +----------------------+----------------------+----------------------+
-| type                 | string               | no                   |
-+----------------------+----------------------+----------------------+
 | time                 | string               | no                   |
 +----------------------+----------------------+----------------------+
-| location             | string || geojson    | no                   |
+| location             | object || geojson    | no                   |
 +----------------------+----------------------+----------------------+
+
+Request
+
+.. code-block:: json
+
+	{
+		"variable": "temperature",
+		"unit"    : "F",
+		"value"   : 55,
+		"time"    : "2015-11-03 13:44:33",
+		"location": {"lat": 42.2974279, "lng": -85.628292}
+	}
 
 Reading Data
 ============
