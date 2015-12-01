@@ -161,7 +161,7 @@ In this example, let's send the status of a digital input from a BBB board. We w
 Diagram
 *******
 
-The circuit is pretty simple as we are using only one digital input connected to a normally open switch (connector P8, pin 19). A 2.2k Ohm resistor keeps the signal in state low (0) when the switch is open.
+The circuit is pretty simple as we are using only one digital input connected to a normally open switch (connector P8, pin 19). A 2.2k Ohm resistor keeps the signal in state low (0) when the switch is closed.
 
 .. image:: _static/tutorials/bbboard_switch.png
 	:width: 50%
@@ -334,4 +334,4 @@ Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mov" autobuffer controls></video><br><br>
+	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mp4" autobuffer controls></video><br><br>
