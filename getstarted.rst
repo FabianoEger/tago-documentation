@@ -33,7 +33,7 @@ You can build great :ref:`dashboards <ref_dashboard_dashboard>` to visualize dat
 
 Click '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
 
-Let's add one widget to show the variable *temperature*. Click on 'Add Widget' blue bottom and pick the widget *Dial*.
+Let's add one widget to show the variable *temperature*. Click on 'Add Widget' blue button and pick the widget *Dial*.
 
 Start the configuration of this widget by adding the variable to be displayed.
 Type the variable name that will be sent by the device as 'temperature', click on 'add' below the name. Select your bucket [dev01], your device [dev01], and click 'OK'.

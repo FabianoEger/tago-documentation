@@ -335,3 +335,157 @@ Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api
 .. raw:: html
 
 	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mp4" autobuffer controls></video><br><br>
+
+
+************
+Raspberry Pi
+************
+
+	.. image:: _static/tutorials/raspberry_pi.png
+		:width: 60%
+		:align: center
+
+This setup will show you how to remotely control a digital load of a Raspberry PI using Tago. For this example, will be using a LED to simulate our digital load.
+
+Diagram
+*******
+
+Connect the LED through a 330Ω resistor to the Raspberry PI GPIO pin (connect to the pin number 18), the figure bellow shows how the connection is made.
+
+.. image:: _static/tutorials/raspberry_diagram.png
+		:width: 50%
+		:align: center
+
+Adding the Device
+*****************
+
+Log in your account, click on Devices (side bar), then click on ‘Add Device’ blue button. The Raspeberry PI board will be the device to be added, we will give it the name ‘dev01’. Therefore, enter with the name ‘dev01’ and click on ‘Save’.
+For each device, you have to define a bucket to store its data. You can let Tago to create a new bucket with the same name as the device.
+All devices should use a valid token when accessing Tago. This token is automatically generated when a device is created. Go to the ‘General information’ session of the device, click on ‘QR Code’ or ‘Tokens’ and copy the token to be added into the Raspberry PI code later.
+
+.. raw:: html
+
+		<video style="max-width: 100%;" src="_static/getstarted/add_device.mp4" autobuffer controls></video><br><br>
+
+
+Building the Dashboard
+**********************
+
+Let’s build a simple dashboard with only one widget that will control the digital load.
+Click ‘+ New Dashboard’ on the left side bar, type the name of your dashboard, and click on ‘Create’.
+To add one widget, click on ‘Add Widget’ blue button, and select the type: **Input**. Then click on **Control*, and 'Create' to get your widget.
+
+Start the configuration of this widget by adding the title to be displayed.
+Type a variable name that will be sent to the device as *control_signal*, click on ‘add’ below the name.
+Select your bucket [dev01], your device [dev01], select switch (true/false) and enter with a label to be showed closed to the switch (i.e LED).
+Then, click ‘Create’, and your widget is ready!
+
+
+.. raw:: html
+
+	<video style="max-width: 100%;" src="_static/tutorials/build_dash_rpi.mp4" autobuffer controls></video><br><br>
+
+Your dashboard will look like this one:
+
+.. image:: _static/tutorials/input_control.png
+		:width: 40%
+		:align: center
+
+Great! As soon as your device starts to send data, the values will be showed on this display.
+
+Creating Action
+***************
+
+Now let’s create an action to send data to our device every time we change the status of our switch.
+First, add an action to be executed:
+
+
+	.. image:: _static/tutorials/rpi_add_action.png
+		:width: 80%
+		:align: center
+
+	.. image:: _static/tutorials/rpi_action_name.png
+		:width: 40%
+		:align: center
+
+In the field ‘Action to be taken’ select ‘Send data to device’, add a name to the action:
+
+	.. image:: _static/tutorials/rpi_select_sendtodevice.png
+		:width: 70%
+		:align: center
+
+
+Now, let's set the trigger condition. Under 'Set trigger', enter with the variable that we created before (control_signal), and Set Trigger condition to 'Any' - it means that any time a value for that variable arrives from the switch on the dash, it will send it to the Raspberry Pi board.
+As the system has no data for this variable yet, you will need to add it. Type the name, and click on 'Click here to add this variable' just below the name.
+
+.. image:: _static/tutorials/add_new_var1.png
+		:width: 70%
+		:align: center
+
+Then, select the bucket [dev01] and the device [dev01] for the variable.
+
+.. image:: _static/tutorials/add_new_var2.png
+				:width: 70%
+				:align: center
+
+We will not define a condition for 'Reset Trigger'. You need to change the status of 'Define Reset Trigger condition?' to NO. Just save it now, and your action should look like this:
+
+.. image:: _static/tutorials/rpi_final_action.png
+		:width: 70%
+		:align: center
+
+Your setup at Tago is ready! Now, you just need to code your Raspberry Pi to receive the data from Tago.
+
+Sending data from the Raspberry
+*******************************
+
+The code developed for this example was done in Python . But, you can also code in other languages, such as C, C# or Node.js. Using Raspbian distribution installed in the Raspberry PI, and Python 2.7, we wrote and tested the code below. You should have no problem with a different linux distribution or Python versions.
+
+Before running the code, you will need to install Tago library for Python. In your terminal type the follow command:
+``$ sudo pip install –U tago``
+
+If you don’t have pip installed, just install it by typing the following command in your terminal:
+``$ sudo apt-get install python-pip``
+
+Python Code
+===========
+
+Create a file .py with the code below. Make sure you replace the token with that one created for your device.
+When you use Tago's lib, as you are doing now, you don't need to go in details of the HTTP command. In this example, you are using the socket.io capability that pushes notifications to the Raspberry Pi device! With this capability you don't need add a code to continuously request data from Tago (polling), instead the Raspberry Pi will be simply in the listening mode. That is a very fast and clean way of control devices remotely.
+
+.. code-block:: python
+
+  import RPi.GPIO as GPIO
+	from tago import Tago
+	MY_DEVICE_TOKEN = '### INSERT YOUR TOKEN HERE ###'
+	my_device = Tago(MY_DEVICE_TOKEN).device
+	GPIO.setmode(GPIO.BOARD)
+	GPIO.setup(PIN_NUMBER,GPIO.OUT,initial=0)
+
+	def func_callback_data(data):
+		Logic_Port = data['value']
+		GPIO.output(PIN_NUMBER,Logic_Port)
+
+	my_device.listening(func_callback_data)
+
+
+As we know that you will want to apply this in your own application later, here goes some tips for your code:
+
+	 | 1. import the Tago lib for Python. ``from tago import Tago``
+	 | 2. replace MY_DEVICE_TOKEN with the token created for your device
+			``MY_DEVICE_TOKEN = ###  INSER THE TOKEN FOR YOUR DEVICE HERE ###``
+	 | 3. Use the ‘listening’ method to run the callback function generated by action
+	 | 4. If you have more than one action set, you may want to check which was the variable that arrived in the board before doing anything with it (filter)
+
+Again, we have libs for several languages to simplify your code, check out ours :ref:`SDKs <ref_sdk_sdk>` and try other methods, like to send data from your board to Tago.
+
+Running the application
+***********************
+
+Look at your dashboard at Tago, and run the code in your Raspberry PI. Go to your dashboard and turn your button ‘on’ the LED will turn on, now you can turn on and off a digital load across the planet using the power of Tago. If you have any issue or question about this application, access our Forum .
+You can also try the tutorial done for the BeagleBlackBone board in your Raspberry just by changing the GPIO library and the methods.
+Right, we know... you can do much more with the Raspberry and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device. Take a look at the concepts , ourAPI’s and SDK’s to bring the full potential of Tago to your system!
+
+	.. raw:: html
+
+		<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mp4" autobuffer controls></video><br><br>
