@@ -275,7 +275,7 @@ Then, create a file .py with the code below. Make sure you replace the token wit
  HIGH = 1
  Level = GPIO.input(PIN) and HIGH or LOW
 
- MY_DEVICE_TOKEN = '### INSERT YOU TOKEN HERE ###'
+ MY_DEVICE_TOKEN = '### INSERT YOUR TOKEN HERE ###'
  my_device = Tago(MY_DEVICE_TOKEN).device
 
  send_close = {
@@ -458,7 +458,7 @@ When you use Tago's lib, as you are doing now, you don't need to go in details o
   import RPi.GPIO as GPIO
   from tago import Tago
   PIN_NUMBER = 18
-  MY_DEVICE_TOKEN = 'afe3cef0-92b0-11e5-8816-8d140d128a36'
+  MY_DEVICE_TOKEN = '### INSERT YOUR TOKEN HERE ###'
   my_device = Tago(MY_DEVICE_TOKEN).device
   GPIO.setmode(GPIO.BOARD)
   GPIO.setup(PIN_NUMBER,GPIO.OUT,initial=0)
