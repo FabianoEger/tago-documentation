@@ -334,7 +334,7 @@ Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mp4" autobuffer controls></video><br><br>
+	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo1.mp4" autobuffer controls></video><br><br>
 
 
 ************

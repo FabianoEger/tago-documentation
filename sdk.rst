@@ -4,7 +4,6 @@
 SDK
 ###
 
-<<<<<<< Updated upstream
 Use any of our SDK (Software Development Kit) in your application to speed up your code development.
 
 *******
@@ -21,62 +20,62 @@ Get the Python lib from the `Github here. <https://github.com/tago-io/tago-pytho
 Java
 ****
 Get the Java lib from the `Github here. <https://github.com/tago-io/tago-java>`_
-=======
-.. raw:: html
 
-	<style>
-		.sdk-thumbnails {
-			text-align: center;
-		}
+..
+	.. raw:: html
 
-		.sdk-thumbnail {
-			display: inline-block;
-		}
+		<style>
+			.sdk-thumbnails {
+				text-align: center;
+			}
 
-		.sdk-thumbnail-img {
-			width: 125px;
-		}
+			.sdk-thumbnail {
+				display: inline-block;
+			}
 
-		.sdk-thumbnail-java {
-			max-height: 144px;
-		}
+			.sdk-thumbnail-img {
+				width: 125px;
+			}
 
-		.soon {
-			opacity: 0.3;
-		}
-	</style>
+			.sdk-thumbnail-java {
+				max-height: 144px;
+			}
 
-	<div class="sdk-thumbnails">
-		<figure class="sdk-thumbnail">
-			<a href="https://github.com/tago-io/tago-nodejs">
-				<img src="_static/sdk/node.png" alt="node.png" class="sdk-thumbnail-img">
-			</a>
+			.soon {
+				opacity: 0.3;
+			}
+		</style>
 
-			<figcaption>Node JS</figcaption>
-		</figure>
+		<div class="sdk-thumbnails">
+			<figure class="sdk-thumbnail">
+				<a href="https://github.com/tago-io/tago-nodejs">
+					<img src="_static/sdk/node.png" alt="node.png" class="sdk-thumbnail-img">
+				</a>
 
-		<figure class="sdk-thumbnail">
-			<a href="https://github.com/tago-io/tago-python">
-				<img src="_static/sdk/python.png" alt="python.png" class="sdk-thumbnail-img">
-			</a>
+				<figcaption>Node JS</figcaption>
+			</figure>
 
-			<figcaption>Python</figcaption>
-		</figure>
+			<figure class="sdk-thumbnail">
+				<a href="https://github.com/tago-io/tago-python">
+					<img src="_static/sdk/python.png" alt="python.png" class="sdk-thumbnail-img">
+				</a>
 
-		<figure class="sdk-thumbnail">
-			<a href="https://github.com/tago-io/tago-java">
-				<img src="_static/sdk/java.png" alt="java.png" class="sdk-thumbnail-java soon">
-			</a>
+				<figcaption>Python</figcaption>
+			</figure>
 
-			<figcaption>Java</figcaption>
-		</figure>
+			<figure class="sdk-thumbnail">
+				<a href="https://github.com/tago-io/tago-java">
+					<img src="_static/sdk/java.png" alt="java.png" class="sdk-thumbnail-java soon">
+				</a>
 
-		<figure class="sdk-thumbnail">
-			<a href="https://github.com/tago-io/tago-java">
-				<img src="_static/sdk/java.png" alt="java.png" class="sdk-thumbnail-java">
-			</a>
+				<figcaption>Java</figcaption>
+			</figure>
 
-			<figcaption>Java</figcaption>
-		</figure>
-	</div>
->>>>>>> Stashed changes
+			<figure class="sdk-thumbnail">
+				<a href="https://github.com/tago-io/tago-java">
+					<img src="_static/sdk/java.png" alt="java.png" class="sdk-thumbnail-java">
+				</a>
+
+				<figcaption>Java</figcaption>
+			</figure>
+		</div>
