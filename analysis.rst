@@ -5,14 +5,14 @@
 Analysis
 ########
 
-The **analysis** is a powerful feature where software developers and data scientists can use to implement scripts to analyze and manipulate the data sent by the devices in real time.
+The **analysis** is a powerful feature at Tago that experts and software developers can use to implement scripts to analyze and manipulate the data sent by the devices in real time.
 
-Analysis is programmed using Javascript language, node.js to be more exactly. Here, you have access to all data inside your buckets, your devices, and several services provide by Tago.  We also provide some  libraries like lodash and async to optmize your code.
+Analysis is programmed using Javascript language, node.js to be more exactly. Here, you have access to all data inside your buckets, your devices, and some services provide by Tago.  We also provide some  libraries like lodash and async to optmize your code.
 
 *******************
 Setting Up Analysis
 *******************
-Create your own analysis is very easy. First, you need to click on Add Analysis in upper left of the analysis main screen. Just write a name and a description, and you're ready to go!
+Create your own analysis is very easy. First, you need to click on Add Analysis in the upper left of the analysis main screen. Just write a name and a description, and you're ready to go!
 
 .. image:: _static/analysis/analysis_new.png
 
@@ -20,21 +20,21 @@ Create your own analysis is very easy. First, you need to click on Add Analysis 
 
 General Information
 ********************
-When you get inside your analysis, you will come across a lot of configurations that will help you to personalize and let your analysis become unique. In the General Information area you define the *time interval* and *environment variables* that are essential to a successful modular script.
+When you get inside your analysis, you will come across some configurations that will help you to personalize your analysis. In the General Information area, you should define the *time interval* that your analysis will run continuously, and the *environment variables* that are essential to a successful modular script.
 
 .. image:: _static/analysis/analysis_general.png
 
-| 1. **Name**: set the analysis name;
-| 2. **Time interval to run this script**: set the time period that your script will automatically run. If you want your script to be initiated by an event, select "never" and you can configure the :ref:`action <ref_actions_run_analysis>` to do it.
-| 3. **Description**: set the analysis description;
-| 4. **More**: Will show "more about this script" table;
-|   4-1. **ID**: the script ID. Origin will automatically use this ID when none is declared;
-|   4-2. **Registered at**: date when your analysis was created;
-|   4-3. **Last runn**: last time the analysis was trigerred;
-|   4-4. **Last update**: las time the analysis was modified;
-| 5. **New Environment variable**: will add an environment variable. No need to delete, just let blank if you will not use that;
-|  5-1. **Name**: the variable name. You can call a environment variable by ##name## inside your analysis;
-|  5-2. **Value**: the value of the variable. Can be integer or string;
+| 1. **Name**: set the analysis name
+| 2. **Time interval to run this script**: set the time period that your script will automatically run. If you want your script to be initiated by an event, select "never" and you can configure the :ref:`action <ref_actions_run_analysis>` to do it
+| 3. **Description**: set the analysis description
+| 4. **More**: Will show "more about this script" table
+|   4-1. **ID**: the ID of this script. Note: Origin will automatically use this ID when none is declared
+|   4-2. **Registered at**: date when your analysis was created
+|   4-3. **Last runn**: last time the analysis was triggered
+|   4-4. **Last update**: last time the analysis was modified
+| 5. **New Environment variable**: will add an environment variable. No need to delete, just leave blank if you don't need to use it
+|  5-1. **Name**: the variable name. You can refer to a environment variable by ##name## inside your analysis
+|  5-2. **Value**: the value of the variable. It can be *integer* or *string*
 |
 
 Script editor
@@ -43,31 +43,31 @@ Tago Script is the area where you write and edit your code that will be processe
 
 .. image:: _static/analysis/analysis_script.png
 
-| 1. **Script Area**: is where your code should be placed;
-| 2. **URL**: you can host your script outside Tago, placing the url reference here;
-| 3. **Save and Run**: You can "Save" or "Save and Run". The last option will immediately run your script after saving any changes;
+| 1. **Script Area**: is where your script should be placed when running locally (default)
+| 2. **URL**: is where your script should be placed when running remotely. Note: You can host your script outside of Tago, just add the url here
+| 3. **Save and Run**: You can "Save" or "Save and Run". The last option will immediately run your script after saving any change
 |
 
 Console
 *******
-Console acts like a common console, letting you see any error or word generated by "console.log". It is also a very good debug tool.
+Use the console to monitor the variables and status of your script. You can see any error or word generated by "console.log". It is also a very good debug tool.
 
 .. image:: _static/analysis/analysis_console.png
 
-| 1. **Run**: will immediately run your script, if new changes are made that will be ignored. For that, you need to save your script before;
-| 2. **Console Screen**: Any error or "console.log" will be show up here;
-| 3. **Clear Console**: Will clear anything that are show in your console screen;
-| 4. **Auto-Clear**: Clear the console everytime script runs;
+| 1. **Run**: will immediately run your script. If you make any change in your script, make sure you save it before running it
+| 2. **Console Screen**: Any error or response to a "console.log" will be show up here
+| 3. **Clear Console**: clear everything that are showed in your console screen
+| 4. **Auto-Clear**: clear the console every time the script runs
 |
 
 *******************
 Internal Functions
 *******************
-Our Analysis have a lot of functions to help you to manipulate buckets and devices. Also you can use some services to send sms, e-mails, and get informations about your account. It is possible to configure and setup almost everything in Tago through analysis.
+Our Analysis have a several functions to help you to manipulate data in the buckets and the devices. You can also use services to send sms, e-mails, and get information from your account. It is possible to configure and setup almost everything in Tago through the analysis.
 
 lodash
 ******
-You can call lodash (**_**) as a native function in analysis, without need to set it up. Lodash is a powerful library to manipulate data and compare values, you can read more about how to use it in the follow documentation: https://lodash.com/docs
+You can call lodash (**_**) as a native function in the analysis, no need to set it up. Lodash is a powerful library to manipulate data and compare values, you can read more about how to use *lodash* in the follow documentation: https://lodash.com/docs
 
 | **Examples**
 
@@ -78,22 +78,22 @@ You can call lodash (**_**) as a native function in analysis, without need to se
     console.log(x);
   });
 
-  //-> Will return 1, 2, 3 in each line respectively.
+  //-> it will return 1, 2, 3 in each line respectively.
 
 moment.js
 *********
-You can call Moment.js (**moment_tz**) as a native function in analysis without need to set it up. With Moment.js you will be able to do more complex calculations about time and date through analysis. You can read more about how to use it in the follow documentation: http://momentjs.com/docs/
+You can call moment.js (**moment_tz**) as a native function in the analysis, no need to set it up. With moment.js you can do more complex calculations about time and date in your analysis. You can read more about how to use *moment.js* in the follow documentation: http://momentjs.com/docs/
 
 | **Examples**
 
 .. code-block:: javascript
 
   moment_tz("12-25-1995", "MM-DD-YYYY");
-  //-> Will return a date object
+  //-> It will return a date object
 
 async
 *****
-You can call async as a native function in analysis without need to set it up. This library allows you to organize your functions so you can get all the performance you need. You can read more about how to use it in the follow documentation: https://github.com/caolan/async
+You can call async as a native function in the analysis, no need to set it up. This library helps you to organize your functions so you can get the performance that you need. You can read more about how to use *async* in the follow documentation: https://github.com/caolan/async
 
 | **Examples**
 
@@ -102,18 +102,18 @@ You can call async as a native function in analysis without need to set it up. T
   async.parallel([functions(...)], function(error, result){
     console.log(result);
   });
-  //-> Force an asynchronous functions to wait for another in order to complet a task.
+  //-> Force an asynchronous functions to wait for another in order to complete a task.
 
 bucket
 ******
-Bucket is the most basic and valuable function in all analysis. You will need to use it always when you want to get, insert, update or delete variables on your bucket. The first pass is to select your bucket by its ID. After that, you will be able to use a lot of child functions which will allow you to manipulate your data.
+Bucket is the most basic and valuable function in all analysis. For more information about how bucket works, check this explanation about:ref:`buckets <ref_concepts_bucket>` You will need to use it always when you want to get, insert, update or delete variables on your bucket. The first step is to select your bucket by its ID. After that, you will be able to use child functions to manipulate your data.
 
 | **Arguments**
 | bucket("bucket_id")
 | *\*bucket_id(String) You need to pass a bucket ID. Only one ID is possible.*
 |
 | **Returns**
-| *(\*) Returns an object which you can use to do a CRUD.*
+| *(\*) Returns an object which you can use to do a CRUD (create, read, update and delete).*
 |
 | **Examples**
 
@@ -121,26 +121,26 @@ Bucket is the most basic and valuable function in all analysis. You will need to
 
   var my_bucket = bucket("15787a4s15s4d799as");
 
-  //-> The first line declares the bucket you will access by ID
-  //-> The following line do a search for the variable "variable" inside that bucket
+  //-> The first line declares the bucket that you will access by ID
+  //-> The next line do a search for the variable "variable" inside that bucket
 
 .query
 ======
-Query Function allows you to do a lot of requests to your data bucket wich, in other way, will be much more difficulty. Is possible, for example, to get the max or min value of a variable, and if you combine with other functions like start_date and end_date, you can retrieve much more precisely information.
+The Query function allows you to do some special type of requests to your data bucket. It is possible, for example, to get the maximum or minimum value of a variable, and if you combine it with other functions like start_date and end_date, you can refine your request even more.
 
 | **Arguments**
 | bucket("variable").query("value").run([thisArg])
-| *\*variable(String): Variable name you want to request;*
-| *\*value(string): What kind of Query you will do. Could be as follow:*
-|   **\*min**: *get the item with minimum value;*
-|   **\*max**: *get the item with maximum value;*
-|   **\*last_item**: *get the last item inserted in the variable, regardless of value or location existence;*
-|   **\*last_value**: *get the last item with value, regardless of location existence;*
-|   **\*last_location**: *get the last item with location, regardless of value existence;*
-|   **\*count**: *get the total of items inside the variable;*
+| *\*variable(String): Variable name you want to request*
+| *\*value(string): the type of query requested. These are the options:*
+|   **\*min**: *get the data with minimum value*
+|   **\*max**: *get the data with maximum value*
+|   **\*last_item**: *get the last data inserted in the variable, regardless of the value or location*
+|   **\*last_value**: *get the last data with value, regardless of the location*
+|   **\*last_location**: *get the last data with location, regardless of the value*
+|   **\*count**: *get the total number of data inserted inside the variable*
 |
 | **Returns**
-| *(Array) An Array with desirable results.*
+| *(Array) An array with the results from the request*
 |
 | **Examples**
 
@@ -153,14 +153,14 @@ Query Function allows you to do a lot of requests to your data bucket wich, in o
 
 .origin
 =======
- Since you can have more than one device, or even a script analysis, inserting values to a bucket, origin function allows you to filter possible results by ID.
+ Since you can have more than one device, or even a script analysis inserting values to a bucket, the *origin* function allows you to filter the results by the ID the inserted the variable.
 
  | **Arguments**
  | bucket_var("variable").origin("id").run([thisArg])
- | *\*id(String) Device or Analysis ID.*
+ | *\*id(String) the device or analysis ID*
  |
  | **Returns**
- | *(Array) Return an Array with values only originated by one ID.
+ | *(Array) An array with the values inserted (originated) only by the selected ID*
  |
  |
  | **Examples**
@@ -176,14 +176,14 @@ Query Function allows you to do a lot of requests to your data bucket wich, in o
 
 .serie
 ======
-Sometimes you will need to get value of one variable by its serie. Series allows you to do a lot of thing, so of course we have a filter for that.
+Sometimes you may need to get value of one variable filtering by its *serie* number.  Serie is used to group variables when necessary, as it helps to synchronize them. You can learn more about :ref: `serie here<concepts-serie>`.
 
 | **Arguments**
 | bucket_var("variable").serie("serie").run([thisArg])
-| *\*serie(String) Serie of the value.*
+| *\*serie(String) the specific serie to be searched*
 |
 | **Returns**
-| *(Array) Return an Array with values of this serie.
+| *(Array) An Array with the data using the same serie number as requested*
 |
 |
 | **Examples**
@@ -199,14 +199,14 @@ Sometimes you will need to get value of one variable by its serie. Series allows
 
 .value
 ======
-Can pass a value to be searched in your bucket. The API will respond with the location, date and other data related to that value.
+It is possible to do a search in the variables by *value*. The result will come with the location, date and other data related to that value.
 
 | **Arguments**
 | bucket_var("variable").value("value").run([thisArg])
-| *\*value(String/Integer) You will need to pass a value.*
+| *\*value(String/Integer) the value to be searched.*
 |
 | **Returns**
-| *(Array) Return an Array with corresponding times which this value was inserted in bucket. You can use **.query("last_value")** to get the last one.
+| *(Array) An Array with the corresponded times which this value was inserted in bucket. You can use **.query("last_value")** to get the last one.
 |
 |
 | **Examples**
@@ -221,14 +221,14 @@ Can pass a value to be searched in your bucket. The API will respond with the lo
 
 .qty
 =====
-Limit the number of results that will be returned from a query in a array. The default value is 15.
+Limit the number of results that will be returned from a query. The default value is 15.
 
 | **Arguments**
 | bucket_var("variable").qty(value).run([thisArg])
-| *\*value(Integer) Number of queries to return.*
+| *\*value(Integer) Maximum number of results to returned*
 |
 | **Returns**
-| *(\*) Return no more than 'qty' results **
+| *(\*) Return no more than 'qty' results (data) **
 |
 | **Examples**
 
@@ -284,7 +284,7 @@ Define the end time for the data search. Only the data containing 'time' informa
 
 .run
 =====
-Every time you query any data from a bucket, "run" need to be included to add the code that will manipulate the result. This function is not useful when using *insert* or *clear*.
+Every time you query any data from a bucket, the *run* need to be included to start the request operation. This function is not useful when using *insert* or *clear*.
 
 | **Arguments**
 | bucket_var("variable").run([thisArg])
@@ -306,14 +306,14 @@ Every time you query any data from a bucket, "run" need to be included to add th
 
 .insert
 =======
-Insert data in the bucket. Different from other functions of bucket, this function don't need "run" function to work.
+Insert data into the bucket. Different from other functions of bucket, this function doesn't need the .run function to work.
 
 | **Arguments**
 | bucket_var("variable").insert(JSON, "origin_id", [thisArg])
-| *(JSON): JSON with all possible datas to insert. I will mention some important ones;*
-|   **\*value**: *value of the variable to be inserted;*
-|   **\*serie**: *serie of the variable. The serie is randomly generated if not referred. If referred a already existed serie, the insert will update that item instead;*
-|   **\*unit**: *A unit will be automatically inserted to widgets on dashboard if referred;*
+| *(JSON): JSON data set with any combination of fields to be inserted. Some examples of field:*
+|   **\*value**: *the value of the variable to be inserted;*
+|   **\*serie**: *the serie of the variable. The serie will be randomly generated if not included. If an included serie already existed, the new one will be updated*
+|   **\*unit**: *the unit of the variable*
 
 .. code-block:: javascript
 
@@ -397,11 +397,11 @@ Get detailed information about a specific device by using its ID. The informatio
 
 | **Arguments**
 | devices.info("id", [thisArg])
-| *id(String): A String with ID of the origin. Default is the script analysis ID.*
-| *[thisArg](Function): The function invoked per iteration.*
+| *id(String): A String with the ID of the origin. The default is the ID from the script analysis*
+| *[thisArg](Function): The function invoked per iteration*
 |
 | **Returns**
-| *(JSON) Detailed information of the device *
+| *(JSON) Detailed information of the device*
 |
 | **Examples**
 
@@ -480,7 +480,7 @@ Whenever you need to send an email, use .send function.
  email.send(email_scope, function(error, result){
   console.log(result);
  });
- //-> Will return success or failure of the email send.
+ //-> It will return success or failure of the email send.
 
 *******************
 Internal Variables
@@ -498,7 +498,7 @@ Every time an action triggers a script, the variable **scope** will be generated
 .. code-block:: javascript
 
   console.log(scope);
-  //-> Will return ... [to-do]
+  //-> It will return ... [to-do]
 
 ##var##
 *******
@@ -509,7 +509,7 @@ When using environment variables, which can be set in the :ref:`analysis_general
 .. code-block:: javascript
 
   console.log(##bucket_id##);
-  //-> Will return the value of "bucket_id" environment variable;
+  //-> It will return the value of "bucket_id" environment variable;
 
   var other_var = ##bucked_id##;
   //-> "other_var" will receive "bucked_id" value;
