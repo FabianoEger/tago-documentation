@@ -330,7 +330,7 @@ Wait few seconds for the Python to start the program and press the button on the
 If you have any issue or question about this application, access our `Forum <https://community.tago.io/>`_ .
 
 Right, we know... you can do much more with the BBB and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
-Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <>` to bring the full potential of Tago to your system!
+Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <ref_sdk_sdk>` to bring the full potential of Tago to your system!
 
 .. raw:: html
 
@@ -456,17 +456,19 @@ When you use Tago's lib, as you are doing now, you don't need to go in details o
 .. code-block:: python
 
   import RPi.GPIO as GPIO
-	from tago import Tago
-	MY_DEVICE_TOKEN = '### INSERT YOUR TOKEN HERE ###'
-	my_device = Tago(MY_DEVICE_TOKEN).device
-	GPIO.setmode(GPIO.BOARD)
-	GPIO.setup(PIN_NUMBER,GPIO.OUT,initial=0)
+  from tago import Tago
+  PIN_NUMBER = 18
+  MY_DEVICE_TOKEN = 'afe3cef0-92b0-11e5-8816-8d140d128a36'
+  my_device = Tago(MY_DEVICE_TOKEN).device
+  GPIO.setmode(GPIO.BOARD)
+  GPIO.setup(PIN_NUMBER,GPIO.OUT,initial=0)
 
-	def func_callback_data(data):
-		Logic_Port = data['value']
-		GPIO.output(PIN_NUMBER,Logic_Port)
+  def func_callback_data(data):
+        Logic_Port = data['value']
+        GPIO.output(PIN_NUMBER,Logic_Port)
+        print(data['value'])
 
-	my_device.listening(func_callback_data)
+  my_device.listening(func_callback_data)
 
 
 As we know that you will want to apply this in your own application later, here goes some tips for your code:
@@ -483,9 +485,6 @@ Running the application
 ***********************
 
 Look at your dashboard at Tago, and run the code in your Raspberry PI. Go to your dashboard and turn your button ‘on’ the LED will turn on, now you can turn on and off a digital load across the planet using the power of Tago. If you have any issue or question about this application, access our Forum .
-You can also try the tutorial done for the BeagleBlackBone board in your Raspberry just by changing the GPIO library and the methods.
-Right, we know... you can do much more with the Raspberry and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device. Take a look at the concepts , ourAPI’s and SDK’s to bring the full potential of Tago to your system!
-
-	.. raw:: html
-
-		<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo.mp4" autobuffer controls></video><br><br>
+You can also try the modify the tutorial done for the BeagleBlackBone board to your Raspberry, by just by changing the GPIO library and the methods.
+Right, we know... you can do much more with the Raspberry and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
+Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's  <ref_sdk_sdk>` to bring the full potential of Tago to your system!
