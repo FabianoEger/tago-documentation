@@ -291,7 +291,7 @@ Every time you query any data from a bucket, the *run* need to be included to st
 | *\*[thisArg](Function): The function invoked per iteration.*
 |
 | **Returns**
-| *(\*) An error and result of the iteration*
+| *(\*) An error or the result of the iteration*
 |
 | **Examples**
 
@@ -367,7 +367,7 @@ Service function expands your analysis limits, allowing you to use external reso
 
 devices
 =======
-When you need to obtain detailed information your the configuration of your devices, or other data about their operations, you can use *devices* service.
+When you need to obtain detailed information your the configuration of your devices, including the details of their operations, you can use *devices* service.
 
 .list
 -----
@@ -378,7 +378,7 @@ Get a list of all devices added in the user account.
 | *[thisArg](Function): The function invoked per iteration.*
 |
 | **Returns**
-| *(\*) A list of all devices and their detailed information in the account*
+| *(\*) A list of all devices and their detailed information under the use account*
 |
 | **Examples**
 
@@ -502,7 +502,7 @@ Every time an action triggers a script, the variable **scope** will be generated
 
 ##var##
 *******
-When using environment variables, which can be set in the :ref:`analysis_general_information` at analysis settings, you will be able to call for that variable using "##" as prefix and suffix of the declared name.
+When using environment variables, which can be set in the :ref:`analysis_general_information` at analysis settings, you will be able to refer for that variable using "##" as prefix and suffix of the declared name.
 
 | **Examples**
 
