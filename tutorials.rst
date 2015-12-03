@@ -451,9 +451,10 @@ If you have any issue or question about this application, access our `Forum <htt
 Right, we know... you can do much more with the BBB and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
 Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <ref_sdk_sdk>` to bring the full potential of Tago to your system!
 
-.. raw:: html
+..
+	.. raw:: html
 
-	<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo1.mp4" autobuffer controls></video><br><br>
+		<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo1.mp4" autobuffer controls></video><br><br>
 
 
 ************
