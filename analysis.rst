@@ -7,7 +7,12 @@ Analysis
 
 The **analysis** is a powerful feature at Tago that experts and software developers can use to implement scripts to analyze and manipulate the data sent by the devices in real time.
 
-Analysis is programmed using Javascript language, node.js to be more exactly. Here, you have access to all data inside your buckets, your devices, and some services provide by Tago.  We also provide some  libraries like lodash and async to optmize your code.
+Analysis is programmed using Javascript language with Tago internal methods injected on context. Here, you have access to all data inside your buckets, your devices, and some services provided by Tago.  We also provide some  libraries like lodash and async to optimize your code.
+
+If you combine Analysis with Actions you can execute that script when some particular variable with value arrive on Tago.
+Example you can process your information, as convert, transform, apply functions on that value. Also you can add new values in another bucket, get data from there or make actions as send email, sms, etc...
+
+We have a github repository with some examples, check it out at: https://github.com/tago-io/tago-analysis-examples
 
 *******************
 Setting Up Analysis
@@ -75,7 +80,7 @@ You can call lodash (**_**) as a native function in the analysis, no need to set
 
   var my_array = [1,2,3];
   _.forEach(my_array, function(x){
-    console.log(x);
+      console.log(x);
   });
 
   //-> it will return 1, 2, 3 in each line respectively.
@@ -100,7 +105,7 @@ You can call async as a native function in the analysis, no need to set it up. T
 .. code-block:: javascript
 
   async.parallel([functions(...)], function(error, result){
-    console.log(result);
+      console.log(result);
   });
   //-> Force an asynchronous functions to wait for another in order to complete a task.
 
@@ -147,7 +152,7 @@ The Query function allows you to do some special type of requests to your data b
 .. code-block:: javascript
 
  my_bucket("variable").query("last_value").run(function(error, result) {
-  console.log(result);
+    console.log(result);
  });
  //->
 
@@ -169,7 +174,7 @@ The Query function allows you to do some special type of requests to your data b
 
  var my_bucket = bucket("15787a4s15s4d799as");
  my_bucket("color").origin("54ab3ee59a56af7a067b7b89").query("last_value").run(function(error, result) {
-   console.log(result);
+     console.log(result);
  });
  //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"},
 
@@ -192,7 +197,7 @@ Sometimes you may need to get value of one variable filtering by its *serie* num
 
   var my_bucket = bucket("15787a4s15s4d799as");
   my_bucket("color").serie("1448132464126").query("last_value").run(function(error, result) {
-    console.log(result);
+      console.log(result);
   });
   //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"},
 
@@ -215,7 +220,7 @@ It is possible to do a search in the variables by *value*. The result will come 
 
   var my_bucket = bucket("15787a4s15s4d799as");
   my_bucket("color").value("blue").query("last_value").run(function(error, result) {
-    console.log(result);
+      console.log(result);
   });
   //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"}]
 
@@ -236,7 +241,7 @@ Limit the number of results that will be returned from a query. The default valu
 
   var my_bucket = bucket("15787a4s15s4d799as");
   my_bucket("color").qty(3).run(function(error, result) {
-    console.log(result);
+      console.log(result);
   });
   //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"},
   //->  {"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T18:47:18.000Z","serie":1448131620070,"location":{"type":"Point","coordinates":[-78.761717,35.7722995]},"value":"red","id":"5650bc3758f890b23427c976"},
@@ -256,7 +261,7 @@ Define the start time for the data search. Only the data containing 'time' infor
 
   var my_bucket = bucket("15787a4s15s4d799as");
   my_bucket("color").start_date("2 day").query("last_value").run(function(error, result) {
-    console.log(result);
+      console.log(result);
   });
   //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T18:25:43.000Z","serie":1448130323366,"location":{"type":"Point","coordinates":[-78.7617483,35.772326]},"value":"blue","id":"5650b72658f890b23427c87b"},
   //->  {"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-25T17:01:45.000Z","serie":1448125287014,"location":{"type":"Point","coordinates":[-78.6379951,35.7788033]},"value":"yellow","id":"5650a37a58f890b23427c138"},
@@ -276,7 +281,7 @@ Define the end time for the data search. Only the data containing 'time' informa
 
   var my_bucket = bucket("15787a4s15s4d799as");
   my_bucket("color").start_date("2 day").query("last_value").run(function(error, result) {
-    console.log(result);
+      console.log(result);
   });
   //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-24T18:25:43.000Z","serie":1448130323366,"location":{"type":"Point","coordinates":[-78.7617483,35.772326]},"value":"blue","id":"5650b72658f890b23427c87b"},
   //->  {"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-24T17:01:45.000Z","serie":1448125287014,"location":{"type":"Point","coordinates":[-78.6379951,35.7788033]},"value":"yellow","id":"5650a37a58f890b23427c138"},
@@ -299,7 +304,7 @@ Every time you query any data from a bucket, the *run* need to be included to st
 
   var my_bucket = bucket("15787a4s15s4d799as");
   my_bucket("color").run(function(error, result) {
-    console.log(result);
+      console.log(result);
   });
   //->  [{"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-24T19:01:22.000Z","serie":1448132464126,"location":{"type":"Point","coordinates":[-78.822224,35.7469741]},"value":"blue","id":"5650bf843644b39f35a8e108"},
   //->  {"variable":"color","origin":"54ab3ee59a56af7a067b7b89","time":"2015-11-24T18:47:18.000Z","serie":1448131620070,"location":{"type":"Point","coordinates":[-78.761717,35.7722995]},"value":"red","id":"5650bc3758f890b23427c976"}(...)]
@@ -317,11 +322,12 @@ Insert data into the bucket. Different from other functions of bucket, this func
 
 .. code-block:: javascript
 
-  {"value": "red",
-  "serie" :"1448132464126",
-  "time"  :"2015-11-24T18:47:18.000Z",
-  "unit"  :"",
-  (...)}
+  {
+      "value" : 33,
+      "serie" :"1448132464126",
+      "time"  :"2015-11-24T18:47:18.000Z",
+      "unit"  :"C",
+  }
 
 | *origin_id(String): A String with ID of the origin. Default is the script analysis ID.*
 | *[thisArg](Function): The function invoked per iteration.*
@@ -333,16 +339,16 @@ Insert data into the bucket. Different from other functions of bucket, this func
 
 .. code-block:: javascript
 
-  var my_bucket    = bucket("15787a4s15s4d799as");
-  var insert_model = {
-    "value":"red"
-  }
-  var origin_id    = "54ab3ee59a56af7a067b7b89";
+    var my_bucket    = bucket("15787a4s15s4d799as");
+    var insert_model = {
+        "value":"red"
+    };
+    var origin_id = "54ab3ee59a56af7a067b7b89";
 
-  my_bucket("color").insert(insert_model, origin_id, function(error, result) {
-    console.log(result);
-  });
-  //->  {"message":"1 Data Added, 0 Errors","added":[{"data":{"bucket":"54ab3ee59a56af7a067b7b8a","variable":"color","created_at":"2015-11-24T01:03:30.754Z","updated_at":"2015-11-24T01:03:30.754Z","origin":"54ab3ee59a56af7a067b7b89","origin_type":"custom","time":"2015-11-24T01:03:30.754Z","value":"red","id":"5653b76296cbc40f16222c90"}}],"errors":[]}
+    my_bucket("color").insert(insert_model, origin_id, function(error, result) {
+        console.log(result);
+    });
+    //->  {"message":"1 Data Added, 0 Errors","added":[{"data":{"bucket":"54ab3ee59a56af7a067b7b8a","variable":"color","created_at":"2015-11-24T01:03:30.754Z","updated_at":"2015-11-24T01:03:30.754Z","origin":"54ab3ee59a56af7a067b7b89","origin_type":"custom","time":"2015-11-24T01:03:30.754Z","value":"red","id":"5653b76296cbc40f16222c90"}}],"errors":[]}
 
 service
 *******
@@ -386,7 +392,7 @@ Get a list of all devices added in the user account.
 
  var devices = service("devices");
  devices.list(function(error, result) {
-  console.log(result);
+    console.log(result);
  });
  //->[{"name":"Device_Config","description":null,"active":true,"visible":true,"bucket":{"id":"5605d8e2147c6f2837f82b90","name":"CB 20"}(...)}(...)]
 
@@ -409,7 +415,7 @@ Get detailed information about a specific device by using its ID. The informatio
 
  var devices = service("devices");
  devices.info("54ab3ee59a56af7a067b7b89", function(error, result) {
-  console.log(result);
+    console.log(result);
  });
  //->{"name":"Device_Config","description":null,"active":true,"visible":true,"created_at":"2015-10-15T21:46:37.871Z","updated_at":"2015-10-15T21:46:37.871Z","id":"56201ebd45674bf049a9f7a2","bucket":{"name":"Configuration","id":"55d2759e2425065b22f2d6b8"}}
 
@@ -440,7 +446,7 @@ Whenever you need to send a sms, use .send function.
 
  var sms = service("sms");
  sms.send({'to': phone_number.value, 'message': message_to_send_backend.value}, function(error, result){
-  console.log(result);
+    console.log(result);
  });
  //-> Will return success or failure of the sms send.
 
@@ -472,13 +478,13 @@ Whenever you need to send an email, use .send function.
 
  var email = service("email");
  let email_scope = {
-  "to": "mary@gmail.com",
-  "from": "Tago Report",
-  "subject": "Time to refill the tank!",
-  "message": "Good morning, Mary!<br> Time to fill the tank! Your car tank is almost empty, Shell gas station at Niles has the best price today."
+    "to"     : "mary@gmail.com",
+    "from"   : "Tago Report",
+    "subject": "Time to refill the tank!",
+    "message": "Good morning, Mary!<br> Time to fill the tank! Your car tank is almost empty, Shell gas station at Niles has the best price today."
  };
  email.send(email_scope, function(error, result){
-  console.log(result);
+    console.log(result);
  });
  //-> It will return success or failure of the email send.
 
@@ -508,8 +514,8 @@ When using environment variables, which can be set in the :ref:`analysis_general
 
 .. code-block:: javascript
 
-  console.log(##bucket_id##);
+  console.log(String("##bucket_id##"));
   //-> It will return the value of "bucket_id" environment variable;
 
-  var other_var = ##bucked_id##;
+  var other_var = Number("##bucket_id##");
   //-> "other_var" will receive "bucked_id" value;
