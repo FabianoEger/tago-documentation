@@ -134,7 +134,9 @@ Delete Data
 ***********
 
 DELETE - ``https://api.tago.io/data/:id``
+
 DELETE - ``https://api.tago.io/data``
+
 DELETE - ``https://api.tago.io/data/:variable_name``
 
 - Each time you insert a data, an ID is associated with it. You can read this ID by using the GET method.
