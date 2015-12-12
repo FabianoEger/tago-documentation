@@ -106,6 +106,8 @@ Edit Data
 
 PUT - ``https://api.tago.io/data/:id``
 
+- Each time you insert a data, an ID is associated with it. You can read this ID by using the GET method.
+
 +----------------------+----------------------+----------------------+
 | KEY                  | TYPE                 | REQUIRED             |
 +======================+======================+======================+
@@ -132,6 +134,13 @@ Delete Data
 ***********
 
 DELETE - ``https://api.tago.io/data/:id``
+DELETE - ``https://api.tago.io/data``
+DELETE - ``https://api.tago.io/data/:variable_name``
+
+- Each time you insert a data, an ID is associated with it. You can read this ID by using the GET method.
+
+Delete method can be used in 3 forms: without argument, with variable, or with ID.  If no argument is specified, the most recent data from your bucket will be removed.
+
 
 GET Data
 ********
