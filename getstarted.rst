@@ -23,7 +23,7 @@ This video shows how to take the steps above in few seconds.
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/getstarted/add_device.mp4"   controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/getstarted/add_device.mp4"   controls></video><br><br>
 
 *************************
 Step 2. Build a dashboard
@@ -41,7 +41,7 @@ Then, click 'Create', and your widget will be ready!
 
  .. raw:: html
 
- 	<video style="max-width: 100%;" src="_static/getstarted/add_var_dash.mp4"   controls></video><br><br>
+ 	 <video style="max-width: 100%;" preload="none" src="_static/getstarted/add_var_dash.mp4"   controls></video><br><br>
 
 
  | *Note: if the variable 'temperature' already exist in your data bucket, the auto-complete function will immediately bring it for you.*

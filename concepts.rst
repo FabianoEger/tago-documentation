@@ -9,7 +9,7 @@ Watch this short video to learn about the concepts around buckets, devices, and 
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/concepts/Tago_Tech_Concept.mp4"   controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/concepts/Tago_Tech_Concept.mp4"   controls></video><br><br>
 
 
 .. _ref_concepts_bucket:
@@ -30,7 +30,7 @@ Enter with a name for the bucket and a short description. You can edit these fie
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/concepts/create_bucket.mp4"   controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/concepts/create_bucket.mp4"   controls></video><br><br>
 
 .. _ref_concepts_bucket_structure
 Bucket structure
@@ -154,7 +154,7 @@ Enter with a name for the device and a description, and select the bucket. Again
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/concepts/add_device.mp4"   controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/concepts/add_device.mp4"   controls></video><br><br>
 
 .. _ref_concepts_manag_device:
 
