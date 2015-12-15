@@ -491,9 +491,9 @@ All devices should use a valid token when accessing Tago. This token is automa
 Building the Dashboard
 **********************
 
-Let’s build a simple dashboard with only one widget that will control the digital load.
+Let's build a simple dashboard with only one widget that will control the digital load.
 Click ‘+ New Dashboard’ on the left side bar, type the name of your dashboard, and click on ‘Create’.
-To add one widget, click on ‘Add Widget’ blue button, and select the type: **Input**. Then click on **Control*, and 'Create' to get your widget.
+To add one widget, click on ‘Add Widget’ blue button, and select the type: **Input**. Then click on **Control**, and 'Create' to get your widget.
 
 Start the configuration of this widget by adding the title to be displayed.
 Type a variable name that will be sent to the device as *control_signal*, click on ‘add’ below the name.
