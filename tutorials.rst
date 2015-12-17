@@ -41,7 +41,7 @@ Go to the 'General information' session of the device, click on 'QR Code' or 'To
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/getstarted/add_device.mp4" controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/getstarted/add_device.mp4" controls></video><br><br>
 
 
 Building the Dashboard
@@ -56,7 +56,7 @@ Then, click 'Create', and your widget will be ready!
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/tutorials/add_var_dash.mp4" controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/tutorials/add_var_dash.mp4" controls></video><br><br>
 
 Great! As soon as your device start to send data, the values will be showed on this dial.
 
@@ -299,7 +299,7 @@ Go to the 'General information' session of the device, click on 'QR Code' or 'To
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/getstarted/add_device.mp4" controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/getstarted/add_device.mp4" controls></video><br><br>
 
 
 Building the Dashboard
@@ -314,7 +314,7 @@ Then, click 'Create', and your widget will be ready!
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/tutorials/dash_bbb.mp4" controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/tutorials/dash_bbb.mp4" controls></video><br><br>
 
 Your dashboard will look like this one:
 
@@ -454,7 +454,7 @@ Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api
 ..
 	.. raw:: html
 
-		<video style="max-width: 100%;" src="_static/tutorials/bbb_switch_demo1.mp4" controls></video><br><br>
+		 <video style="max-width: 100%;" preload="none" src="_static/tutorials/bbb_switch_demo1.mp4" controls></video><br><br>
 
 
 ************
@@ -485,15 +485,15 @@ All devices should use a valid token when accessing Tago. This token is automa
 
 .. raw:: html
 
-		<video style="max-width: 100%;" src="_static/getstarted/add_device.mp4" controls></video><br><br>
+		 <video style="max-width: 100%;" preload="none" src="_static/getstarted/add_device.mp4" controls></video><br><br>
 
 
 Building the Dashboard
 **********************
 
-Let’s build a simple dashboard with only one widget that will control the digital load.
+Let's build a simple dashboard with only one widget that will control the digital load.
 Click ‘+ New Dashboard’ on the left side bar, type the name of your dashboard, and click on ‘Create’.
-To add one widget, click on ‘Add Widget’ blue button, and select the type: **Input**. Then click on **Control*, and 'Create' to get your widget.
+To add one widget, click on ‘Add Widget’ blue button, and select the type: **Input**. Then click on **Control**, and 'Create' to get your widget.
 
 Start the configuration of this widget by adding the title to be displayed.
 Type a variable name that will be sent to the device as *control_signal*, click on ‘add’ below the name.
@@ -503,7 +503,7 @@ Then, click ‘Create’, and your widget is ready!
 
 .. raw:: html
 
-	<video style="max-width: 100%;" src="_static/tutorials/build_dash_rpi.mp4" controls></video><br><br>
+	 <video style="max-width: 100%;" preload="none" src="_static/tutorials/build_dash_rpi.mp4" controls></video><br><br>
 
 Your dashboard will look like this one:
 
