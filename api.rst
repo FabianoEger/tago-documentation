@@ -76,6 +76,8 @@ Using tokens is simple, just add them in the header of the request.
 Send Data
 *********
 
+A device can send data to Tago by using the POST method.
+
 POST - ``https://api.tago.io/data``
 
 +----------------------+----------------------+----------------------+
@@ -147,7 +149,7 @@ DELETE - ``https://api.tago.io/data/:variable_name``
 Delete method can be used in 3 forms: without argument, with variable, or with ID.  If no argument is specified at all, the most recent data inserted into your bucket will be removed.
 
 
-GET Data
+Get Data
 ********
 
 GET - ``https://api.tago.io/data``
@@ -159,7 +161,7 @@ GET - ``https://api.tago.io/data``
 +----------------------+----------------------+-------------------------------------------+
 | query                | string               | Query pre-defined by Tago                 |
 +----------------------+----------------------+-------------------------------------------+
-| qty                  | string               | Maximum number of register to be returned |
+| qty                  | string               | Maximum number of data to be returned     |
 +----------------------+----------------------+-------------------------------------------+
 | start_date           | string               | Start date                                |
 +----------------------+----------------------+-------------------------------------------+
@@ -216,7 +218,8 @@ Also, you can use the array to get more variables: ``https://api.tago.io/data?va
 Query
 =====
 
-``query`` - query parameter is pre defined by Tago, and helps you to obtain certain processed data. Note that you can not use two querys concurrently.
+``query`` - query parameter returns some predefined functions to help you to obtain certain processed data. Note that you can not use two queries concurrently.
+
 
 +---------------+---------------------------------------------------+
 | QUERY         | DESCRIPTION                                       |
@@ -225,7 +228,7 @@ Query
 +---------------+---------------------------------------------------+
 | min           | Get data with the lowest value                    |
 +---------------+---------------------------------------------------+
-| count         | Return the number of data in bucket               |
+| count         | Return the number of data located in the bucket   |
 +---------------+---------------------------------------------------+
 | lat_value     | Get the last data with field *value* not empty    |
 +---------------+---------------------------------------------------+
@@ -233,27 +236,28 @@ Query
 +---------------+---------------------------------------------------+
 | last_item     | Get the last data                                 |
 +---------------+---------------------------------------------------+
-| near*         | Get data near the specified geolocation       	  |
+| near *        | Get data near the specified geolocation           |
 +---------------+---------------------------------------------------+
 
-\* - Need additional parameter.
+
+\*  Need additional parameters
 
 near
 ----
 
 The query ``near`` will return all data geographically located inside the radius of the location. ``near`` requires some extra parameters as listed below.
 
-+---------------+------------------------------------------------------------------------------------------------------------------------+
-| PARAMETER     | DESCRIPTION                                                                                                            |
-+===============+========================================================================================================================+
-| lat           | Latitude                                                                                                               |
-+---------------+------------------------------------------------------------------------------------------------------------------------+
-| lng           | Longitude                                                                                                              |
-+---------------+------------------------------------------------------------------------------------------------------------------------+
-| min_distance  | The minimum distance from the center point that the documents must be. Specify the distance in meters. (default 0)     |
-+---------------+------------------------------------------------------------------------------------------------------------------------+
-| max_distance  | The maximum distance from the center point that the documents can be. Specify the distance in meters. (default 500)    |
-+---------------+------------------------------------------------------------------------------------------------------------------------+
++---------------+---------------------------------------------------------------------------------------------------------------------------------+
+| PARAMETER     | DESCRIPTION                                                                                                                     |
++===============+=================================================================================================================================+
+| lat           | Latitude of the center point                                                                                                   |
++---------------+---------------------------------------------------------------------------------------------------------------------------------+
+| lng           | Longitude of the center point                                                                                                  |
++---------------+---------------------------------------------------------------------------------------------------------------------------------+
+| min_distance  | The minimum distance from the center point that the data is expected to be located. Specify the distance in meters (default 0)  |
++---------------+---------------------------------------------------------------------------------------------------------------------------------+
+| max_distance  | The maximum distance from the center point that the data is expected to be located. Specify the distance in meters (default 500)|
++---------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 
 Quantity
@@ -270,12 +274,12 @@ Quantity
 
 Start Date - End Date
 =====================
- 
+
 ``start_date`` - Define the start time for the data search. Only the data containing 'time' information newer than start_date will be returned.
 
 ``end_date`` - Define the end time for the data search. Only the data containing 'time' information older than end_date will be returned.
 
-Start/End date parameters accept different formats, which include selection based on relative time (e.g. to get data from last 1 hour). Below are some examples:
+Start/End date parameters accept different formats, which include selection based on relative time (e.g. to get data from the last 1 hour). Below are some examples:
 
 +--------------------------------------------+
 | DATE FORMATS                               |
