@@ -240,7 +240,7 @@ Query
 near
 ----
 
-The parameter ``near`` will get data on radius of the location. Also, require some extra parameters parameter, listed below.
+The query ``near`` will get data on radius of the location. Also, require some extra parameters parameter, listed below.
 
 +---------------+------------------------------------------------------------------------------------------------------------------------+
 | PARAMETER     | DESCRIPTION                                                                                                            |
