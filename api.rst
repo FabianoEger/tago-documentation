@@ -270,7 +270,7 @@ Quantity
 
 Start Date - End Date
 =====================
-
+ 
 ``start_date`` - Define the start time for the data search. Only the data containing 'time' information newer than start_date will be returned.
 
 ``end_date`` - Define the end time for the data search. Only the data containing 'time' information older than end_date will be returned.
