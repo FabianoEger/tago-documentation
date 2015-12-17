@@ -7,10 +7,10 @@ Analysis
 
 The **analysis** is a powerful feature at Tago that experts and software developers can use to implement scripts to analyze and manipulate the data sent by the devices in real time.
 
-Analysis is programmed using Javascript language with Tago internal methods injected on context. Here, you have access to all data inside your buckets, your devices, and some services provided by Tago.  We also provide some  libraries like lodash and async to optimize your code.
+Analysis is programmed using Javascript language with Tago methods. Here, you have access to all data inside your buckets, your devices, and some services provided by Tago.  We also provide some  libraries like lodash and async to optimize your code.
 
-If you combine Analysis with Actions you can execute that script when some particular variable with value arrive on Tago.
-Example you can process your information, as convert, transform, apply functions on that value. Also you can add new values in another bucket, get data from there or make actions as send email, sms, etc...
+If you combine Analysis with Actions you can execute that script whenever a predefined variable with value arrives at Tago.
+For example, you can process your information, as convert, transform, apply functions for that value. Also you can add new values in another bucket, get data from there or program actions such as send email, sms, etc...
 
 We have a github repository with some examples, check it out at: https://github.com/tago-io/tago-analysis-examples
 
@@ -269,7 +269,7 @@ Define the start time for the data search. Only the data containing 'time' infor
 
 .end_date
 ==========
-Define the end time for the data search. Only the data containing 'time' information older than start_date will be returned. You can combine this function with start_date to create a period. You can add others types of argument, like a moment.js, a Date, a string formatted date, or even a string date like "yesterday", "1 day", "2 years".
+Define the end time for the data search. Only the data containing 'time' information older than end_date will be returned. You can combine this function with start_date to create a period. You can add others types of argument, like a moment.js, a Date, a string formatted date, or even a string date like "yesterday", "1 day", "2 years".
 
 | **Arguments**
 | bucket_var("variable").end_date("value").run([thisArg])
@@ -293,7 +293,7 @@ Every time you query any data from a bucket, the *run* need to be included to st
 
 | **Arguments**
 | bucket_var("variable").run([thisArg])
-| *\*[thisArg](Function): The function invoked per iteration.*
+| *\*[thisArg](Function): The* `callback <https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks>`_ *function.*
 |
 | **Returns**
 | *(\*) An error or the result of the iteration*
@@ -330,7 +330,7 @@ Insert data into the bucket. Different from other functions of bucket, this func
   }
 
 | *origin_id(String): A String with ID of the origin. Default is the script analysis ID.*
-| *[thisArg](Function): The function invoked per iteration.*
+| *[thisArg](Function): The* `callback <https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks>`_ *function.*
 |
 | **Returns**
 | *(\*) An error and result of the iteration*
@@ -381,7 +381,7 @@ Get a list of all devices added in the user account.
 
 | **Arguments**
 | devices.list([thisArg])2
-| *[thisArg](Function): The function invoked per iteration.*
+| *[thisArg](Function): The* `callback <https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks>`_ *function.*
 |
 | **Returns**
 | *(\*) A list of all devices and their detailed information under the use account*
@@ -404,7 +404,7 @@ Get detailed information about a specific device by using its ID. The informatio
 | **Arguments**
 | devices.info("id", [thisArg])
 | *id(String): A String with the ID of the origin. The default is the ID from the script analysis*
-| *[thisArg](Function): The function invoked per iteration*
+| *[thisArg](Function): The callback function*
 |
 | **Returns**
 | *(JSON) Detailed information of the device*
@@ -435,7 +435,7 @@ Whenever you need to send a sms, use .send function.
 | sms.send("cel_number", "message", [thisArg])
 | *cel_number(String): A string with a phone number. If not sending to the USA, you have to add the country code, (+55) for Brazil, for example.*
 | *message(String): Message of the sms. Use "\n" to break line.*
-| *[thisArg](Function): The function invoked per iteration.*
+| *[thisArg](Function): The* `callback <https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks>`_ *function.*
 |
 | **Returns**
 | *(\*) An error and the result of the request*
@@ -467,7 +467,7 @@ Whenever you need to send an email, use .send function.
 |   **\*from**: *Name of who send the email;*
 |   **\*subject**: *Subject of the email;*
 |   **\*message**: *Message of the email. Use "<br>" to break a line.;*
-| *[thisArg](Function): The function invoked per iteration.*
+| *[thisArg](Function): The* `callback <https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks>`_ *function.*
 |
 | **Returns**
 | *(\*) An error and result of the iteration*
