@@ -221,23 +221,23 @@ Query
 ``query`` - query parameter returns some predefined functions to help you to obtain certain processed data. Note that you can not use two queries concurrently.
 
 
-+---------------+---------------------------------------------------+
-| QUERY         | DESCRIPTION                                       |
-+===============+===================================================+
-| max           | Get data with the highest value                   |
-+---------------+---------------------------------------------------+
-| min           | Get data with the lowest value                    |
-+---------------+---------------------------------------------------+
-| count         | Return the number of data located in the bucket   |
-+---------------+---------------------------------------------------+
-| lat_value     | Get the last data with field *value* not empty    |
-+---------------+---------------------------------------------------+
-| last_location | Get the last data with field *location* not empty |
-+---------------+---------------------------------------------------+
-| last_item     | Get the last data                                 |
-+---------------+---------------------------------------------------+
-| near *        | Get data near the specified geolocation           |
-+---------------+---------------------------------------------------+
++---------------+------------------------------------------------------------------------------+
+| QUERY         | DESCRIPTION                                                                  |
++===============+==============================================================================+
+| max           | Get data with the highest value                                              |
++---------------+------------------------------------------------------------------------------+
+| min           | Get data with the lowest value                                               |
++---------------+------------------------------------------------------------------------------+
+| count         | Return the number of data located in the bucket                              |
++---------------+------------------------------------------------------------------------------+
+| last_value    | Get the last data with field *value* not empty                               |
++---------------+------------------------------------------------------------------------------+
+| last_location | Get the last data with field *location* not empty                            |
++---------------+------------------------------------------------------------------------------+
+| last_item     | Get the last data, not checking if the fields *location* or *value* is empty |
++---------------+------------------------------------------------------------------------------+
+| near *        | Get data near the specified geolocation                                      |
++---------------+------------------------------------------------------------------------------+
 
 
 \*  Need additional parameters
