@@ -18,3 +18,4 @@ Welcome to Tago's documentation!
    sdk
    api
    Forum <https://community.tago.io/>
+   Sign up here <www.tago.io/>
