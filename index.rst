@@ -9,6 +9,7 @@ Welcome to Tago's documentation!
 .. toctree::
    :maxdepth: 2
 
+   Sign up for free! <https://admin.tago.io/signup/>
    getstarted
    concepts
    dashboard
@@ -18,4 +19,3 @@ Welcome to Tago's documentation!
    sdk
    api
    Forum <https://community.tago.io/>
-   Sign up here <www.tago.io/>
