@@ -87,7 +87,7 @@ POST - ``https://api.tago.io/data``
 +----------------------+----------------------+----------------------+
 | unit                 | string               | no                   |
 +----------------------+----------------------+----------------------+
-| value                | string               | no                   |
+| value                | string *             | no                   |
 +----------------------+----------------------+----------------------+
 | time                 | string               | no                   |
 +----------------------+----------------------+----------------------+
@@ -105,6 +105,9 @@ Request
 		"time"    : "2015-11-03 13:44:33",
 		"location": {"lat": 42.2974279, "lng": -85.628292}
 	}
+
+(*) In order to make easier for users to see their data in charts and dials, Tago will always try to convert the *value* to a number format (integer), even if it came as string.
+However, due to the range limitation, the automatic conversion will be done only for strings shorter than 15 characters. If a *value* originally is formed by a string longer than this length limitation, it will NOT be converted to a number.
 
 Edit Data
 *********
