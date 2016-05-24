@@ -488,35 +488,34 @@ Whenever you need to send an email, use .send function.
  });
  //-> It will return success or failure of the email send.
 
- .export
- -----
- Whenever you need to export a data as xml/json/csv by email, use .export
+.export
+-----
+Whenever you need to export a data as xml/json/csv by email, use .export
 
- | **Arguments**
- | email.export(model, email_scope, [thisArg])
- |
- | *model(JSON): Reference to the export, inside a json:*
- |   **\*data**: *An Array of data, retrieve by bucket service;*
- |   **\*output**: *Output format file, available are xml, csv and json;*
- |   **\*filename**: *Name of the file (OPTIONAL);*
- |   **\*simple(bool)**: *True/False. Format file with simple view or not. (OPTIONAL)*
- |
- | *email_scope(JSON): All email items inside a JSON. You should use follow items:*
- |   **\*to**: *Email which will receive the email;*
- |   **\*from**: *Name of who send the email;*
- |   **\*subject**: *Subject of the email;*
- |   **\*message**: *Message of the email. Use "<br>" to break a line.;*
- | *[thisArg](Function): The* `callback <https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks>`_ *function.*
- |
- | **Returns**
- | *(\*) An error and result of the iteration*
- |
- | **Examples**
+| **Arguments**
+| email.export(model, email_scope, [thisArg])
+|
+| *model(JSON): Reference to the export, inside a json:*
+|   **\*data**: *An Array of data, retrieve by bucket service;*
+|   **\*output**: *Output format file, available are xml, csv and json;*
+|   **\*filename**: *Name of the file (OPTIONAL);*
+|   **\*simple(bool)**: *True/False. Format file with simple view or not. (OPTIONAL)*
+|
+| *email_scope(JSON): All email items inside a JSON. You should use follow items:*
+|   **\*to**: *Email which will receive the email;*
+|   **\*from**: *Name of who send the email;*
+|   **\*subject**: *Subject of the email;*
+|   **\*message**: *Message of the email. Use "<br>" to break a line.;*
+| *[thisArg](Function): The* `callback <https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks>`_ *function.*
+|
+| **Returns**
+| *(\*) An error and result of the iteration*
+|
+| **Examples**
 
- .. code-block:: javascript
+.. code-block:: javascript
  var my_bucket = bucket("5705af2ce0bf5a85196d1c97")
  my_bucket("variable").query("last_value").run(function(error, data) {
-  console.log(result);
 
   var email = service("email");
   var email_scope = {
@@ -526,6 +525,12 @@ Whenever you need to send an email, use .send function.
    "message": "Good morning, Mary!<br> Time to fill the tank! Your car tank is almost empty, Shell gas station at Niles has the best price today."
   };
 
+  var model = {
+   "data"    : data,
+   "output"  : "csv",
+   "filename": "my-exported-csv",
+   "simple"  : true
+  }
 
   email.export(model, email_scope, function(error, result){
    console.log(result);
