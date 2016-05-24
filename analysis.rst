@@ -515,6 +515,7 @@ Whenever you need to export a data as xml/json/csv by email, use .export
 | **Examples**
 
 .. code-block:: javascript
+
  var my_bucket = bucket("5705af2ce0bf5a85196d1c97")
  my_bucket("variable").query("last_value").run(function(error, data) {
 
