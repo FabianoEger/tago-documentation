@@ -538,7 +538,7 @@ Whenever you need to export a data as xml/json/csv by email, use .export
    console.log(result);
   });
  });
-  //-> It will return success or failure of the email send.
+ //-> It will return success or failure of the email send.
 
 *******************
 Internal Variables
