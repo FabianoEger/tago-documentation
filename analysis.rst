@@ -488,6 +488,7 @@ Whenever you need to send an email, use .send function.
  });
  //-> It will return success or failure of the email send.
 
+
 .export
 -----
 Whenever you need to export a data as xml/json/csv by email, use .export
