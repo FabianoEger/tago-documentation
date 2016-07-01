@@ -29,7 +29,7 @@ import shlex
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['sphinxcontrib.disqus']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -288,3 +288,7 @@ texinfo_documents = [
 
 locale_dirs = ['locale/']
 gettext_compact = False
+
+
+# --- Extentions Options
+disqus_shortname = 'docs-tago-io'

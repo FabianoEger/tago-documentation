@@ -303,3 +303,5 @@ Start/End date parameters accept different formats, which include selection base
 +--------------------------------------------+
 
 - Relative dates will be subtracted or added to the current time.
+
+.. disqus::
