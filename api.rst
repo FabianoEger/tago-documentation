@@ -123,6 +123,7 @@ It's possible to send more than one data at same time, using an array.
     }]
 
 (*) Variable field should no contain special characters like *?!<>.-=$ or space. Also, notice that the variable will always be converted to lowercase in our database.
+
 (**) In order to make easier for users to see their data in charts and dials, Tago will always try to convert the *value* to a number format (integer), even if it came as string.
 However, due to the range limitation, the automatic conversion will be done only for strings shorter than 15 characters. If a *value* originally is formed by a string longer than this length limitation, it will NOT be converted to a number.
 
