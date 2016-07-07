@@ -100,13 +100,27 @@ Request
 
 .. code-block:: json
 
-	{
-		"variable": "temperature",
-		"unit"    : "F",
-		"value"   : 55,
-		"time"    : "2015-11-03 13:44:33",
-		"location": {"lat": 42.2974279, "lng": -85.628292}
-	}
+    {
+        "variable": "temperature",
+        "unit"    : "F",
+        "value"   : 55,
+        "time"    : "2015-11-03 13:44:33",
+        "location": {"lat": 42.2974279, "lng": -85.628292}
+    }
+
+It's possible to send more than one data at same time, using an array.
+
+.. code-block:: json
+
+    [{
+        "variable": "temperature",
+        "unit"    : "F",
+        "value"   : 55,
+    }, {
+        "variable": "temperature_celsius",
+        "unit"    : "C",
+        "value"   : 12,
+    }]
 
 (*) Variable field should no contain special characters like *?!<>.-=$ or space. Also, notice that the variable will always be converted to lowercase in our database.
 (**) In order to make easier for users to see their data in charts and dials, Tago will always try to convert the *value* to a number format (integer), even if it came as string.
@@ -139,9 +153,9 @@ Request
 
 .. code-block:: json
 
-	{
-		"unit" : "C"
-	}
+    {
+        "unit" : "C"
+    }
 
 Delete Data
 ***********
@@ -184,35 +198,35 @@ Response - Below is the data returned without any parameters. ``https://api.tago
 
 .. code-block:: json
 
-	{
-	    "status" : true,
-	    "result": [
-	        {
-	            "id": "547e42847dbf3af122c02582",
-	            "location": {
-	                "coordinates": [
-	                    41.878876,
-	                    -87.635915
-	                ],
-	                "type": "Point"
-	            },
-	            "time": "2014-12-02T22:51:48.005Z",
-	            "variable": "location"
-	        }, {
-	            "id": "547e353d7dbf3af122c0257d",
-	            "time": "2014-12-02T21:55:09.301Z",
-	            "unit": "%",
-	            "value": "32",
-	            "variable": "fuel_level"
-	        },  {
-	            "id": "547e41f97dbf3af122c02580",
-	            "time": "2014-12-02T22:49:29.777Z",
-	            "unit": "psi",
-	            "value": "25",
-	            "variable": "oil_pressure"
-	        }
-	    ]
-	}
+    {
+        "status" : true,
+        "result": [
+            {
+                "id": "547e42847dbf3af122c02582",
+                "location": {
+                    "coordinates": [
+                        41.878876,
+                        -87.635915
+                    ],
+                    "type": "Point"
+                },
+                "time": "2014-12-02T22:51:48.005Z",
+                "variable": "location"
+            }, {
+                "id": "547e353d7dbf3af122c0257d",
+                "time": "2014-12-02T21:55:09.301Z",
+                "unit": "%",
+                "value": "32",
+                "variable": "fuel_level"
+            },  {
+                "id": "547e41f97dbf3af122c02580",
+                "time": "2014-12-02T22:49:29.777Z",
+                "unit": "psi",
+                "value": "25",
+                "variable": "oil_pressure"
+            }
+        ]
+    }
 
 Variables
 =========
