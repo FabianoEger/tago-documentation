@@ -119,10 +119,6 @@ The useful side of this service is that you can restore the old data from a sing
 
 //TODO: Insert backup screenshot here
 
-.. image:: _static/concepts/bucket_backup.png
-	:width: 70%
-	:align: center
-
 Data Retention
 ==============
 Since storing data in Tago can make you spend more money, or if you just don't want too many data in your bucket, you can active the Data Retention service to automatically remove old data from your bucket.
@@ -130,6 +126,8 @@ Since storing data in Tago can make you spend more money, or if you just don't w
 If you select the default option "forever", it means that the data will never be removed from the bucket until you do remove manually. Otherwise, you need to specify a time that data will be available. For example, one day means that data will remain available just for one day, and then it will be removed.
 
 **Important**: The data retention will always maintain the last data from a variable until a new one arrives.
+
+//TODO: Insert data retention configuration here
 
 Sharing Buckets
 ***************
