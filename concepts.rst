@@ -103,6 +103,33 @@ Some additional features are included to manipulate the variables. Here the vari
 
 .. _ref_concepts_sharing_bucket:
 
+Backup
+======
+With this option activated, Tago will automatically generate one backup for every day in your account, for the selected bucket. You can have as many buckets with backup activated as you want, but the backup will not be generated all at once: Since we have a lot of customers and backups being generated ever hour, it’s possible that our API takes at least some days to backup all your data. It depends directly on how many data you have stored.
+
+Indifferent of the backup being active or not, we take the caution of always backup our customer database in a global backup. But is much hardier to restore in this way if you lose your data for some reason. And we can't guarantee that your data will be in the backup if it is a recently record.
+
+.. image:: _static/concepts/bucket_backup.png
+	:width: 70%
+	:align: center
+
+The backup will always store the data until midnight of your time zone. One backup by day. So if you have data stored from an entire year, will be generated one backup for each day. 
+
+The useful side of this service is that you can restore the old data from a single click in the Backup menu, at any time you want. 
+
+//TODO: Insert backup screenshot here
+
+.. image:: _static/concepts/bucket_backup.png
+	:width: 70%
+	:align: center
+
+Data Retention
+==============
+Since storing data in Tago can make you spend more money, or if you just don't want too many data in your bucket, you can active the Data Retention service to automatically remove old data from your bucket.
+
+If you select the default option "forever", it means that the data will never be removed from the bucket until you do remove manually. Otherwise, you need to specify a time that data will be available. For example, one day means that data will remain available just for one day, and then it will be removed.
+
+**Important**: The data retention will always maintain the last data from a variable until a new one arrives.
 
 Sharing Buckets
 ***************
