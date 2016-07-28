@@ -73,6 +73,26 @@ Using tokens is simple, just add them in the header of the request.
 | Authentication | Any Token (Account or Device) |
 +----------------+-------------------------------+
 
+Blocking Policy
+***************
+
+When doing a request to Tago, it could be a POST, GET, DELETE or PUT, your account will face our blocking policy that prevents attacks, like DDOS, to our server and any other kind of abuses.
+
+For the majority part of our costumers, it will not be a problem to be a concern. Since it is necessary an high amount number of requests in a short period of time, to cause you any issue.
+
+Exists three types of politics, that will change how much requests you can do. If you reach 50%/80%/100% of your limit, we automatically will send you a warning email, like this:
+
++----------------+-------------------------------+
+| Token          | Requests per hour             |
++================+===============================+
+| Account-Token /| 10000 requests. Both          |
+| Device-Token   | Share the same request limit  |
++----------------+-------------------------------+
+| Public-Token   | 10000 requests                |
++----------------+-------------------------------+
+
+If for some reason you need to do more requests than our policy allow, you can contact us and we will try our best to help you cross this obstacle.
+
 Send Data
 *********
 
@@ -122,7 +142,7 @@ It's possible to send more than one data at same time, using an array.
         "value"   : 12,
     }]
 
-(*) Variable field should no contain special characters like *?!<>.-=$ or space. Also, notice that the variable will always be converted to lowercase in our database.
+(*) Variable field should no contain special characters like *?!<>.-=$ or space. Also, notice that the varia\nle will always be converted to lowercase in our database.
 
 (**) In order to make easier for users to see their data in charts and dials, Tago will always try to convert the *value* to a number format (integer), even if it came as string.
 However, due to the range limitation, the automatic conversion will be done only for strings shorter than 15 characters. If a *value* originally is formed by a string longer than this length limitation, it will NOT be converted to a number.
@@ -161,16 +181,34 @@ Request
 Delete Data
 ***********
 
-DELETE - ``https://api.tago.io/data/:id``
+| DELETE - ``https://api.tago.io/data/:id``
+|
+| DELETE - ``https://api.tago.io/data``
+| DELETE - ``https://api.tago.io/data?qty=:qty``
+|
+| DELETE - ``https://api.tago.io/data/:variable_name``
+| DELETE - ``https://api.tago.io/data/:variable_name?qty=:qty``
+|
 
-DELETE - ``https://api.tago.io/data``
-
-DELETE - ``https://api.tago.io/data/:variable_name``
-
-- Each time you insert a data, an ID is associated with it. You can read this ID by using the GET method.
+Each time you insert a data, an ID is associated with it. You can read this ID by using the GET method.
 
 Delete method can be used in 3 forms: without argument, with variable, or with ID.  If no argument is specified at all, the most recent data inserted into your bucket will be removed.
 
+You can pass a query parameter ``qty`` to specify a number of records you want to delete. It will not work when deleting by ID, only for variable or without a parameter:
+
+|  **Examples:**
+|   Delete the last 10 records in the variable temperature
+|   ``https://api.tago.io/data/temperature?qty=10``
+| 
+|   Delete the all records for variable temperature
+|   ``https://api.tago.io/data/temperature?qty=all``
+|
+|   Delete the all records from the device
+|   ``https://api.tago.io/data?qty=all``
+|
+|   Delete the record by its ID
+|   ``https://api.tago.io/data/579a3c22861e23d02162e87f``
+|
 
 Get Data
 ********
