@@ -118,19 +118,9 @@ The backup process for each bucket will always run at midnight of your time zone
 
 You can easily recover the data from the backup and move it back to the online database (buckets) by selecting the files based on the period you need. 
 
-//TODO: Insert backup screenshot here
-
-Data Retention
-==============
-Tago uses a very fast and reliable database system to store your data and make it available online at any time for visualization or analysis as needed. Each of this data is considered one register that is counted against your data storage limit. Instead of just to increase this limit, you may want to consider to define a period of time that  you want Tago system to keep the data, and automatically remove the old ones. And, when you activate the Backup function for the bucket, you will still have it in the backup system (offline) for future use.  
-
-When the data is removed by the Retention system, even if it is under the backup session, it will not be available for visualization or data analysis. You will need to recover the specific period of data from the Backup to make it available online again.
-
-If you select the default option "forever", it means that the data will never be removed from the bucket unless you remove it manually. Otherwise, you need to specify a time that data will be available. For example, 1day means that data will remain available just for one day, and then it will be removed.
-
-**Important**: The data retention will maintain at least the last data from a variable.
-
-//TODO: Insert data retention configuration here
+.. image:: _static/concepts/backup_list.png
+	:width: 70%
+	:align: center
 
 Sharing Buckets
 ***************
