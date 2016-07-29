@@ -73,25 +73,25 @@ Using tokens is simple, just add them in the header of the request.
 | Authentication | Any Token (Account or Device) |
 +----------------+-------------------------------+
 
-Blocking Policy
+Usage Policy
 ***************
 
-When doing a request to Tago, it could be a POST, GET, DELETE or PUT, your account will face our blocking policy that prevents attacks, like DDOS, to our server and any other kind of abuses.
+When executing a request to Tago, through POST, GET, DELETE or PUT, your account will face our a blocking limit policy based on your account settings. Such blocking system also helps to prevent attacks to our server, like DDOS, or any other kind of abuses.
 
-For the majority part of our costumers, it will not be a problem to be a concern. Since it is necessary an high amount number of requests in a short period of time, to cause you any issue.
+Based on our estimation, for the majority of our users, such policy will not cause problems to their applications. The limit is based on the number of requests per certain period of time.
 
-Exists three types of politics, that will change how much requests you can do. If you reach 50%/80%/100% of your limit, we automatically will send you a warning email, like this:
+There are three limit levels that will be trigger based on your requests per hour. As you reach 50%/80%/100% of your limit, Tago will automatically send you warning emails.
 
 +----------------+-------------------------------+
 | Token          | Requests per hour             |
 +================+===============================+
-| Account-Token /| 10000 requests. Both          |
-| Device-Token   | Share the same request limit  |
+| Account-Token /| 10,000 requests. Both accesses|
+| Device-Token   | share the same request limit. |
 +----------------+-------------------------------+
-| Public-Token   | 10000 requests                |
+| Public-Token   | 10,000 requests               |
 +----------------+-------------------------------+
 
-If for some reason you need to do more requests than our policy allow, you can contact us and we will try our best to help you cross this obstacle.
+If for some reason you need to do more requests than our account setting allows, you can contact us directly.
 
 Send Data
 *********
