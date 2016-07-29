@@ -114,7 +114,7 @@ Regardless of backup being active or not, we take the caution of always backup o
 	:width: 70%
 	:align: center
 
-The backup process for each bucket will always run at midnight of your time zone. The system will create one backup file per day. So if you have data stored from an entire year, will be generated one backup for each day. 
+The backup process for each bucket will always run at midnight of your time zone (defined at Account Settings). The system will create one backup file per day. Therefore, if for example you have data stored from an entire year, it will be generated 365 backup files - one for each day. 
 
 You can easily recover the data from the backup and move it back to the online database (buckets) by selecting the files based on the period you need. 
 
