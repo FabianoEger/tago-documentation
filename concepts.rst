@@ -192,11 +192,11 @@ Managing Devices
 Under the **General Information** session, you can find detailed information about the device.
 In your list of devices, select one to get more information, and click on MORE to obtain details.
 
-Actived
-=======
+Activated
+=========
 
 This option will define how Tago will respond to any request from the device.
-If the switch is 'OFF', the system will deny access to device to any command from its side. When it is 'ON', the system will continue checking the credentials (token) and respond accordingly.
+If the switch is 'OFF', the system will deny access to any command coming from the device. When it is 'ON', the system will continue checking the credentials (token) and respond accordingly.
 
 Visible
 =======
