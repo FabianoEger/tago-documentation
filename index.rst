@@ -14,6 +14,7 @@ Welcome to Tago's documentation!
    concepts
    dashboard
    analysis
+   analysisv2
    actions
    tutorials
    sdk
