@@ -6,12 +6,12 @@ Analysis V2
 ###########
 The **analysis** is a powerful feature at Tago that experts and software developers can use to implement scripts to analyze and manipulate the data sent by the devices in real time.
 
-Analysis is programmed using Javascript Tago’s SDK. You can get more instructions on how to write an analysis script in the our `SDK documentation <http://sdk.js.tago.io/en/latest/>`_.
+Analysis is programmed using Node.js Tago’s SDK. You can get more instructions on how to write an analysis script in our `SDK documentation <http://sdk.js.tago.io/en/latest/>`_.
 
-Here, you have access to all data inside your devices, and some services provided by Tago.
+By using the Analysis, you have access to all your data, devices, and even the services provided by Tago. One example of service is the weather that provides realtime condition data about the current and forecast weather for different locations.
 
-If you combine Analysis with Actions you can execute that script whenever a predefined variable with value arrives at Tago.
-For example, you can process your information, as convert, transform, apply functions for that value. Also you can add new values in another bucket, get data from there or program actions such as send email, sms, etc...
+Also, if you combine Analysis with Actions you can execute that script whenever a predefined variable with value arrives at Tago.
+For example, you can process your data and perform a math transformation for any variable. Also you can add new values in another data bucket, get data from there, or program actions that will send email, SMS, or data back to an specific device.
 
 *******************
 Setting Up Analysis
