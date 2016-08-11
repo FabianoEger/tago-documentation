@@ -6,7 +6,7 @@ Analysis V2
 ###########
 The **analysis** is a powerful feature at Tago that experts and software developers can use to implement scripts to analyze and manipulate the data sent by the devices in real time.
 
-Analysis is programmed using Node.js Tago’s SDK. You can get more instructions on how to write an analysis script in the our `SDK documentation <http://sdk.js.tago.io/en/latest/>`_.
+Analysis is programmed using Node.js Tago’s SDK. You can get more instructions on how to write an analysis script in our `SDK documentation <http://sdk.js.tago.io/en/latest/>`_.
 
 Here, you have access to all data inside your devices, and some services provided by Tago.
 
