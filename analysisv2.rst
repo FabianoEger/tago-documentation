@@ -65,6 +65,8 @@ Examples
 ********
 Tago provide a list of analysis examples to help you understand better how to use our analyze service. There you can get great examples on how to get and insert records, send email and other things.
 
+All examples come with a README.md file, with instructions to help you put the analysis to work. Remember to read them.
+
 .. image:: _static/analysisv2/analysis_examples.png
 
 | 1. **Name**: Name of the Example;
