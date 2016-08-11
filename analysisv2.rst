@@ -26,7 +26,7 @@ General Information
 ********************
 When you get inside your analysis, you will come across some configurations that will help you to personalize your analysis. In the General Information area, you should define the *time interval* that your analysis will run continuously, and the *environment variables* that are essential to a successful modular script.
 
-.. image:: _static/analysis/analysis_general.png
+.. image:: _static/analysisv2/analysis_general.png
 
 | 1. **Analysis Name**: set the analysis name;
 | 2. **Time interval to run this script**: set the time period that your script will automatically run. If you want your script to be initiated by an event, select "never" and you can configure the :ref:`action <ref_actions_run_analysis>` to do it;
@@ -45,12 +45,16 @@ When you get inside your analysis, you will come across some configurations that
 | 10. **Show Console**: Show the console of the analysis;
 | 11. **Show Examples**: Show a list of analysis examples. You can download them and use as you wish;
 | 12. **Run Script**: will immediately run your script;
-| 14. **Save**: Save any change made in the analysis information;
+| 13. **Save**: Save any change made in the analysis information;
+| 14. **Actived**: Turn on/off the current analysis;
+| 15. **Delete**: Delete current analysis;
 |
 
 Environment Variables
 *********************
 Enviroment Variables is a very useful resource to send variables to the context of your analysis. You can, for example, put token of accounts and devices here, to be used later in the analysis when it runs. Analysis will get this variables by the parameter "environment" in the context object.
+
+.. image:: _static/analysisv2/analysis_variables.png
 
 | 5. **New Environment variable**: will add an environment variable. No need to delete, just leave blank if you don't need to use it
 |  5-1. **Name**: the variable name.
@@ -60,6 +64,8 @@ Enviroment Variables is a very useful resource to send variables to the context 
 Examples
 ********
 Tago provide a list of analysis examples to help you understand better how to use our analyze service. There you can get great examples on how to get and insert records, send email and other things.
+
+.. image:: _static/analysisv2/analysis_examples.png
 
 | 1. **Name**: Name of the Example;
 | 2. **Description**: Description of the Example;
@@ -72,6 +78,7 @@ Use the console to monitor the variables and status of your script. You can see 
 
 .. image:: _static/analysis/analysis_console.png
 
+| 2. **Run Script**: will immediately run your script;
 | 2. **Console Screen**: Any error or response to a "context.log" will be show up here;
 | 3. **Clear Console**: clear everything that are showed in your console screen;
 | 4. **Auto-Clear**: clear the console every time the script runs;
