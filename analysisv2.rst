@@ -22,8 +22,55 @@ Create your own analysis is very easy. First, you need to click on Add Analysis 
 
 .. _analysis_general_information:
 
+Node.js and NPM
+***************
+Node isn’t a program that you simply launch like Word or Photoshop: you won’t find it pinned to the taskbar or in your list of Apps. To use Node you must type command-line instructions, so you need to be comfortable with (or at least know how to start) a command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows).
+
+Warning: You can use any version of Node.js to run analysis on your machine. But if you desire to upload the analysis to Tago to run it, the version restriction is 4.4.7
+
+How to Install
+==============
+Please, open `Node.js Linux Installation Guide <https://nodejs.org/en/download/package-manager/>`_ for instructions.
+
+Tago SDK Install
+================
+The Tago SDK for Node.js is essential to help you send instructions to Tago and run any of our examples.
+Run `npm install tago` in your command-line tool.
+
+Python
+******
+We are still working in a SDK for Python. Check Other Languages if you want to program in Python before our official support.
+
+Other Languages
+***************
+Tago will not provide SDK for other languages. If you still want to use them to comunicate with Tago, you can check our :ref:`Api documentation <ref_api_api>` and send your own http requests.
+
+Creating Analysis
+*****************
+1. Create a Analysis;
+2. Select to run "external";
+3. Copy the Analysis-Token;
+4. Press "Show Examples" and Download a Example;
+5. Check the example Readme.md for instructions of how to use it;
+6. Press "Show Variables" and set the Environment Variables if needed;
+
+.. image:: _static/analysisv2/analysis.gif
+
+Programming
+***********
+1. Open index.js with any editor you have;
+2. Change or create code as you want;
+
+Upload the Script
+***********
+1. If your script have dependencies, get our CLI and build to a single analysis;
+2. Press "Upload File" on admin analysis;
+3. Select the .js file;
+4. Change to run script from "Tago";
+
+*******************
 General Information
-********************
+*******************
 When you get inside your analysis, you will come across some configurations that will help you to personalize your analysis. In the General Information area, you should define the *time interval* that your analysis will run continuously, and the *environment variables* that are essential to a successful modular script.
 
 .. image:: _static/analysisv2/analysis_general.png
