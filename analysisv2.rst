@@ -47,26 +47,29 @@ Tago will not provide SDK for other languages. If you still want to use them to 
 
 Creating Analysis
 *****************
-1. Create a Analysis;
-2. Select to run "external";
-3. Copy the Analysis-Token;
-4. Press "Show Examples" and Download a Example;
-5. Check the example Readme.md for instructions of how to use it;
-6. Press "Show Variables" and set the Environment Variables if needed;
+| 1. **Create** a Analysis;
+| 2. Select to run **"external"**;
+| 3. Copy the **Analysis-Token**;
+| 4. **Press "Show Examples"** and **Download** a Example;
+|   4-1. Check the example **Readme.md** for instructions of how to use it;
+| 6. **Press "Show Variables"** and set the **Environment Variables** if needed;
+|
 
 .. image:: _static/analysisv2/analysis.gif
 
 Programming
 ***********
-1. Open index.js with any editor you have;
-2. Change or create code as you want;
+| 1. Open index.js with any editor you have;
+| 2. Change or create code as you want;
+|
 
 Upload the Script
-***********
-1. If your script have dependencies, get our CLI and build to a single analysis;
-2. Press "Upload File" on admin analysis;
-3. Select the .js file;
-4. Change to run script from "Tago";
+*****************
+| 1. If your script have dependencies, get our CLI and build to a single analysis;
+| 2. Press "Upload File" on admin analysis;
+| 3. Select the .js file;
+| 4. Change to run script from "Tago";
+|
 
 *******************
 General Information
@@ -103,9 +106,9 @@ Enviroment Variables is a very useful resource to send variables to the context 
 
 .. image:: _static/analysisv2/analysis_variables.png
 
-| 5. **New Environment variable**: will add an environment variable. No need to delete, just leave blank if you don't need to use it
-|  5-1. **Name**: the variable name.
-|  5-2. **Value**: the value of the variable. It can be *integer* or *string*
+| 1. **New Environment variable**: will add an environment variable. No need to delete, just leave blank if you don't need to use it
+| 2. **Name**: the variable name.
+| 3. **Value**: the value of the variable. It can be *integer* or *string*
 |
 
 Examples
