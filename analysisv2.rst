@@ -16,9 +16,11 @@ If you are new at Tago, take a look at this short video that will introduce you 
 
 
 There are three main steps that you need to take in order to create and run your scripts on analysis.
-1. Setup 
-2. Code your script
-3. Upload
+
+| 1. Setup 
+| 2. Code your script
+| 3. Upload
+|
 
 *******************
 Setting Up Analysis
@@ -29,54 +31,67 @@ Create your own analysis is easy. First, you need to click on Add Analysis in th
 
 .. _analysis_general_information:
 
-Node.js and NPM
-***************
-Node isn’t a program that you simply launch like Word or Photoshop: you won’t find it pinned to the taskbar or in your list of Apps. To use Node you must type command-line instructions, so you need to be comfortable with (or at least know how to start) a command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows).
+1. Setup
+********
+It's possible to setup the analysis in many ways. For initial purposes, we will only set the analysis to run with an external script. It allows you to run the analysis direct from your machine, and do any changes you want in realtime. After downloading the example, you need get :ref:`Analysis-Token <ref_analysisv2_general>` from your analysis and set inside the index.js
 
-Warning: You can use any version of Node.js to run analysis on your machine. But if you desire to upload the analysis to Tago to run it, the version restriction is 4.4.7
-
-How to Install
-==============
-Please, open `Node.js Linux Installation Guide <https://nodejs.org/en/download/package-manager/>`_ for instructions.
-
-Tago SDK Install
-================
-The Tago SDK for Node.js is essential to help you send instructions to Tago and run any of our examples.
-Run `npm install tago` in your command-line tool.
-
-Python
-******
-We are still working in a SDK for Python. Check Other Languages if you want to program in Python before our official support.
-
-Other Languages
-***************
-Tago will not provide SDK for other languages. If you still want to use them to comunicate with Tago, you can check our :ref:`Api documentation <ref_api_api>` and send your own http requests.
-
-Creating Analysis
-*****************
 | 1. **Create** a Analysis;
 | 2. Select to run **"external"**;
 | 3. Copy the **Analysis-Token**;
 | 4. **Press "Show Examples"** and **Download** a Example;
 |   4-1. Check the example **Readme.md** for instructions of how to use it;
-| 6. **Press "Show Variables"** and set the **Environment Variables** if needed;
+| 5. **Press "Show Variables"** and set the **Environment Variables** if needed;
+| 7. Set the Analysis-Token inside the analysis script.
 |
 
 .. image:: _static/analysisv2/analysis.gif
 
-Programming
-***********
-| 1. Open index.js with any editor you have;
-| 2. Change or create code as you want;
+2. Code your script
+*******************
+With the example in your hands, you can do any change you want. Officially, Tago only support Node.js and Python as it analysis code language, but you are free to use any language you want. Be in mind if you use another language, you can't upload the script to Tago, and will need to run in your machine.
+
+| 1. If using Node, type `npm install` inside the example folder.
+| 1. Open **index.js** with any editor you have;
+| 2. **Change** or **create** code as you want;
 |
 
-Upload the Script
-*****************
-| 1. If your script have dependencies, get our CLI and build to a single analysis;
-| 2. Press "Upload File" on admin analysis;
-| 3. Select the .js file;
-| 4. Change to run script from "Tago";
+*Node.js and NPM*
+=================
+Node isn’t a program that you simply launch like Word or Photoshop: you won’t find it pinned to the taskbar or in your list of Apps. To use Node you must type command-line instructions, so you need to be comfortable with (or at least know how to start) a command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows).
+
+Warning: You can use any version of Node.js to run analysis on your machine. But if you desire to upload the analysis to Tago to run it, the version restriction is 4.4.7
+
+| **How to Install**
+| Please, open `Node.js Linux Installation Guide <https://nodejs.org/en/download/package-manager/>`_ for instructions.
+| 
+| **Tago SDK Install**
+| The Tago SDK for Node.js is essential to help you send instructions to Tago and run any of our examples.
+| Run `npm install tago` in your command-line tool.
 |
+
+*Python*
+========
+We are still working in a SDK for Python. Check Other Languages if you want to program in Python before our official support.
+
+*Other Languages*
+=================
+Tago will not provide SDK for other languages. If you still want to use them to comunicate with Tago, you can check our :ref:`Api documentation <ref_api_api>` and send your own http requests.
+
+3. Upload
+*********
+As you can run the script analysis on your machine, this step is only necessary if you want to let Tago handle the script for you.
+
+When uploading a script, Tago will run the analysis using Node version 4.4.7 LTS or Python 2.7. If you are using a more recent version, you should check for compatibility before upload. 
+
+*All available examples for download are compatible with Tago*
+
+| 1. If your script have **dependencies**, get our `CLI <http://sdk.js.tago.io/en/latest/analysis.html#build>`_ and build to a single analysis;
+| 2. **Press "Upload File"** on admin analysis;
+| 3. Select the **.js file**;
+| 4. Change to **run script from "Tago"**;
+|
+
+.. _ref_analysisv2_general:
 
 *******************
 General Information
@@ -137,7 +152,7 @@ Use the console to monitor the variables and status of your script. You can see 
 
 .. image:: _static/analysis/analysis_console.png
 
-| 2. **Run Script**: will immediately run your script;
+| 1. **Run Script**: will immediately run your script;
 | 2. **Console Screen**: Any error or response to a "context.log" will be show up here;
 | 3. **Clear Console**: clear everything that are showed in your console screen;
 | 4. **Auto-Clear**: clear the console every time the script runs;
