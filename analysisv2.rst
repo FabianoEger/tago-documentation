@@ -12,11 +12,18 @@ By using the Analysis, you have access to all your data, devices, and even the s
 
 Also, if you combine Analysis with Actions you can execute that script whenever a predefined variable with value arrives at Tago.
 For example, you can process your data and perform a math transformation for any variable. Also you can add new values in another data bucket, get data from there, or program actions that will send email, SMS, or data back to an specific device.
+If you are new at Tago, take a look at this short video that will introduce you to Tago Analysis. You will understand how the pieces are put together, and what are the steps that you need to take to start scripting today.
+
+
+There are three main steps that you need to take in order to create and run your scripts on analysis.
+1. Setup 
+2. Code your script
+3. Upload
 
 *******************
 Setting Up Analysis
 *******************
-Create your own analysis is very easy. First, you need to click on Add Analysis in the upper left of the analysis main screen. Just write a name and a description, and you're ready to go!
+Create your own analysis is easy. First, you need to click on Add Analysis in the upper left of the analysis main screen. Just write a name and a description, and you're ready to go!
 
 .. image:: _static/analysis/analysis_new.png
 
