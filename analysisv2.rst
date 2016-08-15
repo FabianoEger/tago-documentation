@@ -22,9 +22,9 @@ There are three main steps that you need to take in order to create and run your
 | 3. Upload
 |
 
-*******************
-Setting Up Analysis
-*******************
+********************
+Creating an Analysis
+********************
 Create your own analysis is easy. First, you need to click on Add Analysis in the upper left of the analysis main screen. Just write a name and a description, and you're ready to go!
 
 .. image:: _static/analysis/analysis_new.png
@@ -35,24 +35,26 @@ Create your own analysis is easy. First, you need to click on Add Analysis in th
 ********
 It's possible to setup the analysis in many ways. For initial purposes, we will only set the analysis to run with an external script. It allows you to run the analysis direct from your machine, and do any changes you want in realtime. After downloading the example, you need get :ref:`Analysis-Token <ref_analysisv2_general>` from your analysis and set inside the index.js
 
-| 1. **Create** a Analysis;
+| 1. **Open** the specific analysis;
 | 2. Select to run **"external"**;
-| 3. Copy the **Analysis-Token**;
-| 4. **Press "Show Examples"** and **Download** a Example;
-|   4-1. Check the example **Readme.md** for instructions of how to use it;
+| 3. Copy the **Analysis-Token** - you will use it later in your code;
+| 4. **Press "Show Examples"** and **Download** an example;
+|   4-1. Check the description of the example on the **Readme.md** for instructions of how to use it;
 | 5. **Press "Show Variables"** and set the **Environment Variables** if needed;
-| 7. Set the Analysis-Token inside the analysis script.
+| 7. Replace the Analysis-Token in your script with that one copied at step 3.
 |
 
 .. image:: _static/analysisv2/analysis.gif
 
 2. Code your script
 *******************
-With the example in your hands, you can do any change you want. Officially, Tago only support Node.js and Python as it analysis code language, but you are free to use any language you want. Be in mind if you use another language, you can't upload the script to Tago, and will need to run in your machine.
+Open the example with the editor of your preference, and make the changes that you need in the code as necessary. Currently, if you are wish to run your code at Tago, have in mind that Tago only supports Node.js and Python languages. However, you are free to use any language you want if your select to run the analysis in the 'external' server. It means that if you chose to program in another language, you won't be able to upload the script on Tago; you will need to run the code in your machine or another server instead.
 
-| 1. If using Node, type `npm install` inside the example folder.
-| 1. Open **index.js** with any editor you have;
-| 2. **Change** or **create** code as you want;
+To write your code using node.js language, follow these steps:
+
+| 1. Inside the folder where you downloaded the example, install `npm install`;
+| 1. Open the **index.js** that you downloaded from the example using your editor;
+| 2. **Edit** or **create** the code as needed;
 |
 
 *Node.js and NPM*
@@ -71,17 +73,17 @@ Warning: You can use any version of Node.js to run analysis on your machine. But
 
 *Python*
 ========
-We are still working in a SDK for Python. Check Other Languages if you want to program in Python before our official support.
+We are still working on a SDK for Python. Check Other Languages if you need to program in Python before our official support.
 
 *Other Languages*
 =================
-Tago will not provide SDK for other languages. If you still want to use them to comunicate with Tago, you can check our :ref:`Api documentation <ref_api_api>` and send your own http requests.
+In the futuro, Tago will provide some SDK for other languages such as C# and C. If you still want to use them to communicate with Tago, you can check our :ref:`Api documentation <ref_api_api>` and send your own http requests.
 
 3. Upload
 *********
-As you can run the script analysis on your machine, this step is only necessary if you want to let Tago handle the script for you.
+As you can run your scripts on your machine, this step is only necessary if you want to let Tago handle the script for you.
 
-When uploading a script, Tago will run the analysis using Node version 4.4.7 LTS or Python 2.7. If you are using a more recent version, you should check for compatibility before upload. 
+When uploading a script, Tago will run it using Node version 4.4.7 LTS or Python 2.7. If you are using a more recent version, you should check for compatibility before upload it. 
 
 *All available examples for download are compatible with Tago*
 
