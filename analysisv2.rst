@@ -22,17 +22,12 @@ There are three main steps that you need to take in order to create and run your
 | 3. Upload
 |
 
-*******************
-Setting Up Analysis
-*******************
+1. Setup
+********
 Create your own analysis is easy. First, you need to click on Add Analysis in the upper left of the analysis main screen. Just write a name and a description, and you're ready to go!
 
 .. image:: _static/analysis/analysis_new.png
 
-.. _analysis_general_information:
-
-1. Setup
-********
 It's possible to setup the analysis in many ways. For initial purposes, we will only set the analysis to run with an external script. It allows you to run the analysis direct from your machine, and do any changes you want in realtime. After downloading the example, you need get :ref:`Analysis-Token <ref_analysisv2_general>` from your analysis and set inside the index.js
 
 | 1. **Create** a Analysis;
@@ -50,14 +45,18 @@ It's possible to setup the analysis in many ways. For initial purposes, we will 
 *******************
 With the example in your hands, you can do any change you want. Officially, Tago only support Node.js and Python as it analysis code language, but you are free to use any language you want. Be in mind if you use another language, you can't upload the script to Tago, and will need to run in your machine.
 
-| 1. If using Node, type `npm install` inside the example folder.
-| 1. Open **index.js** with any editor you have;
-| 2. **Change** or **create** code as you want;
+| 1. If using :ref:`Node <ref_analysis_node_and_npm>` , type `npm install` inside the example folder.
+| 2. Open **index.js** with any editor you have;
+| 3. **Change** or **create** code as you want;
 |
+
+.. _ref_analysis_node_and_npm:
 
 *Node.js and NPM*
 =================
-Node isn’t a program that you simply launch like Word or Photoshop: you won’t find it pinned to the taskbar or in your list of Apps. To use Node you must type command-line instructions, so you need to be comfortable with (or at least know how to start) a command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows).
+Node.js is a powerful language that allows you to code fast and easy. Is automatic integrated with Node Package Manager(NPM), which you can use to access a lot of repositorys to make you life easier.
+
+Node.js is a powerful and relative new programing language developed using JavaScript. It is a non-blocking and event-driven language that has been adopted for several developers and companies to deal with data-intensive real-time applications. You can learn about node.js `here <https://nodejs.org/en/>`._ To use Node you must type command-line instructions, so you need to be comfortable witha command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows). NPM is the node package manager that as the name implies, helps with node.js programs installation, sharing, and with the dependencies management.
 
 Warning: You can use any version of Node.js to run analysis on your machine. But if you desire to upload the analysis to Tago to run it, the version restriction is 4.4.7
 
@@ -66,7 +65,8 @@ Warning: You can use any version of Node.js to run analysis on your machine. But
 | 
 | **Tago SDK Install**
 | The Tago SDK for Node.js is essential to help you send instructions to Tago and run any of our examples.
-| Run `npm install tago` in your command-line tool.
+| To better know how to use the SDK for coding a Analysis, use our `SDK documentation <http://sdk.js.tago.io/en/latest/>`_.
+| Run `npm install --save tago` in your command-line tool.
 |
 
 *Python*
