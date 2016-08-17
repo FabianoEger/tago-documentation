@@ -196,7 +196,7 @@ Table widgets presents your data in a tabular way. It is one of the special kind
 
 To finish, you just need to fill your cells either with text or with the value of a variable. To do that, click on a cell, select the type and fill the value (a text or a variable).
 
-Cells with variables will always display the last value of the variable and it will be updated in real time as soon as a new value arrive.
+Cells with variables will always display the last value of the variable and it will be updated in real time as soon as a new value arrives.
 
 .. image:: _static/dashboard/widget_table.png
 
@@ -212,11 +212,17 @@ You are able to define colors for the cell where a variable is displayed. By def
       "metadata": {"color":"green"}
   }
   
+<<<<<<< HEAD
   As the color should be associate with the data of a variable, it is not possible to color cells that are selected as type 'Text'  (option available in each cell input used during the configuration).
   Use the metadata color options from your Analysis to help your users to detect issues or alerts on a table more easily.
 
 .. image:: _static/dashboard/widget_table_color.png
 
+=======
+As the color should be associate with the data of a variable, it is not possible to color cells that are selected as type 'Text'  (option available in each cell input used during the configuration).
+Use the metadata color options from your Analysis to help your users to detect issues or alerts on a table more easily.
+  
+>>>>>>> 79f4e14d2371421db699724ebe9fa12ee1f73454
 Dynamic Table
 *************
 
