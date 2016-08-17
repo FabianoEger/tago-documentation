@@ -200,6 +200,18 @@ Cells with variables will always display the last value of the variable and it w
 
 .. image:: _static/dashboard/widget_table.png
 
+You are able to use colors in the cell where a variable is displayed. By default, the background is transparent (white). If you use metadata when posting a variable, you are able to define the color of that specific background. For example, by adding metadata to this POST in JSON below, the cell will change its color to green. 
+
+.. code-block:: javascript
+  {
+      "variable" : "temperature",
+      "value": "71",
+      "unit"  :"F",
+      "metadata": {"color":"green"}
+  }
+  
+  Use the metadata color options from your Analysis to help your users to detect issues or alerts on a table more easily.
+  
 Dynamic Table
 *************
 
