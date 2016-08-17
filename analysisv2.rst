@@ -14,6 +14,9 @@ Also, if you combine Analysis with Actions you can execute that script whenever 
 For example, you can process your data and perform a math transformation for any variable. Also you can add new values in another data bucket, get data from there, or program actions that will send email, SMS, or data back to an specific device.
 If you are new at Tago, take a look at this short video that will introduce you to Tago Analysis. You will understand how the pieces are put together, and what are the steps that you need to take to start scripting today.
 
+.. raw:: html
+
+	 <video style="max-width: 100%;" preload="none" src="_static/analysisv2/analysis_intro.mp4"   controls></video><br><br>
 
 There are three main steps that you need to take in order to create and run your scripts on analysis.
 
@@ -59,7 +62,7 @@ To write your code using node.js language, follow these steps:
 
 *Node.js and NPM*
 =================
-Node.js is a powerful and relative new programing language developed using JavaScript. It is a non-blocking and event-driven language that has been adopted for several developers and companies to deal with data-intensive real-time applications. You can learn about node.js here <https://nodejs.org/en/>. To use Node you must type command-line instructions, so you need to be comfortable witha command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows).
+Node.js is a powerful and relative new programing language developed using JavaScript. It is a non-blocking and event-driven language that has been adopted for several developers and companies to deal with data-intensive real-time applications. You can learn about node.js `here <https://nodejs.org/en/>`._ To use Node.js you must type command-line instructions, so you need to be comfortable witha command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows).
 NPM is the node package manager that as the name implies, helps with node.js programs installation, sharing, and with the dependencies management.
 
 Warning: As you in most of the cases, developers will upload their code to run automatically on Tago server, it is necessary  to make sure that you install the most recent LTS, Long Term Support, version. Current Tago runs on the v4.4.7.   Therefore, don't use the most recent non-LTS version, unless you will only run it at your machine or another server.
