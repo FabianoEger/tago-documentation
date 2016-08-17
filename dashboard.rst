@@ -214,7 +214,9 @@ You are able to define colors for the cell where a variable is displayed. By def
   
   As the color should be associate with the data of a variable, it is not possible to color cells that are selected as type 'Text'  (option available in each cell input used during the configuration).
   Use the metadata color options from your Analysis to help your users to detect issues or alerts on a table more easily.
-  
+
+.. image:: _static/dashboard/widget_table_color.png
+
 Dynamic Table
 *************
 
