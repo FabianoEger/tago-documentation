@@ -2,7 +2,7 @@
 .. _ref_analysis_analysis:
 
 ########
-Analysis
+Analysis (deprecated)
 ########
 
 The **analysis** is a powerful feature at Tago that experts and software developers can use to implement scripts to analyze and manipulate the data sent by the devices in real time.
@@ -11,8 +11,6 @@ Analysis is programmed using Javascript language with Tago methods. Here, you ha
 
 If you combine Analysis with Actions you can execute that script whenever a predefined variable with value arrives at Tago.
 For example, you can process your information, as convert, transform, apply functions for that value. Also you can add new values in another bucket, get data from there or program actions such as send email, sms, etc...
-
-We have a github repository with some examples, check it out at: https://github.com/tago-io/tago-analysis-examples
 
 *******************
 Setting Up Analysis
