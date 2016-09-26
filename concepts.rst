@@ -106,7 +106,7 @@ Some additional features are included to manipulate the variables. Here the vari
 Backup
 ======
 All data sent to Tago is stored in a online database which very fast reponse time. On top of this other backups that Tago execute in its server you can activated your personal backup. With this option activated, Tago will automatically generate one backup for the selected bucket per day in your own account. This backups can be very helpfull in some cases, as when you want to activate data retantion that will automatically delete old data from your account, allowing you to avoid extra cost for data storage. Backup storage does not count against your data record storage limit (Under Setting / Account).
-You can have as many buckets with backup activated as you want. Is important to be aware that the backup will not be generated all at once, and it will depend on the quantity and the period of data stored in your bucket. Just as a reference, one bucket with a 30 days records can take about 5 hours to be complete. 
+You can have as many buckets with backup activated as you want. Is important to be aware that the backup will not be generated all at once, and it will depend on the quantity and the period of data stored in your bucket. Just as a reference, one bucket with a 30 days records can take more than one day to be completed.
 
 Regardless of backup being active or not, we take the caution of always backup our customer database in a global backup for several hours.
 
@@ -116,11 +116,23 @@ Regardless of backup being active or not, we take the caution of always backup o
 
 The backup process for each bucket will always run at midnight of your time zone (defined at Account Settings). The system will create one backup file per day. Therefore, if for example you have data stored from an entire year, it will be generated 365 backup files - one for each day. 
 
+Recover 
+-------
 You can easily recover the data from the backup and move it back to the online database (buckets) by selecting the files based on the period you need. 
 
 .. image:: _static/concepts/backup_list.png
 	:width: 70%
 	:align: center
+
+An old backup will be know as a recently added one. It means that this data will be backup at midnight, and will respect the data retention rules to be deleted.
+
+Data Retention
+==============
+To solve problems with a lot of data stored in a single bucket, and raising the cost of the data storage, you can active the data retention to automatically remove old data. It's configurable by each bucket, so you need to active it every time you create a new one.
+
+You can set the *retain data* to "Forever", it means that the data retention will never delete any data stored in that bucket, or you can set to *days* or even *months*. Setting to one day, means that data will remain in the bucket for the time of only one day.
+
+This system is directly linked to Backup system. If you have both enabled in the same bucket, Data Retention will always wait for the last backup to be done, and then it will be deleted.
 
 Sharing Buckets
 ***************
