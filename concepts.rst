@@ -105,10 +105,10 @@ Some additional features are included to manipulate the variables. Here the vari
 
 Backup
 ======
-All data sent to Tago is stored in a online database which very fast reponse time. On top of this other backups that Tago execute in its server you can activated your personal backup. With this option activated, Tago will automatically generate one backup for the selected bucket per day in your own account. This backups can be very helpfull in some cases, as when you want to activate data retantion that will automatically delete old data from your account, allowing you to avoid extra cost for data storage. Backup storage does not count against your data record storage limit (Under Setting / Account).
-You can have as many buckets with backup activated as you want. Is important to be aware that the backup will not be generated all at once, and it will depend on the quantity and the period of data stored in your bucket. Just as a reference, one bucket with a 30 days records can take more than one day to be completed.
+All data sent to Tago is stored in a online database (buckets) with very fast reponse time. And you can activate your personal backup service. With this option activated, Tago backend will automatically generate one backup for the selected bucket per day in your account. The backup function is very helpfull in cases as when you want to activate data retention that will automatically delete old data from your account, allowing you to reduce cost by removing data that are not accessible too often. Backup storage does not count against your data record bucket storage limit, but will be counted in the backup storage (with a signficant lower cost per data register).
+You may have as many buckets with backup active as you want. It is important to be aware that the backup will not be generated all at once, and it will depend on the quantity of data and the period stored in each bucket. Just as a reference, one bucket with a 30 days records can take about one day to be completed.
 
-Regardless of backup being active or not, we take the caution of always backup our customer database in a global backup for several hours.
+Regardless of backup being active or not, we take the caution of always backuping our customer database in a global backup for several hours.
 
 .. image:: _static/concepts/bucket_backup.png
 	:width: 70%
@@ -118,7 +118,7 @@ The backup process for each bucket will always run at midnight of your time zone
 
 Recover 
 -------
-You can easily recover the data from the backup and move it back to the online database (buckets) by selecting the files based on the period you need. 
+You can easily recover the data from the backup area and move it back to the online database (bucket) by selecting the files based on the period you need. 
 
 .. image:: _static/concepts/backup_list.png
 	:width: 70%
@@ -128,11 +128,13 @@ An old backup will be know as a recently added one. It means that this data will
 
 Data Retention
 ==============
-To solve problems with a lot of data stored in a single bucket, and raising the cost of the data storage, you can active the data retention to automatically remove old data. It's configurable by each bucket, so you need to active it every time you create a new one.
+We created the Data Retention feature to give the option for users to automatically remove data from the bucket after a defined period of time. The goal is to help customers to avoid unnecessary costs with data that don't need to be kept for a long period of time. By combining this feature with the Backup system, users can still keep old data by moving them to a lower cost storage system (offline that can be recovered later when necessary). Data Retention is configurable for each bucket and are disabled by default, so you need to active it every time you create a new one if you want to take advantage of the feature.
 
-You can set the *retain data* to "Forever", it means that the data retention will never delete any data stored in that bucket, or you can set to *days* or even *months*. Setting to one day, means that data will remain in the bucket for the time of only one day.
+You can set the *retain data* to "Forever", it means that the data in that bucket will never be deleted automatically, or you can set to *days* or even *months*. For example, setting it to one day means that data will remain in the bucket for the time of only one day.
 
-This system is directly linked to Backup system. If you have both enabled in the same bucket, Data Retention will always wait for the last backup to be done, and then it will be deleted.
+This system is directly linked to Backup system. If you have enabled both Backup and Data Retention in the same bucket, the Data Retention system will always wait for the last backup to be completed before it remove the data.
+
+When a certain backup is restored, that specific data will be kept in the bucket during the period set at the Data Retention.  For example, if you recover a backup file that was created 6 months ago, and the data retention is set to 15 days, this data set will be available for 15 days e then removed again from the buckets (you can recover it again if needed).
 
 Sharing Buckets
 ***************
