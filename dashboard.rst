@@ -240,16 +240,6 @@ Under **advanced options** you will find some specific options:
 
 **Display date and time**: if you check this options, a column named "Time" will be added to the table and will show the ``time`` of one of the values of that row.
 
-Pie
-***
-
-Not available yet.
-
-Control input
-**************
-
-Not available yet.
-
 .. _widget-form:
 
 Form input
@@ -300,13 +290,135 @@ Under **advanced options** you will find some specific options:
 
 **Display a map to visualize address**: this option will display a map at the end of the form, and this map will display the last address selected in a address field.
 
+Control input
+**************
+
+Control input allows you to create a single widget to input multiple variables, and change only one individually. It has less options than Form Input, but is more easy to set.
+
+You just select the variables you want to change, and after that, you select the Type and and Label of them. It's possible to select between two types:
+
+.. image:: _static/dashboard/widget_controlinput.png
+	:width: 50%
+	:align: center
+
+**Switch (true/false)**
+The input will be a switch type. A simple button that change the value of the variable to true or to false.
+
+**Input (value)**
+The input value allows you to entry with a value for the variable, and change only that one.
+
+.. image:: _static/dashboard/widget_controlinput_example.png
+	:width: 50%
+	:align: center
+
+Pie
+***
+
+Enter multiple variables and let the Pie widget automatic create a pie and slice it for you. You can choose between a circle or a semi-circle, it only change how you will view the data. See the examples bellow.
+
+You need to be sure that all variables will have a Number value. A text (string) value can broke the widget and will not show anything at all.
+
+.. image:: _static/dashboard/widget_pie.png
+	:width: 50%
+	:align: center
+
 Gauge
 *****
 
+Gauge shows a collections of metric widgets. You can choose between five types of Gauge that will show you different values, or in different ways. 
+
+Angular
+=======
+Enter a variable to show it in a angular meter.
+
+Options
+	**Minimum (main axis)**: Is the minimum value that the variable can reach. 
+	**Maximum (main axis)**: Is the maximum value that the variable can reach.
+
+
+Advanced Options
+	**Number Format (main axis):** Show the variable fully, or integer. You can select from multiple ways.
+	**Unit (main axis):** Unit to show in the widget, like "F" for fahrenheit.
+
+.. image:: _static/dashboard/widget_gauge_angular.png
+	:width: 50%
+	:align: center
+
+Solid
+=======
+Enter a variable to show it in a solid meter.
+
+Options
+	**Minimum (main axis)**: Is the minimum value that the variable can reach. 
+	**Maximum (main axis)**: Is the maximum value that the variable can reach.
+
+Advanced Options
+	**Number Format (main axis):** Show the variable fully, or integer. You can select from multiple ways.
+	**Unit (main axis):** Unit to show in the widget, like "F" for fahrenheit.
+
+.. image:: _static/dashboard/widget_gauge_solid.png
+	:width: 50%
+	:align: center
+
+Clock
+=====
+Select a timezone to show a analogic clock. You can pass the mouse above the widget to see a popup of the time in a digital way.
+
+.. image:: _static/dashboard/widget_gauge_clock.png
+	:width: 50%
+	:align: center
+
+Dual Axes
+=========
+
 Not available yet.
+
+VU Meter
+========
+
+Not available yet.
+
+Image
+*****
+
+The Image widget, as the same says, is to put a image on your dashboard. It has some specific features, you can create a static image or a dynamic image based on value of a variable. You can switch between what you want selecting one of the follow options.
+
+Static Image
+============
+You can enter an URL to show in your dashboard.
+
+.. image:: _static/dashboard/widget_image.png
+	:width: 50%
+	:align: center
+
+By Variable
+===========
+You can select multiple conditions to show different images. Just enter with the condition and the image to be showed.
+
+| It's possible to enter just one variable for the conditions.
+| Click on **'+'** to create a new condition for this variable.
+| Select the condition and put a image on the URL box.
+
+.. image:: _static/dashboard/widget_image_byvariable.png
+	:width: 50%
+	:align: center
 
 Note
 ****
+
+Note allows you to create a text to be viewed in your dashboard. It accepts a `markdown <http://simplemde.com/markdown-guide>`_ formated text, allowing you to use bold, italic and list tools.
+
+.. image:: _static/dashboard/widget_note.png
+	:width: 50%
+	:align: center
+
+Grain Bin
+*********
+
+Not available yet.
+
+Grain Temp
+**********
 
 Not available yet.
 
