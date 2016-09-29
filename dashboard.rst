@@ -442,7 +442,7 @@ To complete the action, fill the email of whom you want to share your dashboard.
 
 	 <video style="max-width: 100%;" preload="none" src="_static/dashboard/dashboard_share_2.mp4"   controls></video><br><br>
 
-In that screen you can also visualize the list of people which you already shared that dashboard. From there, you can also stop sharing your dashboard by clicking the trash can.
+In that screen you can also visualize the list of people who already can see the dashboards that your shared. From there, you can also stop sharing your dashboard by clicking on the trash can icon. 
 
 .. raw:: html
 
