@@ -314,9 +314,9 @@ The input value allows you to entry with a value for the variable, and change on
 Pie
 ***
 
-Enter multiple variables and let the Pie widget automatic create a pie and slice it for you. You can choose between a circle or a semi-circle, it only change how you will view the data. See the examples bellow.
+Enter multiple variables and let the Pie widget automatic create a pie and slice widgets for you. You can choose between a circle or a semi-circle, each one will present the data slightly different for you. See the examples bellow.
 
-You need to be sure that all variables will have a Number value. A text (string) value can broke the widget and will not show anything at all.
+You need to be sure that all variables will have value that is Number type. A text (string) value will break the widget and will not show anything.
 
 .. image:: _static/dashboard/widget_pie.png
 	:width: 50%
@@ -325,15 +325,15 @@ You need to be sure that all variables will have a Number value. A text (string)
 Gauge
 *****
 
-Gauge shows a collections of metric widgets. You can choose between five types of Gauge that will show you different values, or in different ways. 
+Gauge contains a collections of metric widgets. You can choose among five types of Gauges that will present the last of value of a variable in different formats. 
 
 Angular
 =======
-Enter a variable to show it in a angular meter.
+Enter a variable to show it in a angular gauge meter.
 
 Options
-	**Minimum (main axis)**: Is the minimum value that the variable can reach. 
-	**Maximum (main axis)**: Is the maximum value that the variable can reach.
+	**Minimum (main axis)**: Is the minimum value that the variable in the scale. 
+	**Maximum (main axis)**: Is the maximum value that the variable in the scale.
 
 
 Advanced Options
@@ -346,11 +346,11 @@ Advanced Options
 
 Solid
 =======
-Enter a variable to show it in a solid meter.
+Enter a variable to show it in a solid gauge meter.
 
 Options
-	**Minimum (main axis)**: Is the minimum value that the variable can reach. 
-	**Maximum (main axis)**: Is the maximum value that the variable can reach.
+	**Minimum (main axis)**: Is the minimum value that the variable in the scale. 
+	**Maximum (main axis)**: Is the maximum value that the variable in the scale.
 
 Advanced Options
 	**Number Format (main axis):** Show the variable fully, or integer. You can select from multiple ways.
@@ -362,7 +362,7 @@ Advanced Options
 
 Clock
 =====
-Select a timezone to show a analogic clock. You can pass the mouse above the widget to see a popup of the time in a digital way.
+Select a timezone to show a analogic clock. You can pass the mouse above the widget to see a popup of the time in a digital format.
 
 .. image:: _static/dashboard/widget_gauge_clock.png
 	:width: 50%
@@ -381,11 +381,11 @@ Not available yet.
 Image
 *****
 
-The Image widget, as the same says, is to put a image on your dashboard. It has some specific features, you can create a static image or a dynamic image based on value of a variable. You can switch between what you want selecting one of the follow options.
+Image widget will give the capability for you to present customized images in your dashboard. You can use it to present the logo of your company or client, or anything else that help the user to better visualize your application. Image widget has two basic options: you can create a static image, or a dynamic image wich is based on value of a variable. You can switch between what you want by selecting one of the follow options.
 
 Static Image
 ============
-You can enter an URL to show in your dashboard.
+You can enter an URL to show on specific image in your dashboard.
 
 .. image:: _static/dashboard/widget_image.png
 	:width: 50%
@@ -393,7 +393,7 @@ You can enter an URL to show in your dashboard.
 
 By Variable
 ===========
-You can select multiple conditions to show different images. Just enter with the condition and the image to be showed.
+You can select multiple conditions to show different images based on the value of the selected variable. Just enter with the condition and the image to be showed in each case.
 
 | It's possible to enter just one variable for the conditions.
 | Click on **'+'** to create a new condition for this variable.
@@ -406,7 +406,7 @@ You can select multiple conditions to show different images. Just enter with the
 Note
 ****
 
-Note allows you to create a text to be viewed in your dashboard. It accepts a `markdown <http://simplemde.com/markdown-guide>`_ formated text, allowing you to use bold, italic and list tools.
+Note allows you to create a text to be viewed in your dashboard. It accepts a `markdown <http://simplemde.com/markdown-guide>`_ formated text, allowing you to use bold, italic and list tools. Although you can use the Note Widget to add images on your dashboard, we highly recommend that you use the Image Widget instead as it contains an auto resize image feature.
 
 .. image:: _static/dashboard/widget_note.png
 	:width: 50%
@@ -418,7 +418,7 @@ Note allows you to create a text to be viewed in your dashboard. It accepts a `m
 Sharing dashboards
 ******************
 
-Sometimes a dashboard can become an entire feature that you want to share. Now there are two ways of sending a dashboard to someone:
+A great feature from Tago platform is it native sharing capability for data and dashboards. And we know that sometimes a dashboard can become an entire feature that you want to share. For the dashboard sharing, there are two ways of sending a dashboard to another user:
 
 * :ref:`dashboard-share`
 * :ref:`dashboard-clone`
@@ -428,7 +428,7 @@ Sometimes a dashboard can become an entire feature that you want to share. Now t
 Share
 *****
 
-When you share your dashboard, others can only visualize it. They will not be able to move, resize, or even edit widgets. They will also have access only to the variables that you added on it.
+When you share your dashboard, others can only visualize the data and input data as your defined. They will not be able to move, resize, or even edit the widgets. They will have visual access only to the variables that you added on that specific dashboard, nothing else.  Also, they are not able to share those dashboards with anybody else.
 
 To **share** a dashboard with someone, you must access that dashboard and then, through the **Dashboard options** menu, click in **Share**.
 
