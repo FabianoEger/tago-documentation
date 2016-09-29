@@ -412,16 +412,6 @@ Note allows you to create a text to be viewed in your dashboard. It accepts a `m
 	:width: 50%
 	:align: center
 
-Grain Bin
-*********
-
-Not available yet.
-
-Grain Temp
-**********
-
-Not available yet.
-
 .. _dashboard_share_dashboards:
 
 ******************
