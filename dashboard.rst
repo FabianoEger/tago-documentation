@@ -391,11 +391,11 @@ You can enter an URL to show on specific image in your dashboard.
 	:width: 50%
 	:align: center
 
-By Variable
-===========
-You can select multiple conditions to show different images based on the value of the selected variable. Just enter with the condition and the image to be showed in each case.
+Dynamic Image
+=============
+You can select multiple conditions to show different images based on the value of the selected variable. Just enter with the conditions and the images to be showed in each case.
 
-| It's possible to enter just one variable for the conditions.
+| It's possible to enter with just one variable for the conditions.
 | Click on **'+'** to create a new condition for this variable.
 | Select the condition and put a image on the URL box.
 
