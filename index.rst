@@ -12,6 +12,7 @@ Welcome to Tago's documentation!
    Sign up for free! <https://admin.tago.io/signup>
    getstarted
    concepts
+   account
    dashboard
    analysis
    analysisv2
