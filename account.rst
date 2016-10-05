@@ -15,7 +15,7 @@ To access the Users Management menu, go to **Settings** > **Account Management**
 ********************
 Sharing your account
 ********************
-You can grant access to others user with Tago account by adding them in your list at Users Management section. When adding another users in your account, you will be granting complete access to all your dashboards, devices, buckets, actions and analysis. However, they will not be able to create Account-Tokens or to access to any Account Settings information. 
+You can grant access to other users by adding them in your list at the Users Management section. These users should have a Tago account. Have in mind that when are adding users in your account, you will be granting complete access to all your dashboards, devices, buckets, actions and analysis. However, they will not be able to create Account-Tokens or to access any Account Settings information. 
 
 | To add users in your account your should:
 | 1. Click on **Add new user** button;
@@ -34,13 +34,13 @@ If the email already exists in Tago system, the user will be added in your list.
 ****************************
 Logging into another Account
 ****************************
-When you login and have no account shared with you, you will automatically redirect to your main account. If someone has shared his account with you, a menu with accounts to login will appears instead.
+When are user is added in at least one  account other than his/her own, the user profile options will show up during the login section.  For example, when you try to log in, and there is no account shared with you, you will be automatically redirect to your main account. However, if someone has shared an account with you (by adding you in their list), a menu showing the accounts that you can login will be showed to you for selection.
 
 .. image:: _static/account/select_profile.png
 	:width: 60%
 	:align: center
 
-When logged to someone else account, you will be able to check the current account on the up left corner of the admin.
+In both cases, you will always be able to identify each account you are accessing by visualizing the account owner name and yours  on the top left side of the browser or mobile APP.
 
 .. image:: _static/account/login_identity.png
 	:width: 40%
