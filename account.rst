@@ -34,10 +34,10 @@ If the email already exists in Tago system, the user will be added in your list.
 ****************************
 Logging into another Account
 ****************************
-When are user is added in at least one  account other than his/her own, the user profile options will show up during the login section.  For example, when you try to log in, and there is no account shared with you, you will be automatically redirect to your main account. However, if someone has shared an account with you (by adding you in their list), a menu showing the accounts that you can login will be showed to you for selection.
+When an user is added in at least one  account other than his/her own, an user profile options will show up during the login section.  For example, when you try to log in, and there is no account shared with you, you will be automatically redirect to your main account (no options showed). However, if someone has shared an account with you (by adding you in his or her list), a menu showing the accounts that you are allowed to login will be showed to you for selection.
 
 .. image:: _static/account/select_profile.png
-	:width: 60%
+	:width: 40%
 	:align: center
 
 In both cases, you will always be able to identify each account you are accessing by visualizing the account owner name and yours  on the top left side of the browser or mobile APP.
