@@ -18,13 +18,13 @@ Watch this short video to learn about the concepts around buckets, devices, and 
 Bucket
 ******
 
-*Bucket* is where the data from your devices is stored. You may create as many buckets as you wish.
+*Bucket* is where the data from your devices is stored. You may create as many buckets as you wish. In general, we recommend to create one bucket for each device to make it easier to find and keep control of the data. However, as you will note below, more than one device may be linked to a single bucket.
 
 
 Creating Buckets
 ****************
 
-To create a bucket, click on **Data Buckets** on the sidebar. Then, click on **Add data bucket** blue button.
+To create a bucket, click on **Data Buckets** on the sidebar. Then, click on **Add data bucket** (the top right button).
 
 Enter with a name for the bucket and a short description. You can edit these fields later if needed.
 
@@ -52,13 +52,13 @@ Doing so, when requested, Tago will return the most recent data of that variable
 Managing Buckets
 ****************
 
-Under the **General Information** session, you can find detailed information about the bucket.
+Under the **General Information** section, you can find detailed information about the bucket.
 In your list of buckets, select one to get more information, and click on *MORE* to obtain the details.
 
 Visible
 =======
 
-With this option is possible to hide the bucket from the list, which is helpful when you create a bucket for special purposes and don't want the user to worry about it.
+With this option it is possible to hide the bucket from the bucket list, which is helpful when you create a bucket for special purposes and don't want the user to worry about it.
 Sometimes you may want to create a hidden bucket for special scripts purposes, like a temporary bucket used only in the Analysis.
 
 .. image:: _static/concepts/more.png
@@ -82,7 +82,7 @@ The bucket ID can be found under the bucket general information. The ID is uniqu
 
 Amount of data records
 ======================
-The amount of data stored into each bucket is also showed in the *More* session.
+The amount of data stored into each bucket is also showed in the *More* section.
 
 Variables
 =========
@@ -105,20 +105,20 @@ Some additional features are included to manipulate the variables. Here the vari
 
 Backup
 ======
-All data sent to Tago is stored in a online database (buckets) with very fast reponse time. And you can activate your personal backup service. With this option activated, Tago backend will automatically generate one backup for the selected bucket per day in your account. The backup function is very helpfull in cases as when you want to activate data retention that will automatically delete old data from your account, allowing you to reduce cost by removing data that are not accessible too often. Backup storage does not count against your data record bucket storage limit, but will be counted in the backup storage (with a signficant lower cost per data register).
-You may have as many buckets with backup active as you want. It is important to be aware that the backup will not be generated all at once, and it will depend on the quantity of data and the period stored in each bucket. Just as a reference, one bucket with a 30 days records can take about one day to be completed.
-
-Regardless of backup being active or not, we take the caution of always backuping our customer database in a global backup for several hours.
+All data sent to Tago is stored in an online database (buckets) with very fast reponse time. Through the APIs you have full access to insert, read, remove or update the data from the buckets in real-time. If you prefer, you can activate your personal backup service to create a copy of this data to an off-line database. With this option activated, Tago back-end system will automatically 
+one backup for the selected bucket per day in your account. Each backup will be stored in your Tago account. The backup function is very helpful in cases when you want to activate data retention that will automatically delete old data from your account, allowing you to reduce cost by removing data that are not accessed very often. Backup storage does not count against your data record bucket storage limit, but will be counted in the backup storage (with a signficant lower cost per data register).
+You may have as many buckets with backup active as you want. Note that costs may occur to perform the backup operation. This cost normally will be charged only during the preparation of the backup. Check the current terms of your plan or contact Tago directly.
+It is important to be aware that the backup will not be generated all at once, and it will depend on the quantity of data and the period stored in each bucket. Just as a reference, one bucket with a 30 days records can take about one day to be completed.
 
 .. image:: _static/concepts/bucket_backup.png
 	:width: 70%
 	:align: center
 
-The backup process for each bucket will always run at midnight of your time zone (defined at Account Settings). The system will create one backup file per day. Therefore, if for example you have data stored from an entire year, it will be generated 365 backup files - one for each day. 
+The backup process for each bucket will always run at midnight of your time zone (defined in your Account Settings). The system will create one backup file per day. Therefore, if for example you have data stored from an entire year, the system will generate 365 backup files - one for each day. 
 
 Recover 
 -------
-You can easily recover the data from the backup area and move it back to the online database (bucket) by selecting the files based on the period you need. 
+You can easily recover the data from the backup area and move it back to the online database (bucket) by selecting the files based on the period you need. Remember that only the data contained in the buckets can be visualized at the dashboards, or processed in any way by Tago system. 
 
 .. image:: _static/concepts/backup_list.png
 	:width: 70%
