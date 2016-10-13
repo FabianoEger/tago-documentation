@@ -10,16 +10,16 @@ Step 1. Add a device
 ********************
 Start by adding a  :ref:`device <ref_concepts_device>` to your account. This will provide a link between the data in your account and the external world.
 
-In this example, let's send a variable called *temperature* from your device.
+In this example, let's send a variable called *temperature* from your device to your account at Tago.
 
-On the left side bar, click on **Devices**. Then, click on **Add Device** blue button, enter with the name 'dev01' and click on 'Save'.
+On the left side bar, click on **Devices**. Then, click on **Add Device** (the top right button), enter with the name of the device, for this example: 'dev01', and click on 'Save'.
 
 For each device, you have to define a :ref:`bucket <ref_concepts_bucket>` to store its data. You can let Tago create a new bucket with the same name as the device.
 
 For security, all devices should use a valid :ref:`token <ref_concepts_token>` when accessing Tago. One token is automatically generated when a device is created.
-Later in this example, you will need to use this token. Go to the 'General information' session of the device, click on 'QR Code' or 'Tokens' and copy the token code that was created for your device.
+Later in this example, you will need to use this token. Go to the 'General information' section of the device, click on 'QR Code' or 'Tokens' and copy the token code that was created for your device.
 
-This video shows how to take the steps above in few seconds.
+This video shows how to take the steps above in a few seconds.
 
 .. raw:: html
 
@@ -33,10 +33,10 @@ You can build great :ref:`dashboards <ref_dashboard_dashboard>` to visualize dat
 
 Click '+ New Dashboard' on the left side bar, type the name of your dashboard, and click on 'Create'.
 
-Let's add one widget to show the variable *temperature*. Click on 'Add Widget' blue button and pick the widget *Dial*.
+Let's add one widget to show the variable *temperature*. Click on 'Add Widget' (the top right button), and pick the widget *Dial*.
 
 Start the configuration of this widget by adding the variable to be displayed.
-Type the variable name that will be sent by the device as 'temperature', click on 'add' below the name. Select your bucket [dev01], your device [dev01], and click 'OK'.
+Type the variable name that will be sent by the device as 'temperature', then click on 'add' below the name. Select your bucket [dev01], your device [dev01], and click 'OK'.
 Then, click 'Create', and your widget will be ready!
 
  .. raw:: html
@@ -44,18 +44,18 @@ Then, click 'Create', and your widget will be ready!
  	 <video style="max-width: 100%;" preload="none" src="_static/getstarted/add_var_dash.mp4"   controls></video><br><br>
 
 
- | *Note: if the variable 'temperature' already exist in your data bucket, the auto-complete function will immediately bring it for you.*
+ | *Note: if the variable 'temperature' already exists in your data bucket, the auto-complete function will immediately bring it for you.*
 
-Good! As soon as your device start to send data, the values will be showed on this dial.
+As soon as your device starts to send data, the values will be showed on this dial.
 
 *****************
 Step 3. Send data
 *****************
 
-Now you are ready to integrate Tago system with your electronic devices using our :ref:`APIs <ref_api_api>`. You can use one of our :ref:`SDKs <ref_sdk_sdk>` designed for your platform.
+Now that you completed the setup of your account, you are ready to send data from your electronic devices using our :ref:`APIs <ref_api_api>`. You can use one of our :ref:`SDKs <ref_sdk_sdk>` designed for your platform.
 
-Or you can simulate your device right now, by sending data remotely to your bucket by using any tool that transfer data from and to a server with HTTP.
-Below, you can quickly send data depending on your OS.
+Or you can simulate your device right now, by sending data remotely to your bucket by using any tool that transfers data from and to a server with HTTP.
+Below, you will learn how to quickly send data depending on the OS that you are using.
 
 Mac or Linux
 ************
@@ -76,7 +76,7 @@ Try to send more data by changing the value of the 'temperature'. Keep an eye on
 Windows
 *******
 To send data, there are some tools that support HTTP communication like the `Postman <https://www.getpostman.com/>`_.
-Considering the same inputs as used above, you can make a POST by entering the url, Device-Token, and configuration in the **Postman** like this:
+Considering the same input as used above, you can make a POST by entering the url, Device-Token, and configuration in the **Postman** like this:
 
 .. image:: _static/getstarted/postman1.png
 		:height: 300
@@ -110,4 +110,4 @@ Create powerful :ref:`data analysis <ref_analysis_analysis>` in realtime using o
 
 Learn more about our powerful :ref:`API's <ref_api_api>`. And check out the :ref:`tutorials <ref_tutorial_intro>` and :ref:`SDKs <ref_sdk_sdk>` prepared for different boards and applications.
 
-Visit our Marketplace! [beta] You will find dashboards ready to be used in interesting applications.
+Visit our Marketplace! You will find dashboards ready to be used in interesting applications.
