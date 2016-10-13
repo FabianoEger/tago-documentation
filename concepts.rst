@@ -124,7 +124,8 @@ You can easily recover the data from the backup area and move it back to the onl
 	:width: 70%
 	:align: center
 
-An old backup will be know as a recently added one. It means that this data will be backup at midnight, and will respect the data retention rules to be deleted.
+
+The recovered data will be backed up again at midnight (based on your time zone) and it will follow the data retention rules normally.
 
 Data Retention
 ==============
