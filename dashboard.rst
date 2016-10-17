@@ -4,7 +4,7 @@
 Dashboard
 #########
 
-A dashboard is where you place your widgets to visualize and interact with data, everything in real time. All your dashboards are listed on the sidebar of Tago. On the top right you will find the **Dashboard options** menu. From there you will have access to other dashboard functionalities such as **rename**, **share** and **delete**.
+A dashboard is where you place your widgets to visualize and interact with data, all in real-time. All your dashboards are listed on the sidebar of Tago. On the top right you will find the **Dashboard options** menu. From there you will have access to other dashboard functionalities such as **rename**, **share** and **delete**.
 
 .. image:: _static/dashboard/dashboard_list.png
 
@@ -42,9 +42,9 @@ As most widgets handle data, they need a data source. The data source of your wi
 	:width: 50%
 	:align: center
 
-You'll notice that many widgets uses your variables name in order to identify, for example, a line of a chart or a device in a map. And we know that sometimes your variable name isn't appropriate to the end user. Because of that, every variable selected might have a **label**. A label is simply an alias that will be used by the widget whenever it needs to display your variable name. To add an alias to a variable, just click on top of it, and you'll see a little balloon with the alias field.
+You'll notice that many widgets use your variable's name in order to identify, for example, a line of a chart or a device in a map. And we know that sometimes your variable name isn't appropriate to the end user. Because of that, every variable selected might have a **label**. A label is simply an alias that will be used by the widget whenever it needs to display your variable name. To add an alias to a variable, just click on top of it, and you'll see a little balloon with the alias field.
 
-Along with the alias field, you'll see that you can change the bucket and/or the device of this variable. Well, sometimes our needs changes or a new device is now responsible for sending an specific data. Whatever the reason, you're covered. You can change your variable settings if you need.
+Along with the alias field, you'll see that you can change the bucket and the device of this variable. We understand that sometimes the needs of our users change or that a new device would be responsible for sending an specific data. Whatever the reason, you're covered. You can change your variable settings if you need.
 
 .. image:: _static/dashboard/widget_var_edit.png
 	:width: 30%
