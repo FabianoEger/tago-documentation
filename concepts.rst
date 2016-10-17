@@ -133,13 +133,13 @@ We created the Data Retention feature to give the option for users to automatica
 
 You can set the *retain data* to "Forever", it means that the data in that bucket will never be deleted automatically, or you can set to *days* or even *months*. For example, setting it to one day means that data will remain in the bucket for the time of only one day.
 
-This system is directly linked to Backup system. If you have enabled both Backup and Data Retention in the same bucket, the Data Retention system will always wait for the last backup to be completed before it remove the data.
+This system is directly linked to the Backup system. If you have enabled both Backup and Data Retention in the same bucket, the Data Retention system will always wait for the last backup to be completed before it remove the data.
 
-When a certain backup is restored, that specific data will be kept in the bucket during the period set at the Data Retention.  For example, if you recover a backup file that was created 6 months ago, and the data retention is set to 15 days, this data set will be available for 15 days e then removed again from the buckets (you can recover it again if needed).
+When a certain backup is restored, that specific data will be kept in the bucket during the period set at the Data Retention.  For example, if you recover a backup file that was created 6 months ago, and the data retention is set to 15 days, this data set will be available for 15 days and then removed again from the buckets (you can recover it again if needed).
 
 Sharing Buckets
 ***************
-Your data can be shared with others through the option 'Share' in the General Information session.
+Your data can be shared with others through the option 'Share' in the General Information section.
 When the other user receives your bucket, he or she can visualize and work with your data based on the type of access that you granted.
 The other user can use your data to complement his or her data analysis as long as you allow the access. You can stop sharing any time.
 
@@ -181,7 +181,7 @@ Detailed information about how to interface with the devices can be found in the
 Adding Devices
 **************
 
-To add a device, click on Devices on the side bar. Then, click on 'Add new device' blue button.
+To add a device, click on Devices on the side bar. Then, click on 'Add new device' (the top right button).
 
 Enter with a name for the device and a description, and select the bucket. Again, you can edit the field later at any time.
 
@@ -194,7 +194,7 @@ Enter with a name for the device and a description, and select the bucket. Again
 Managing Devices
 ****************
 
-Under the **General Information** session, you can find detailed information about the device.
+Under the **General Information** section, you can find detailed information about the device.
 In your list of devices, select one to get more information, and click on MORE to obtain details.
 
 Activated
@@ -206,7 +206,7 @@ If the switch is 'OFF', the system will deny access to any command coming from t
 Visible
 =======
 
-With this option is possible to hide the device from the list.
+With this option it is possible to hide a specific device from the Device list.
 It may be helpful when creating a Dashboard and using the widget :ref:`*Form*<widget-form>` that has a field type called 'Device'.
 When configured with a device, the form will show the list of all visible devices connected to that bucket.
 
@@ -248,7 +248,7 @@ Permission
 Expiration
 **********
 
-This define the life of the token, which can be temporary or not (never).
+This defines the life of the token, which can be temporary or infinite (never).
 
 Advanced Options
 ****************
