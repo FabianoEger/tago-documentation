@@ -1,10 +1,10 @@
 
 .. _ref_account_account:
 
-#################
-Users  Management
-#################
-Sometimes you or your organization may want to allow multiple users to access the same Tago account, for this purpose you just need to setup the Users Management section. There, you will be able to grant access to any user that already have a Tago account. Each user will have access to all your account sections but the **Settings**, which means they will not able to add new users to the list.
+################
+User  Management
+################
+Sometimes you or your organization may want to allow multiple users to access the same Tago account, for this purpose you just need to setup the Users Management section. There, you will be able to grant access to any user that already has a Tago account. Each user will have access to all your account sections but the **Settings**, which means they will not able to add new users to the list.
 
 To access the Users Management menu, go to **Settings** > **Users Management** on Tago admin.
 
@@ -15,7 +15,7 @@ To access the Users Management menu, go to **Settings** > **Users Management** o
 ********************
 Sharing your account
 ********************
-You can grant access to other users by adding them in your list at the Users Management section. These users should have a Tago account. Have in mind that when are adding users in your account, you will be granting complete access to all your dashboards, devices, buckets, actions and analysis. However, they will not be able to create Account-Tokens or to access any Account Settings information. 
+You can grant access to other users by adding them in your list at the Users Management section. These users should have a Tago account. Have in mind that when you are adding users in your account, you will be granting complete access to all your dashboards, devices, buckets, actions and analysis. However, they will not be able to create Account-Tokens or to access any Account Settings information. 
 
 | To add users in your account your should:
 | 1. Click on **Add new user** button;
