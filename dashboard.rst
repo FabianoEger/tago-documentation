@@ -170,6 +170,19 @@ As you pick variables for your map, you'll have two more options to fill about i
 
 .. [#f1] If you don't know how to send location coordinates within your data, please read our :ref:`API docs<ref_api_api>`
 
+Color Options 
+=============
+You are able to define colors for the pin. By default, the pin color is defined inside widget. If you use metadata when posting a variable, you are able to define the pin color of that specific variable.
+
+.. code-block:: javascript
+
+    {
+        "variable" : "location",
+        "value": "My Address",
+		"location": { "lat": 42.2974279, "lng": -85.628292 }
+        "metadata": {"color":"green"}
+    }
+
 Advanced Options
 ================
 
