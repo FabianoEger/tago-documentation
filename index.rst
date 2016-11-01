@@ -14,7 +14,6 @@ Welcome to Tago's documentation!
    concepts
    account
    dashboard
-   analysis
    analysisv2
    actions
    tutorials
