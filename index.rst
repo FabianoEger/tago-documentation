@@ -14,9 +14,9 @@ Welcome to Tago's documentation!
    concepts
    account
    dashboard
-   analysisv2
+   analysis
    actions
    tutorials
    sdk
    api
-   Forum <https://community.tago.io/>
+   Community <http://community.tago.io/>
