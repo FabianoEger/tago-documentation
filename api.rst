@@ -115,6 +115,8 @@ POST - ``https://api.tago.io/data``
 +----------------------+----------------------+----------------------+
 | location             | object || geojson    | no                   |
 +----------------------+----------------------+----------------------+
+| metadata             | object               | no                   |
++----------------------+----------------------+----------------------+
 
 Request
 
@@ -168,6 +170,8 @@ PUT - ``https://api.tago.io/data/:id``
 | serie                | string               | no                   |
 +----------------------+----------------------+----------------------+
 | location             | object || geojson    | no                   |
++----------------------+----------------------+----------------------+
+| metadata             | object               | no                   |
 +----------------------+----------------------+----------------------+
 
 Request
@@ -361,3 +365,140 @@ Start/End date parameters accept different formats, which include selection base
 +--------------------------------------------+
 
 - Relative dates will be subtracted or added to the current time.
+
+Devices
+*******
+
+Using the account-token, you can manage your devices through API requests. It's possible to create, edit, delete, and get info of it. 
+
+Create
+======
+Create a device through POST method.
+
+POST - ``https://api.tago.io/device``
+
++----------------------+----------------------+----------------------+
+| KEY                  | TYPE                 | REQUIRED             |
++======================+======================+======================+
+| name                 | string               | yes                  |
++----------------------+----------------------+----------------------+
+| description          | string               | no                   |
++----------------------+----------------------+----------------------+
+| active               | boolean              | no                   |
++----------------------+----------------------+----------------------+
+| visible              | boolean              | no                   |
++----------------------+----------------------+----------------------+
+| configuration_params*| array                | no                   |
++----------------------+----------------------+----------------------+
+| tags*                | array                | no                   |
++----------------------+----------------------+----------------------+
+
+| * configuration_params and tags expect to receive an array of objects.
+| For **tags** is expected to receive an object containing ``key`` (string) and ``value`` (string). 
+| For **configuration_params** its expected to receive a object containing ``sent`` (bool), ``key`` (string) and ``value`` (string).
+|
+
+Request
+
+.. code-block:: json
+
+    {
+        "name":        "My first device",
+        "description": "Creating my first device",
+        "active":      true,
+        "visible":     true,
+        "tags": [
+            {"key": "client", "value": "John"}
+        ]
+        "configuration_params": [
+            {"sent": false, "key": "check_rate", "value": 600}
+            {"sent": false, "key": "measure_time", "value": 0}
+        ]
+    }
+
+
+Edit
+====
+
+PUT - ``https://api.tago.io/device/:id``
+
+- Each time you create a device, an ID is associated with it. You can read this ID by using the GET method.
+
++----------------------+----------------------+----------------------+
+| KEY                  | TYPE                 | REQUIRED             |
++======================+======================+======================+
+| name                 | string               | no                   |
++----------------------+----------------------+----------------------+
+| description          | string               | no                   |
++----------------------+----------------------+----------------------+
+| active               | boolean              | no                   |
++----------------------+----------------------+----------------------+
+| visible              | boolean              | no                   |
++----------------------+----------------------+----------------------+
+| configuration_params | array                | no                   |
++----------------------+----------------------+----------------------+
+| tags                 | array                | no                   |
++----------------------+----------------------+----------------------+
+
+Request
+
+.. code-block:: json
+
+    {
+        "name" : "New name for my device"
+    }
+
+Info
+====
+
+Retrieve informations for a device, using it's ID.
+
+GET - ``https://api.tago.io/device/:id``
+
+Response
+
+.. code-block:: json
+
+    {
+        "status": true,
+        "result": {
+            "created_at": "2016-11-03T23:24:19.787Z",
+            "updated_at": "2016-11-03T23:24:19.787Z",
+            "last_access": "2016-11-03T23:24:19.787Z",
+            "visible": true,
+            "active": true,
+            "tags": [
+                {"key": "client", "value": "John"}
+            ],
+            "name": "My Device",
+            "id": "581bc7233148f62587e2d507",
+            "configuration_params": [
+                {"sent": false, "key": "check_rate", "value": "600"}
+                {"sent": false, "key": "measure_time", "value": ""}
+            ],
+            "bucket": {
+                "name": "My Bucket",
+                "id": "577bdd94567190920cfe9cfd"
+            }
+        }
+    }
+
+List
+====
+Retrieve a list of all devices in the account
+
+GET - ``https://api.tago.io/device``
+
+Delete
+======
+
+DELETE - ``https://api.tago.io/device/:id``
+
+Response
+
+.. code-block:: json
+
+    {
+        "status": true,
+        "result": "Successfully Removed"
+    }
