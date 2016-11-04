@@ -255,7 +255,7 @@ Running the application
 
 Open your dashboard, and run the code in your Arduino board. Note the widget display the value in realtime.
 Try to heat the sensor to reach the 50C. You should then receive an e-mail from Tago. Cool down the sensor below 30C, and try again!
-If you have any issue or question about this application, access our `Forum <https://community.tago.io/>`_ .
+If you have any issue or question about this application, access our `Community <http://community.tago.io/>`_ .
 
 
 Conclusion
@@ -446,7 +446,7 @@ Running the application
 
 Look at your dashboard at Tago, and run the code in your BBB. Note the widget will display the value of the variable in realtime.
 Wait few seconds for the Python to start the program and press the button on the switch. You should then receive an e-mail from Tago. Release the button, and you will see the status on the display. Press again, and receive another e-mail ;-)
-If you have any issue or question about this application, access our `Forum <https://community.tago.io/>`_ .
+If you have any issue or question about this application, access our `Community <http://community.tago.io/>`_ .
 
 Right, we know... you can do much more with the BBB and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
 Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's <ref_sdk_sdk>` to bring the full potential of Tago to your system!
@@ -604,7 +604,7 @@ Again, we have libs for several languages to simplify your code, check out ours 
 Running the application
 ***********************
 
-Look at your dashboard at Tago, and run the code in your Raspberry PI. Go to your dashboard and turn your button ‘on’ the LED will turn on, now you can turn on and off a digital load across the planet using the power of Tago. If you have any issue or question about this application, access our Forum .
+Look at your dashboard at Tago, and run the code in your Raspberry PI. Go to your dashboard and turn your button ‘on’ the LED will turn on, now you can turn on and off a digital load across the planet using the power of Tago. If you have any issue or question about this application, access our Community .
 You can also try the modify the tutorial done for the BeagleBlackBone board to your Raspberry, by just by changing the GPIO library and the methods.
 Right, we know... you can do much more with the Raspberry and Tago! But at least, we hope you got the idea about how to set the ecosystem around Tago and your device.
 Take a look at the :ref:`concepts <ref_concepts>` , our :ref:`API's <ref_api_api>` and :ref:`SDK's  <ref_sdk_sdk>` to bring the full potential of Tago to your system!
