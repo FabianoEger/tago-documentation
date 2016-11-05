@@ -390,12 +390,12 @@ POST - ``https://api.tago.io/device``
 +----------------------+----------------------+----------------------+
 | configuration_params*| array                | no                   |
 +----------------------+----------------------+----------------------+
-| tags*                | array                | no                   |
+| tags *               | array                | no                   |
 +----------------------+----------------------+----------------------+
 
-| * configuration_params and tags expect to receive an array of objects.
-| For **tags** is expected to receive an object containing ``key`` (string) and ``value`` (string). 
-| For **configuration_params** its expected to receive a object containing ``sent`` (bool), ``key`` (string) and ``value`` (string).
+| * configuration_params and tags are expected to receive an array of objects.
+| For **tags** it is expected to receive an object containing ``key`` (string) and ``value`` (string). 
+| For **configuration_params** it is expected to receive an object containing ``sent`` (bool), ``key`` (string) and ``value`` (string).
 |
 
 Request
