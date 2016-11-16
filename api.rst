@@ -301,28 +301,8 @@ Query
 +---------------+------------------------------------------------------------------------------+
 | last_item     | Get the last data, not checking if the fields *location* or *value* is empty |
 +---------------+------------------------------------------------------------------------------+
-| near *        | Get data near the specified geolocation                                      |
-+---------------+------------------------------------------------------------------------------+
-
 
 \*  Need additional parameters
-
-near
-----
-
-The query ``near`` will return all data geographically located inside the radius of the location. ``near`` requires some extra parameters as listed below.
-
-+---------------+---------------------------------------------------------------------------------------------------------------------------------+
-| PARAMETER     | DESCRIPTION                                                                                                                     |
-+===============+=================================================================================================================================+
-| lat           | Latitude of the center point                                                                                                    |
-+---------------+---------------------------------------------------------------------------------------------------------------------------------+
-| lng           | Longitude of the center point                                                                                                   |
-+---------------+---------------------------------------------------------------------------------------------------------------------------------+
-| min_distance  | The minimum distance from the center point that the data is expected to be located. Specify the distance in meters (default 0)  |
-+---------------+---------------------------------------------------------------------------------------------------------------------------------+
-| max_distance  | The maximum distance from the center point that the data is expected to be located. Specify the distance in meters (default 500)|
-+---------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 
 Quantity
