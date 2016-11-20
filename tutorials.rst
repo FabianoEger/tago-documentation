@@ -46,7 +46,7 @@ The Arduino board will be the device to be added, we will give it the name 'dev0
 For each device, you have to define a :ref:`bucket <ref_concepts_bucket>` to store its data. You can let Tago to create a new bucket with the same name as the device.
 
 All devices should use a valid :ref:`token <ref_concepts_token>` when accessing Tago. This token is automatically generated when a device is created.
-Go to the 'General information' session of the device, click on 'QR Code' or 'Tokens' and copy the token to be added in the Arduino code later.
+Go to the 'General information' section of the device, click on 'QR Code' or 'Tokens' and copy the token to be added in the Arduino code later.
 
 .. raw:: html
 
