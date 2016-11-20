@@ -116,7 +116,7 @@ When communicating with devices, Tago uses the JSON format. For example, to send
 	    "unit": "C"
 	}
 
-Here for the Arduino, we give a C code example which use HTTP format connecting through port 80 (non-secure) to simplify the example. To send the data, the json data will result in code with a post as simple like: "variable":temperature, "value":26,"unit":"C".
+Here for the Arduino, we give a C code example which use HTTP format connecting through port 80 (non-secure) to simplify the example. To send the data, the json data will result in code with a post as simple like: "variable":"temperature", "value":26,"unit":"C".
 
 
 Arduino Code
@@ -143,134 +143,132 @@ Arduino Code
 
 	char ssid[] = "## YOUR NETWORK HERE ##";      //  your network SSID (name)
 	char pass[] = "## YOUR NETWORK PASSWORD HERE ##";   // your network password
-	String Device_Token = "## INSERT THE TOKEN FOR YOUR DEVICE HERE ##";
+	String Device_Token = "## INSERT THE TOKEN FOR YOUR DEVICE HERE ##";	
+	int keyIndex = 0;         // your network key Index number (needed only for WEP)
 
-	
-int keyIndex = 0;         // your network key Index number (needed only for WEP)
+	int sensorPin = A0;       // select the input pin for the analog input
+	int rawvoltage = 0;       // variable to store the value coming from the sensor
+	float sensorValue = 0;
+	String value_string = ""; 
 
-int sensorPin = A0;       // select the input pin for the analog input
-int rawvoltage = 0;       // variable to store the value coming from the sensor
-float sensorValue = 0;
-String value_string = ""; 
+	int status = WL_IDLE_STATUS;
 
-int status = WL_IDLE_STATUS;
+	// Initialize the Wifi client library
+	WiFiClient client;
 
-// Initialize the Wifi client library
-WiFiClient client;
+	// server address:
+	char server[] = "api.tago.io";
 
-// server address:
-char server[] = "api.tago.io";
+	unsigned long lastConnectionTime = 0;            // last time you connected to the server, in milliseconds
+	const unsigned long postingInterval = 2L * 1000L; // delay between updates, in milliseconds
 
-unsigned long lastConnectionTime = 0;            // last time you connected to the server, in milliseconds
-const unsigned long postingInterval = 2L * 1000L; // delay between updates, in milliseconds
+	void setup() {
+	  //Initialize serial and wait for port to open:
+	  Serial.begin(9600);
+	  while (!Serial) {
+	    ;                     // wait for serial port to connect. Needed for native USB port only
+	  }
 
-void setup() {
-  //Initialize serial and wait for port to open:
-  Serial.begin(9600);
-  while (!Serial) {
-    ;                     // wait for serial port to connect. Needed for native USB port only
-  }
+	  // check for the presence of the shield:
+	  if (WiFi.status() == WL_NO_SHIELD) {
+	    Serial.println("WiFi shield not present");
+	    // don't continue:
+	    while (true);
+	  }
 
-  // check for the presence of the shield:
-  if (WiFi.status() == WL_NO_SHIELD) {
-    Serial.println("WiFi shield not present");
-    // don't continue:
-    while (true);
-  }
+	  // attempt to connect to Wifi network:
+	  while ( status != WL_CONNECTED) {
+	    Serial.print("Attempting to connect to SSID: ");
+	    Serial.println(ssid);
+	    // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
+	    status = WiFi.begin(ssid, pass);
 
-  // attempt to connect to Wifi network:
-  while ( status != WL_CONNECTED) {
-    Serial.print("Attempting to connect to SSID: ");
-    Serial.println(ssid);
-    // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
-    status = WiFi.begin(ssid, pass);
+	    // wait 10 seconds for connection:
+	    delay(10000);
+	  }
+	  // you're connected now, so print out the status:
+	  printWifiStatus();
+	}
 
-    // wait 10 seconds for connection:
-    delay(10000);
-  }
-  // you're connected now, so print out the status:
-  printWifiStatus();
-}
+	void loop() {
+	  // if there's incoming data from the net connection.
+	  // send it out the serial port.  This is for debugging
+	  // purposes only:
+	  while (client.available()) {
+	    char c = client.read();
+	    Serial.write(c);
+	  }
 
-void loop() {
-  // if there's incoming data from the net connection.
-  // send it out the serial port.  This is for debugging
-  // purposes only:
-  while (client.available()) {
-    char c = client.read();
-    Serial.write(c);
-  }
+	  // if TWO seconds have passed since your last connection,
+	  // then connect again and send data:
 
-  // if TWO seconds have passed since your last connection,
-  // then connect again and send data:
+	  if (millis() - lastConnectionTime > postingInterval) {
+	    // read the value from the sensor:
+	    rawvoltage = analogRead(sensorPin);
+	    // converting that reading to voltage, for 3.3v voltage 
+	    float voltage = rawvoltage * 3.3;
+	    voltage /= 1024.0;    
+	    // converting to Celsius
+	    float temperatureC = (voltage - 0.5) * 100 ;  //converting from 10 mv per degree wit 500 mV offset
+							  //to degrees ((voltage - 500mV) times 100)                                                      
 
-  if (millis() - lastConnectionTime > postingInterval) {
-    // read the value from the sensor:
-    rawvoltage = analogRead(sensorPin);
-    // converting that reading to voltage, for 3.3v voltage 
-    float voltage = rawvoltage * 3.3;
-    voltage /= 1024.0;    
-    // converting to Celsius
-    float temperatureC = (voltage - 0.5) * 100 ;  //converting from 10 mv per degree wit 500 mV offset
-                                                  //to degrees ((voltage - 500mV) times 100)                                                      
+	    int i = (int) temperatureC;                   //convert data format from float to int
+	    value_string =String(i);                      //end of conversion, to finally get it in the String format(Celsius)
+	    Serial.println(value_string);
 
-    int i = (int) temperatureC;                   //convert data format from float to int
-    value_string =String(i);                      //end of conversion, to finally get it in the String format (Celsius)
-    Serial.println(value_string);
+	    // then, send data to Tago
+	    httpRequest();
+	  }
 
-    // then, send data to Tago
-    httpRequest();
-  }
+	}
 
-}
+	// this method makes a HTTP connection to the server:
+	void httpRequest() {
+	    // close any connection before send a new request.
+	    // This will free the socket on the WiFi shield
+	    client.stop();
 
-// this method makes a HTTP connection to the server:
-void httpRequest() {
-    // close any connection before send a new request.
-    // This will free the socket on the WiFi shield
-    client.stop();
+	    Serial.println("\nStarting connection to server...");
+	    // if you get a connection, report back via serial:
+	    String PostData = String("{\"variable\":\"temperature\", \"value\":") + String(value_string)+ String(",\"unit\":\"C\"}");         
+	    String Dev_token = String("Device-Token: ")+ String(Device_Token);
+	    if (client.connect(server,80)) {                      // we will use non-secured connnection (HTTP) for tests
+	    Serial.println("connected to server");
+	    // Make a HTTP request:
+	    client.println("POST /data? HTTP/1.1");
+	    client.println("Host: api.tago.io");
+	    client.println("_ssl: false");                        // for non-secured connection, use this option "_ssl: false" 
+	    client.println(Dev_token);
+	    client.println("Content-Type: application/json");
+	    client.print("Content-Length: ");
+	    client.println(PostData.length());
+	    client.println();
+	    client.println(PostData);
+	    // note the time that the connection was made:
+	    lastConnectionTime = millis();
+	  }
+	  else {
+	    // if you couldn't make a connection:
+	    Serial.println("connection failed");
+	  }
+	}
 
-    Serial.println("\nStarting connection to server...");
-    // if you get a connection, report back via serial:
-    String PostData = String("{\"variable\":\"temperature\", \"value\":") + String(value_string)+ String(",\"unit\":\"C\"}");         
-    String Dev_token = String("Device-Token: ")+ String(Device_Token);
-    if (client.connect(server,80)) {                      // we will use non-secured connnection (HTTP) for tests
-    Serial.println("connected to server");
-    // Make a HTTP request:
-    client.println("POST /data? HTTP/1.1");
-    client.println("Host: api.tago.io");
-    client.println("_ssl: false");                        // for non-secured connection, use this option "_ssl: false" 
-    client.println(Dev_token);
-    client.println("Content-Type: application/json");
-    client.print("Content-Length: ");
-    client.println(PostData.length());
-    client.println();
-    client.println(PostData);
-    // note the time that the connection was made:
-    lastConnectionTime = millis();
-  }
-  else {
-    // if you couldn't make a connection:
-    Serial.println("connection failed");
-  }
-}
+	void printWifiStatus() {
+	  // print the SSID of the network you're attached to:
+	  Serial.print("SSID: ");
+	  Serial.println(WiFi.SSID());
 
-void printWifiStatus() {
-  // print the SSID of the network you're attached to:
-  Serial.print("SSID: ");
-  Serial.println(WiFi.SSID());
+	  // print your WiFi shield's IP address:
+	  IPAddress ip = WiFi.localIP();
+	  Serial.print("IP Address: ");
+	  Serial.println(ip);
 
-  // print your WiFi shield's IP address:
-  IPAddress ip = WiFi.localIP();
-  Serial.print("IP Address: ");
-  Serial.println(ip);
-
-  // print the received signal strength:
-  long rssi = WiFi.RSSI();
-  Serial.print("signal strength (RSSI):");
-  Serial.print(rssi);
-  Serial.println(" dBm");
-}
+	  // print the received signal strength:
+	  long rssi = WiFi.RSSI();
+	  Serial.print("signal strength (RSSI):");
+	  Serial.print(rssi);
+	  Serial.println(" dBm");
+	}
 
 Running the application
 ***********************
