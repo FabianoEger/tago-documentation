@@ -112,12 +112,12 @@ When you get inside the analysis session that you created, you will come across 
 | 3. **Run this script from**: select "Tago" to run script that you have uploaded from Tago server, or select "External" to run it from outside Tago - which can be from your machine or another server;
 | 4. **Script language used for this script**: if you select "Tago" environment to run the script, it will need to set the code of the script. The available languages are Python and Node.js. If you select external in the previous parameter, you don't need to define the language;
 | 5. **Upload Script**: Upload a *.js (node.js) or a *.py (python) file to upload the file to Tago. You can only upload one file that will run when this specific analysis is triggered. Uploading one script can't be undone, but you can disable it manually or just upload another file on top of the previous one;
-| 6. **Analysis Token**: Token of the Analysis. Needed to run the analysis in a external enviroment;
+| 6. **Analysis Token**: Token of the Analysis. Needed to run the analysis in an external enviroment;
 | 7. **Generate new Token**: Change the analysis token to a new one;
 | 8. **More**: Will show "more about this script" table;
 |   8-1. **ID**: the ID of this script. Note: Origin will automatically use this ID when none is declared;
 |   8-2. **Registered at**: date when your analysis was created;
-|   8-3. **Last runn**: last time the analysis was triggered;
+|   8-3. **Last run**: last time the analysis was triggered;
 |   8-4. **Last update**: last time the analysis was modified;
 |   8-5. **Description**: set the analysis description;
 | 9. **Show Variables**: Show the environment variables of the analysis;
@@ -131,7 +131,7 @@ When you get inside the analysis session that you created, you will come across 
 
 Environment Variables
 *********************
-Enviroment Variable is a very useful resource used to send variables values to the context of your script. You can, for example, put token of accounts and devices to be used later in the script when it runs. Analysis will then get this variables as "environment" parameters and used them in the context.
+Enviroment Variable is a very useful resource used to send variables values to the context of your script. You can, for example, add token of accounts and devices to be used later in the script when it runs. Analysis will then get these variables as "environment" parameters and used them in the context.
 
 .. image:: _static/analysisv2/analysis_variables.png
 
@@ -160,7 +160,7 @@ Use the console to monitor the variables and status of your script. You can see 
 .. image:: _static/analysis/analysis_console.png
 
 | 1. **Run Script**: it will run your script immediately;
-| 2. **Console Screen**: Any error or response to a "context.log" will be showed here;
-| 3. **Clear Console**: it will clear everything that are showed in your console screen;
+| 2. **Console Screen**: Any error or response to a "context.log" will show up here;
+| 3. **Clear Console**: it will clear everything that is showed in your console screen;
 | 4. **Auto-Clear**: it will clear the console every time the script runs;
 |
