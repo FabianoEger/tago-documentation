@@ -29,7 +29,6 @@ The temperature sensor used in this tutorial is the TMP36 that comes in a TO-92 
 **Voltage at pin in milliVolts = (reading from ADC) * (3300/1024)**
 
 This formula converts the number 0-1023 from the ADC into 0-3300mV (= 3.3V)
-
 Then, to convert millivolts into temperature, use this formula:
 
 **Centigrade temperature = [(analog voltage in mV) - 500] / 10**
@@ -116,7 +115,7 @@ When communicating with devices, Tago uses the JSON format. For example, to send
 	    "unit": "C"
 	}
 
-Here for the Arduino, we give a C code example which use HTTP format connecting through port 80 (non-secure) to simplify the example. To send the data, the json data will result in code with a post as simple like: "variable":"temperature", "value":26,"unit":"C".
+Here for the Arduino, we give a C code example which use HTTP format connecting through port 80 (non-secure) to simplify the example. To send the data to Tago correctly, the code should simply prepare a string that will represent the json block above: "variable":"temperature", "value":26,"unit":"C".
 
 
 Arduino Code
