@@ -4,7 +4,7 @@
 Dashboard
 #########
 
-A dashboard is where you place your widgets to visualize and interact with data, all in real-time. All your dashboards are listed on the sidebar of Tago. On the top right you will find the **Dashboard options** menu. From there you will have access to other dashboard functionalities such as **rename**, **share** and **delete**.
+A dashboard is where you place your widgets to visualize and interact with data, all in real-time. All your dashboards are listed on the sidebar of the screen. On the top right you will find the **Dashboard options** menu. From there you will have access to other dashboard functionalities such as **rename**, **share** and **delete**.
 
 .. image:: _static/dashboard/dashboard_list.png
 
@@ -18,7 +18,7 @@ You can organize them in the way that best fit your needs by moving and resizing
 Building dashboards
 *******************
 
-To create a new dashboard, just click the button below your dashboards list **+ New Dashboard**, give a name to your new dashboard and click on **Create**.
+To create a new dashboard, just click on the button **+ New Dashboard**, give a name to your new dashboard and click on **Create**.
 
 .. raw:: html
 
@@ -27,7 +27,7 @@ To create a new dashboard, just click the button below your dashboards list **+ 
 Widgets
 *******
 
-Dashboards are made of widgets. Tago provides a variety of widgets to handle your data in real time. From simple **dials** to **tables**, **maps** and even **forms** that you can use to create new data.
+Dashboards are composed by widgets. Tago provides a variety of widgets to handle your data in real time. The available options  cover from simple **dials** to **tables**, **maps** and even **forms** that you can use to allow the user to input data.
 
 .. image:: _static/dashboard/widget_types.png
 
@@ -36,15 +36,15 @@ Dashboards are made of widgets. Tago provides a variety of widgets to handle you
 Variables
 *********
 
-As most widgets handle data, they need a data source. The data source of your widgets are the variables created when you send data from your device to Tago's API. So you have to pick which variables, from which device & bucket, to use as data in your widgets.
+As most widgets handle sometime of data, they need a data source. The data source of your widgets are the variables created when you send data from your device or the analysis to Tago. Therefore you will need to select which variable, and from which device and bucket, you want to add in each widget.
 
 .. image:: _static/dashboard/widget_vars.png
 	:width: 50%
 	:align: center
 
-You'll notice that many widgets use your variable's name in order to identify, for example, a line of a chart or a device in a map. And we know that sometimes your variable name isn't appropriate to the end user. Because of that, every variable selected might have a **label**. A label is simply an alias that will be used by the widget whenever it needs to display your variable name. To add an alias to a variable, just click on top of it, and you'll see a little balloon with the alias field.
+You'll notice that many widgets use your variable's name in order to identify, for example, a line of a chart or a device in a map. And we know that sometimes the original name of the variable is not the most appropriate name for the end user to see. Because of that, every variable selected may have a **label**. A label is simply an alias that will be used by the widget whenever it needs to display your variable name. To add an alias to a variable, just click on top of it, and you'll see a little balloon with the alias field. The label will be used only for visualization in that specific widget, it will not be recorded in the database, neither associate with that variable for future use.
 
-Along with the alias field, you'll see that you can change the bucket and the device of this variable. We understand that sometimes the needs of our users change or that a new device would be responsible for sending an specific data. Whatever the reason, you're covered. You can change your variable settings if you need.
+Along with the alias field, you'll see that you can change the bucket and the device of this variable. We understand that sometimes the user needs change or that a new device would be responsible for sending an specific data. Whatever the reason, you're covered. You can change your variable settings if you need.
 
 .. image:: _static/dashboard/widget_var_edit.png
 	:width: 30%
@@ -55,20 +55,20 @@ Along with the alias field, you'll see that you can change the bucket and the de
 Configuration
 *************
 
-Besides the data sources, every kind of widget has its own particular configurations in regard to how to display the data. So when creating a widget, you're going to find **basic** options - generally these are critical to the algorithm that builds your widget - and **advanced** options, which allows you to give your personal touch to each widget and also provides advanced features you might need. Two advanced features included in every widget are:
+Besides the data sources, every kind of widget has its own particular configurations in regards to how to display the data. So when creating a widget, you're going to find **basic** options - generally these are critical to the algorithm that builds your widget - and **advanced** options, which allows you to give a personal touch to each widget and also provides advanced features you might need. Two advanced features included in every widget are:
 
 * Help text
 * Hide variables name
 
-The **help text** allows you to add a little help text that will be placed on the top-right corner of your widget, under a interrogation sign.
+The **help text** allows you to add a short help text that will be placed on the top-right corner of your widget, under a question mark icon.
 
 .. image:: _static/dashboard/widget_help.png
 	:width: 50%
 	:align: center
 
-The second one gives you the ability of hiding the variables name in the widget. It can be useful if you don't want to show names at all in your widgets. We recommend you to add a descriptive title in such cases though.
+The second one gives you the ability to hide the variables name in the widget. It can be useful if you don't want to show the widget names in some of your widgets. We recommend you to add a descriptive title in such cases though.
 
-You will notice that some widgets are more complex than others. While a dial only need a mininum and maximum value, a **multiple axis chart** needs more configuration related to each variable, in this particular case you'll have to define the type (bar, line, etc) of each data source. This kind of customization, while it takes a little more time to get done, offers you a lot of flexibility.
+You will notice that some widgets are more powerful and complex than others. While a dial only needs the mininum and maximum values, a **multiple axis chart** needs more configuration fields that are related to each variable, in this particular case you'll have to define the type (bar, line, etc) of each data source as well. This kind of customization, while takes a little more time to get done, offers you a lot of flexibility.
 
 .. image:: _static/dashboard/widget_var_configuration.png
 	:width: 50%
