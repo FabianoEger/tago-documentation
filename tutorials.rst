@@ -25,10 +25,13 @@ the actions capability to send e-mails when the temperature reaches a threshold.
 Diagram
 *******
 The temperature sensor used in this tutorial is the TMP36 that comes in a TO-92 package. The output of the TMP36 is a voltage that will be read by the Analog pin 0 of the Arduino Zero. As the Arduino Zero is a 3.3V board, we will use the following formula to convert the reading to temperature in Celsius.
-**Voltage at pin in milliVolts = (reading from ADC) * (3300/1024) **
+
+**Voltage at pin in milliVolts = (reading from ADC) * (3300/1024)**
+
 This formula converts the number 0-1023 from the ADC into 0-3300mV (= 3.3V)
 
 Then, to convert millivolts into temperature, use this formula:
+
 **Centigrade temperature = [(analog voltage in mV) - 500] / 10**
 
 .. image:: _static/tutorials/arduino_tmp36.gif
