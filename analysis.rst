@@ -34,7 +34,7 @@ Creating your own analysis is easy. First, you need to click on Add Analysis in 
 
 1. Setup
 *********
-It's possible to setup the analysis in many ways. For initial purposes, we will only set the analysis to run with an external script. It allows you to run the analysis direct from your machine, and do any changes you want in realtime. After downloading the example, you need get :ref:`Analysis-Token <ref_analysis_general>` from your analysis and set inside the index.js
+It's possible to setup the analysis in many ways. For initial purposes, we will only set the analysis to run with an external script. It allows you to run the analysis directly from your machine, and do any changes you want in realtime. After downloading the example, you need to get :ref:`Analysis-Token <ref_analysis_general>` from your analysis and set it inside the index.js
 
 | 1. **Open** the specific analysis;
 | 2. Select to run **"external"**;
@@ -49,7 +49,7 @@ It's possible to setup the analysis in many ways. For initial purposes, we will 
 
 2. Code your script
 *******************
-Open the example with the editor of your preference, and make the changes that you need in the code as necessary. Currently, if you are wish to run your code at Tago, have in mind that Tago only supports Node.js and Python languages. However, you are free to use any language you want if your select to run the analysis in the 'external' server. It means that if you chose to program in another language, you won't be able to upload the script on Tago; you will need to run the code in your machine or another server instead.
+Open the example with the editor of your preference, and make the changes that you need in the code as necessary. Currently, if you are wish to run your code at Tago, have in mind that Tago only supports Node.js and Python languages. However, you are free to use any language you want if you select to run the analysis in the 'external' server. It means that if you chose to program in another language, you won't be able to upload the script on Tago; you will need to run the code in your own machine or in another server instead.
 
 To write your code using node.js language, follow these steps:
 
@@ -62,10 +62,10 @@ To write your code using node.js language, follow these steps:
 
 *Node.js and NPM*
 =================
-Node.js is a powerful and relative new programing language developed using JavaScript. It is a non-blocking and event-driven language that has been adopted for several developers and companies to deal with data-intensive real-time applications. You can learn about node.js `here <https://nodejs.org/en/>`._ To use Node.js you must type command-line instructions, so you need to be comfortable witha command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows).
+Node.js is a powerful and relatively new programing language developed using JavaScript. It is a non-blocking and event-driven language that has been adopted for several developers and companies to deal with data-intensive real-time applications. You can learn about node.js `here <https://nodejs.org/en/>`._ To use Node.js you must type command-line instructions, so you need to be comfortable witha command-line tool like the Windows Command Prompt, PowerShell, Cygwin, Bash or the Git shell (which is installed along with Github for Windows).
 NPM is the node package manager that as the name implies, helps with node.js programs installation, sharing, and with the dependencies management.
 
-Warning: As you in most of the cases, developers will upload their code to run automatically on Tago server, it is necessary  to make sure that you install the most recent LTS, Long Term Support, version. Current Tago runs on the v4.4.7.   Therefore, don't use the most recent non-LTS version, unless you will only run it at your machine or another server.
+Warning: As you in most cases developers will upload their code to run it automatically on Tago server, it is necessary  to make sure that you install the most recent LTS, Long Term Support, version. Current Tago runs on the v4.4.7.   Therefore, don't use the most recent non-LTS version, unless you will only run it at your machine or another server.
 
 | **How to Install**
 | Please, open `Node.js Linux Installation Guide <https://nodejs.org/en/download/package-manager/>`_ for instructions.
@@ -86,13 +86,13 @@ In the future, Tago will provide some SDK for other languages such as C# and C. 
 
 3. Upload
 *********
-After you have coded and debuged your code, you can upload the script (only one file) to Tago. .
+After you have coded and debuged your code, you can upload the script (only one file) to Tago.
 
-Remember that Tago will run you script using Node version 4.4.7 LTS or Python 2.7. If you are using a more recent version, you should check for compatibility before upload it. 
+Remember that Tago will run your script using Node version 4.4.7 LTS or Python 2.7. If you are using a more recent version, you should check for compatibility before uploading it. 
 
 *All available examples for download are compatible with Tago*
 
-| 1. If your script have **dependencies**, get our `CLI <http://sdk.js.tago.io/en/latest/analysis.html#build>`_ and build to a single file (Tago will not accept more than one file per analysis);
+| 1. If your script has **dependencies**, get our `CLI <http://sdk.js.tago.io/en/latest/analysis.html#build>`_ and build them to a single file (Tago will not accept more than one file per analysis);
 | 2. **Press "Upload File"** on the Analysis session that you created;
 | 3. Select the **.js file**;
 | 4. In the option **Run this script from **, select "Tago";
@@ -103,7 +103,7 @@ Remember that Tago will run you script using Node version 4.4.7 LTS or Python 2.
 *******************
 General Information
 *******************
-When you get inside the analysis session that you created, you will come across some configuration fields that will help you to define how Tago should manage it. In the General Information area, you should define the *time interval* that your analysis (time based at a fix period of time, or per external event only), and the *environment variables* that are essential to a successful modular script.
+When you get inside the analysis section that you created, you will come across some configuration fields that will help you to define how Tago should manage it. In the General Information area, you should define the *time interval* that your analysis should run(you should select to run it by (1) time based for a fix period of time, or (2) external event only). Also, you can define *environment variables* that are essential for a successful development of modular scripts.
 
 .. image:: _static/analysisv2/analysis_general.png
 
@@ -125,13 +125,13 @@ When you get inside the analysis session that you created, you will come across 
 | 11. **Show Examples**: Show a list of analysis examples. You can download them and use as you wish;
 | 12. **Run Script**: will immediately run your script;
 | 13. **Save**: Save any change made in the analysis information;
-| 14. **Actived**: Turn on/off the current analysis;
+| 14. **Activated**: Turn on/off the current analysis;
 | 15. **Delete**: Delete current analysis;
 |
 
 Environment Variables
 *********************
-Enviroment Variable is a very useful resource used to send variables values to the context of your script. You can, for example, add token of accounts and devices to be used later in the script when it runs. Analysis will then get these variables as "environment" parameters and used them in the context.
+Enviroment Variable is a very useful resource used to send variables values to the context of your script. You can, for example, add tokens of accounts and devices to be used later in the script when it runs. The Analysis will get these variables as "environment" parameters and used them in the context of your script.
 
 .. image:: _static/analysisv2/analysis_variables.png
 
