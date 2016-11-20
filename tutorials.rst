@@ -484,12 +484,12 @@ Raspberry Pi
 		:width: 60%
 		:align: center
 
-This setup will show you how to remotely control a digital load of a Raspberry PI using Tago. For this example, will be using a LED to simulate our digital load.
+This setup will show you how to remotely control a digital load of a Raspberry PI using Tago. For this example, we will be using a LED as our ouput digital load.
 
 Diagram
 *******
 
-Connect the LED through a 330Ω resistor to the Raspberry PI GPIO pin (connect to the pin number 18), the figure bellow shows how the connection is made.
+Connect the LED through a 330Ω resistor to the Raspberry PI GPIO pin (connect to the pin number 18), the figure below shows how the electric connection is made.
 
 .. image:: _static/tutorials/raspberry_diagram.png
 		:width: 50%
@@ -498,9 +498,9 @@ Connect the LED through a 330Ω resistor to the Raspberry PI GPIO pin (connect t
 Adding the Device
 *****************
 
-Log in your account, click on Devices (side bar), then click on ‘Add Device’ blue button. The Raspeberry PI board will be the device to be added, we will give it the name ‘dev01’. Therefore, enter with the name ‘dev01’ and click on ‘Save’.
+Log in your account, click on Devices (side bar), then click on ‘Add Device’ top right button. The Raspeberry PI board will be the device to be added, we will give it the name ‘dev01’. Therefore, enter with the name ‘dev01’ and click on ‘Save’.
 For each device, you have to define a bucket to store its data. You can let Tago to create a new bucket with the same name as the device.
-All devices should use a valid token when accessing Tago. This token is automatically generated when a device is created. Go to the ‘General information’ session of the device, click on ‘QR Code’ or ‘Tokens’ and copy the token to be added into the Raspberry PI code later.
+All devices should use a valid token when accessing Tago. This token is automatically generated when a new device is created. Go to the ‘General information’ section of the device, click on ‘QR Code’ or ‘Tokens’ and copy the token to be added into the Raspberry PI code later.
 
 .. raw:: html
 
@@ -510,14 +510,14 @@ All devices should use a valid token when accessing Tago. This token is automa
 Building the Dashboard
 **********************
 
-Let's build a simple dashboard with only one widget that will control the digital load.
+Let's build a simple dashboard with only one widget that will control the digital load (LED).
 Click ‘+ New Dashboard’ on the left side bar, type the name of your dashboard, and click on ‘Create’.
-To add one widget, click on ‘Add Widget’ blue button, and select the type: **Input**. Then click on **Control**, and 'Create' to get your widget.
+To add one widget, click on ‘Add Widget’ top right button, and select the type: **Input**. Then click on **Control**, and 'Create' to get your widget.
 
 Start the configuration of this widget by adding the title to be displayed.
 Type a variable name that will be sent to the device as *control_signal*, click on ‘add’ below the name.
-Select your bucket [dev01], your device [dev01], select switch (true/false) and enter with a label to be showed closed to the switch (i.e LED).
-Then, click ‘Create’, and your widget is ready!
+Select your bucket [dev01], your device [dev01], select switch (true/false) and enter with a label to be showed close to the switch (i.e LED).
+Then, click on ‘Create’, and your widget is ready!
 
 
 .. raw:: html
@@ -530,12 +530,12 @@ Your dashboard will look like this one:
 		:width: 40%
 		:align: center
 
-Great! As soon as your device starts to send data, the values will be showed on this display.
+As soon as your device starts to send data, the most recent value will be showed on this display.
 
 Creating Action
 ***************
 
-Now let’s create an action to send data to our device every time we change the status of our switch.
+Now, let’s create an action to send data to our device every time we change the status of our switch.
 First, add an action to be executed:
 
 
@@ -554,8 +554,8 @@ In the field ‘Action to be taken’ select ‘Send data to device’, add a na
 		:align: center
 
 
-Now, let's set the trigger condition. Under 'Set trigger', enter with the variable that we created before (control_signal), and Set Trigger condition to 'Any' - it means that any time a value for that variable arrives from the switch on the dash, it will send it to the Raspberry Pi board.
-As the system has no data for this variable yet, you will need to add it. Type the name, and click on 'Click here to add this variable' just below the name.
+Now, let's set the trigger condition. Under 'Set trigger', enter with the variable that we created before (control_signal), and Set Trigger condition to 'Any' - it means that any time a value for that variable arrives from the switch on the dashboard, the data will be sent to the Raspberry Pi board.
+As the system has no data for this variable yet, you will need to add it manually just to prepare it for visualization (it will not create a variable in the bucket). Type the name, and click on 'Click here to add this variable' just below the name.
 
 .. image:: _static/tutorials/add_new_var1.png
 		:width: 70%
@@ -567,7 +567,7 @@ Then, select the bucket [dev01] and the device [dev01] for the variable.
 				:width: 70%
 				:align: center
 
-We will not define a condition for 'Reset Trigger'. You need to change the status of 'Define Reset Trigger condition?' to NO. Just save it now, and your action should look like this:
+We will not define a condition for 'Reset Trigger' because we want the action to trigger for every time a data arrives from the dashboard. You need to change the status of 'Define Reset Trigger condition?' to NO. Just save it now, and your action should look like this:
 
 .. image:: _static/tutorials/rpi_final_action.png
 		:width: 70%
