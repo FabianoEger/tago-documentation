@@ -142,15 +142,15 @@ Enviroment Variable is a very useful resource used to send variables values to t
 
 Examples
 ********
-Tago provide a list of examples to help you to understand better how to use Tago analysis service. There, you can get great examples on how to get and insert data into your database, send emails, run some calculations, and other interesting things.
+Tago provides a list of examples to help you to understand how to use Tago analysis services. There, you can get great examples on how to get and insert data into your database, send emails, run some calculations, and other interesting things that can be added to your applications.
 
-All examples come with a README.md file that gives instructions to help you put the analysis to work. Remember to read it before start to modify the code.
+All examples come with a README.md file that gives instructions to help you put the analysis to work. Remember to read it before starting to modify the code.
 
 .. image:: _static/analysisv2/analysis_examples.png
 
 | 1. **Name**: Name of the example;
 | 2. **Description**: Description of the example;
-| 3. **Download**: Download a ZIP file of the selected example.;
+| 3. **Download**: Download a ZIP file of the selected example;
 |
 
 Console
