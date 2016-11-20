@@ -8,10 +8,10 @@ The **analysis** is a powerful feature at Tago that experts and software develop
 
 Analysis is programmed using Node.js Tago’s SDK. You can get more instructions on how to write an analysis script in our `SDK documentation <http://sdk.js.tago.io/en/latest/>`_.
 
-By using the Analysis, you have access to all your data, devices, and even the services provided by Tago. One example of service is the weather that provides realtime condition data about the current and forecast weather for different locations.
+By using the Analysis, you have access to all your data, devices, and even to other services provided by Tago. One example of service is Weather that provides real time condition information about the current and forecasted weather for different locations.
 
-Also, if you combine Analysis with Actions you can execute that script whenever a predefined variable with value arrives at Tago.
-For example, you can process your data and perform a math transformation for any variable. Also you can add new values in another data bucket, get data from there, or program actions that will send email, SMS, or data back to an specific device.
+Also, if you combine Analysis with Actions you can execute that script whenever a predefined variable with a new value arrives at Tago. For example, you can process your information, convert it, or perform any math transformation for that variable.
+Also you can add new values in another data bucket, read the data from there, or setup actions that will send email, SMS, or the data back to a specific device.
 If you are new at Tago, take a look at this short video that will introduce you to Tago Analysis. You will understand how the pieces are put together, and what are the steps that you need to take to start scripting today.
 
 .. raw:: html
@@ -28,7 +28,7 @@ There are three main steps that you need to take in order to create and run your
 ********************
 Creating an Analysis
 ********************
-Create your own analysis is easy. First, you need to click on Add Analysis in the upper left of the analysis main screen. Just write a name and a description, and you’re ready to go!
+Creating your own analysis is easy. First, you need to click on Add Analysis in the upper right of the analysis main screen. Just write a name and a description, and you’re ready to go!
 
 .. image:: _static/analysis/analysis_new.png
 
