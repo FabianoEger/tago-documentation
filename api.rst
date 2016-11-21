@@ -76,7 +76,7 @@ Using tokens is simple, just add them in the header of the request.
 Usage Policy
 ***************
 
-When executing a request to Tago, through POST, GET, DELETE or PUT, your account will face our a blocking limit policy based on your account settings. Such blocking system also helps to prevent attacks to our server, like DDOS, or any other kind of abuses.
+When executing a request to Tago, through POST, GET, DELETE or PUT, your account may face our blocking limit policy based on your account settings and the frequency of API requests. Such blocking system helps to prevent attacks to our servers, like DDOS, and offers a way to limit the usage for your applications.
 
 Based on our estimation, for the majority of our users, such policy will not cause problems to their applications. The limit is based on the number of requests per certain period of time.
 
