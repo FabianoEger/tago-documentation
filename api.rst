@@ -80,7 +80,7 @@ When executing a request to Tago, through POST, GET, DELETE or PUT, your account
 
 Based on our estimation, for the majority of our users, such policy will not cause problems to their applications. The limit is based on the number of requests per certain period of time.
 
-There are three limit levels that will be trigger based on your requests per hour. As you reach 50%/80%/100% of your limit, Tago will automatically send you warning emails.
+There are three limit levels that will be triggered based on the number of requests per hour in your account. As you reach 50%/80%/100% of your limit, Tago will automatically send you warning emails.
 
 +----------------+-------------------------------+
 | Token          | Requests per hour             |
@@ -91,7 +91,7 @@ There are three limit levels that will be trigger based on your requests per hou
 | Public-Token   | 10,000 requests               |
 +----------------+-------------------------------+
 
-If for some reason you need to do more requests than our account setting allows, you can contact us directly.
+If for some reason you need to do more requests than our default account setting allows, you can contact us directly.
 
 Send Data
 *********
@@ -259,13 +259,13 @@ Response - Below is the data returned without any parameters. ``https://api.tago
                 "id": "547e353d7dbf3af122c0257d",
                 "time": "2014-12-02T21:55:09.301Z",
                 "unit": "%",
-                "value": "32",
+                "value": 32,
                 "variable": "fuel_level"
             },  {
                 "id": "547e41f97dbf3af122c02580",
                 "time": "2014-12-02T22:49:29.777Z",
                 "unit": "psi",
-                "value": "25",
+                "value": 25,
                 "variable": "oil_pressure"
             }
         ]
