@@ -24,6 +24,15 @@ the actions capability to send e-mails when the temperature reaches a threshold.
 
 Diagram
 *******
+The temperature sensor used in this tutorial is the TMP36 that comes in a TO-92 package. The output of the TMP36 is a voltage that will be read by the Analog pin 0 of the Arduino Zero. As the Arduino Zero is a 3.3V board, we will use the following formula to convert the reading to temperature in Celsius.
+
+**Voltage at pin in milliVolts = (reading from ADC) * (3300/1024)**
+
+This formula converts the number 0-1023 from the ADC into 0-3300mV (= 3.3V)
+Then, to convert millivolts into temperature, use this formula:
+
+**Centigrade temperature = [(analog voltage in mV) - 500] / 10**
+
 .. image:: _static/tutorials/arduino_tmp36.gif
 	:width: 70%
 	:align: center
@@ -37,7 +46,7 @@ The Arduino board will be the device to be added, we will give it the name 'dev0
 For each device, you have to define a :ref:`bucket <ref_concepts_bucket>` to store its data. You can let Tago to create a new bucket with the same name as the device.
 
 All devices should use a valid :ref:`token <ref_concepts_token>` when accessing Tago. This token is automatically generated when a device is created.
-Go to the 'General information' session of the device, click on 'QR Code' or 'Tokens' and copy the token to be added in the Arduino code later.
+Go to the 'General information' section of the device, click on 'QR Code' or 'Tokens' and copy the token to be added in the Arduino code later.
 
 .. raw:: html
 
@@ -96,16 +105,17 @@ Sending data from Arduino
 
 Your setup is ready at Tago! Now, you just need to code your Arduino to send the data to Tago.
 
-When communicating with devices, Tago uses the JSON format. For example, to send the temperature @ 26.5C, the device just need to POST the data like:
+When communicating with devices, Tago uses the JSON format. For example, to send a temperature value of 26 C, the device just needs to POST the data:
 
 .. code-block:: json
 
 	{
 	    "variable": "temperature",
-	    "value": "26.5"
+	    "value": 26,
+	    "unit": "C"
 	}
 
-But, here for the Arduino, it is better to another content type format (x-www-form-urlencoded), which would result in a post as simple like: "variable=temperature&value=26.5".
+Here for the Arduino, we give a C code example which use HTTP format connecting through port 80 (non-secure) to simplify the example. To send the data to Tago correctly, the code should simply prepare a string that will represent the json block above: "variable":"temperature", "value":26,"unit":"C".
 
 
 Arduino Code
@@ -132,12 +142,13 @@ Arduino Code
 
 	char ssid[] = "## YOUR NETWORK HERE ##";      //  your network SSID (name)
 	char pass[] = "## YOUR NETWORK PASSWORD HERE ##";   // your network password
-	String Device_Token = "## INSERT THE TOKEN FOR YOUR DEVICE HERE ##";
+	String Device_Token = "## INSERT THE TOKEN FOR YOUR DEVICE HERE ##";	
+	int keyIndex = 0;         // your network key Index number (needed only for WEP)
 
-	int keyIndex = 0;            // your network key Index number (needed only for WEP)
-
-	int sensorPin = A0;    // select the input pin for the analog input
-	int sensorValue = 0;  // variable to store the value coming from the sensor
+	int sensorPin = A0;       // select the input pin for the analog input
+	int rawvoltage = 0;       // variable to store the value coming from the sensor
+	float sensorValue = 0;
+	String value_string = ""; 
 
 	int status = WL_IDLE_STATUS;
 
@@ -146,7 +157,6 @@ Arduino Code
 
 	// server address:
 	char server[] = "api.tago.io";
-	//IPAddress server(64,131,82,241);
 
 	unsigned long lastConnectionTime = 0;            // last time you connected to the server, in milliseconds
 	const unsigned long postingInterval = 2L * 1000L; // delay between updates, in milliseconds
@@ -155,7 +165,7 @@ Arduino Code
 	  //Initialize serial and wait for port to open:
 	  Serial.begin(9600);
 	  while (!Serial) {
-	    ; // wait for serial port to connect. Needed for native USB port only
+	    ;                     // wait for serial port to connect. Needed for native USB port only
 	  }
 
 	  // check for the presence of the shield:
@@ -192,12 +202,20 @@ Arduino Code
 	  // then connect again and send data:
 
 	  if (millis() - lastConnectionTime > postingInterval) {
-
 	    // read the value from the sensor:
 	    rawvoltage = analogRead(sensorPin);
-			float sensorValue = 100.0 * (rawvoltage/310) - 50;
-	    Serial.println(sensorValue);
-	    // them send the value to Tago
+	    // converting that reading to voltage, for 3.3v voltage 
+	    float voltage = rawvoltage * 3.3;
+	    voltage /= 1024.0;    
+	    // converting to Celsius
+	    float temperatureC = (voltage - 0.5) * 100 ;  //converting from 10 mv per degree wit 500 mV offset
+							  //to degrees ((voltage - 500mV) times 100)                                                      
+
+	    int i = (int) temperatureC;                   //convert data format from float to int
+	    value_string =String(i);                      //end of conversion, to finally get it in the String format(Celsius)
+	    Serial.println(value_string);
+
+	    // then, send data to Tago
 	    httpRequest();
 	  }
 
@@ -211,15 +229,16 @@ Arduino Code
 
 	    Serial.println("\nStarting connection to server...");
 	    // if you get a connection, report back via serial:
-	    String PostData = String("variable=temperature&value=") + String(sensorValue);
+	    String PostData = String("{\"variable\":\"temperature\", \"value\":") + String(value_string)+ String(",\"unit\":\"C\"}");         
 	    String Dev_token = String("Device-Token: ")+ String(Device_Token);
-	    if (client.connectSSL(server,443)) {
+	    if (client.connect(server,80)) {                      // we will use non-secured connnection (HTTP) for tests
 	    Serial.println("connected to server");
 	    // Make a HTTP request:
 	    client.println("POST /data? HTTP/1.1");
 	    client.println("Host: api.tago.io");
+	    client.println("_ssl: false");                        // for non-secured connection, use this option "_ssl: false" 
 	    client.println(Dev_token);
-	    client.println("Content-Type: application/x-www-form-urlencoded");
+	    client.println("Content-Type: application/json");
 	    client.print("Content-Length: ");
 	    client.println(PostData.length());
 	    client.println();
@@ -253,15 +272,15 @@ Arduino Code
 Running the application
 ***********************
 
-Open your dashboard, and run the code in your Arduino board. Note the widget display the value in realtime.
-Try to heat the sensor to reach the 50C. You should then receive an e-mail from Tago. Cool down the sensor below 30C, and try again!
+Open your dashboard, and run the code in your Arduino board. Notice that the widget displays the value in realtime.
+Try to heat the sensor to reach a temperature higher than 50C. You should then receive an e-mail from Tago. Cool down the sensor below 30C, and try again!
 If you have any issue or question about this application, access our `Community <http://community.tago.io/>`_ .
 
 
 Conclusion
 **********
 
-That was a simple example that showed how easy and quick is to set the ecosystem around Tago and your device.
+That was a complete example that showed how easy and quick is to set the ecosystem around Tago and your device.
 To extract more from Tago, check out our next tutorials. There you will be able to send and receive data from Tago, run scripts in the Analysis and combine data.
 
 
@@ -465,12 +484,12 @@ Raspberry Pi
 		:width: 60%
 		:align: center
 
-This setup will show you how to remotely control a digital load of a Raspberry PI using Tago. For this example, will be using a LED to simulate our digital load.
+This setup will show you how to remotely control a digital load of a Raspberry PI using Tago. For this example, we will be using a LED as our ouput digital load.
 
 Diagram
 *******
 
-Connect the LED through a 330Ω resistor to the Raspberry PI GPIO pin (connect to the pin number 18), the figure bellow shows how the connection is made.
+Connect the LED through a 330Ω resistor to the Raspberry PI GPIO pin (connect to the pin number 18), the figure below shows how the electric connection is made.
 
 .. image:: _static/tutorials/raspberry_diagram.png
 		:width: 50%
@@ -479,9 +498,9 @@ Connect the LED through a 330Ω resistor to the Raspberry PI GPIO pin (connect t
 Adding the Device
 *****************
 
-Log in your account, click on Devices (side bar), then click on ‘Add Device’ blue button. The Raspeberry PI board will be the device to be added, we will give it the name ‘dev01’. Therefore, enter with the name ‘dev01’ and click on ‘Save’.
+Log in your account, click on Devices (side bar), then click on ‘Add Device’ top right button. The Raspeberry PI board will be the device to be added, we will give it the name ‘dev01’. Therefore, enter with the name ‘dev01’ and click on ‘Save’.
 For each device, you have to define a bucket to store its data. You can let Tago to create a new bucket with the same name as the device.
-All devices should use a valid token when accessing Tago. This token is automatically generated when a device is created. Go to the ‘General information’ session of the device, click on ‘QR Code’ or ‘Tokens’ and copy the token to be added into the Raspberry PI code later.
+All devices should use a valid token when accessing Tago. This token is automatically generated when a new device is created. Go to the ‘General information’ section of the device, click on ‘QR Code’ or ‘Tokens’ and copy the token to be added into the Raspberry PI code later.
 
 .. raw:: html
 
@@ -491,14 +510,14 @@ All devices should use a valid token when accessing Tago. This token is automa
 Building the Dashboard
 **********************
 
-Let's build a simple dashboard with only one widget that will control the digital load.
+Let's build a simple dashboard with only one widget that will control the digital load (LED).
 Click ‘+ New Dashboard’ on the left side bar, type the name of your dashboard, and click on ‘Create’.
-To add one widget, click on ‘Add Widget’ blue button, and select the type: **Input**. Then click on **Control**, and 'Create' to get your widget.
+To add one widget, click on ‘Add Widget’ top right button, and select the type: **Input**. Then click on **Control**, and 'Create' to get your widget.
 
 Start the configuration of this widget by adding the title to be displayed.
 Type a variable name that will be sent to the device as *control_signal*, click on ‘add’ below the name.
-Select your bucket [dev01], your device [dev01], select switch (true/false) and enter with a label to be showed closed to the switch (i.e LED).
-Then, click ‘Create’, and your widget is ready!
+Select your bucket [dev01], your device [dev01], select switch (true/false) and enter with a label to be showed close to the switch (i.e LED).
+Then, click on ‘Create’, and your widget is ready!
 
 
 .. raw:: html
@@ -511,12 +530,12 @@ Your dashboard will look like this one:
 		:width: 40%
 		:align: center
 
-Great! As soon as your device starts to send data, the values will be showed on this display.
+As soon as your device starts to send data, the most recent value will be showed on this display.
 
 Creating Action
 ***************
 
-Now let’s create an action to send data to our device every time we change the status of our switch.
+Now, let’s create an action to send data to our device every time we change the status of our switch.
 First, add an action to be executed:
 
 
@@ -535,8 +554,8 @@ In the field ‘Action to be taken’ select ‘Send data to device’, add a na
 		:align: center
 
 
-Now, let's set the trigger condition. Under 'Set trigger', enter with the variable that we created before (control_signal), and Set Trigger condition to 'Any' - it means that any time a value for that variable arrives from the switch on the dash, it will send it to the Raspberry Pi board.
-As the system has no data for this variable yet, you will need to add it. Type the name, and click on 'Click here to add this variable' just below the name.
+Now, let's set the trigger condition. Under 'Set trigger', enter with the variable that we created before (control_signal), and Set Trigger condition to 'Any' - it means that any time a value for that variable arrives from the switch on the dashboard, the data will be sent to the Raspberry Pi board.
+As the system has no data for this variable yet, you will need to add it manually just to prepare it for visualization (it will not create a variable in the bucket). Type the name, and click on 'Click here to add this variable' just below the name.
 
 .. image:: _static/tutorials/add_new_var1.png
 		:width: 70%
@@ -548,7 +567,7 @@ Then, select the bucket [dev01] and the device [dev01] for the variable.
 				:width: 70%
 				:align: center
 
-We will not define a condition for 'Reset Trigger'. You need to change the status of 'Define Reset Trigger condition?' to NO. Just save it now, and your action should look like this:
+We will not define a condition for 'Reset Trigger' because we want the action to trigger for every time a data arrives from the dashboard. You need to change the status of 'Define Reset Trigger condition?' to NO. Just save it now, and your action should look like this:
 
 .. image:: _static/tutorials/rpi_final_action.png
 		:width: 70%
