@@ -65,7 +65,7 @@ Enter with the following command replacing the *YOUR_TOKEN_HERE* by that **token
 
 .. code-block:: text
 
- curl -H "Content-Type: application/json" -H "Device-Token: 6ea148d0-e75c-11e6-a091-5756b91044c4" -X POST -d '{"variable":"temperature","value":27,"unit":"F"}' https://api.tago.io/data
+ curl -H "Content-Type: application/json" -H "Device-Token: YOUR_TOKEN_HERE" -X POST -d '{"variable":"temperature","value":27,"unit":"F"}' https://api.tago.io/data
 
 Try to send more data by changing the value of the 'temperature'. Keep an eye on your dashboard. You should see something like this.
 
