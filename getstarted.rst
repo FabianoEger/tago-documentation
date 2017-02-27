@@ -57,15 +57,15 @@ Now that you completed the setup of your account, you are ready to send data fro
 Or you can simulate your device right now, by sending data remotely to your bucket by using any tool that transfers data from and to a server with HTTP.
 Below, you will learn how to quickly send data depending on the OS that you are using.
 
-Mac or Linux
-************
+Mac or Linux Command Line
+**************************
 
 Let's use **cURL** to post the data.
 Enter with the following command replacing the *YOUR_TOKEN_HERE* by that **token** created earlier for your device.
 
 .. code-block:: text
 
-  curl -H "Device-Token: YOUR_TOKEN_HERE" -X POST -d "variable=temperature&value=27&unit=F" https://api.tago.io/data
+ curl -H "Content-Type: application/json" -H "Device-Token: YOUR_TOKEN_HERE" -X POST -d '{"variable":"temperature","value":27,"unit":"F"}' https://api.tago.io/data
 
 Try to send more data by changing the value of the 'temperature'. Keep an eye on your dashboard. You should see something like this.
 
@@ -75,8 +75,7 @@ Try to send more data by changing the value of the 'temperature'. Keep an eye on
 
 Windows
 *******
-To send data, there are some tools that support HTTP communication like the `Postman <https://www.getpostman.com/>`_.
-Considering the same input as used above, you can make a POST by entering the url, Device-Token, and configuration in the **Postman** like this:
+To send data, there are some tools that support HTTP communication like the `Postman <https://www.getpostman.com/>`_. Considering the same input as used above, you can make a POST by entering the url, Device-Token, and configuration in the **Postman** like this:
 
 .. image:: _static/getstarted/postman1.png
 		:height: 300
