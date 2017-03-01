@@ -149,39 +149,6 @@ It's possible to send more than one data at same time, using an array.
 (**) In order to make easier for users to see their data in charts and dials, Tago will always try to convert the *value* to a number format (integer), even if it came as string.
 However, due to the range limitation, the automatic conversion will be done only for strings shorter than 15 characters. If a *value* originally is formed by a string longer than this length limitation, it will NOT be converted to a number.
 
-Edit Data
-*********
-
-PUT - ``https://api.tago.io/data/:id``
-
-- Each time you insert a data, an ID is associated with it. You can read this ID by using the GET method.
-
-+----------------------+----------------------+----------------------+
-| KEY                  | TYPE                 | REQUIRED             |
-+======================+======================+======================+
-| variable             | string               | no                   |
-+----------------------+----------------------+----------------------+
-| unit                 | string               | no                   |
-+----------------------+----------------------+----------------------+
-| value                | string               | no                   |
-+----------------------+----------------------+----------------------+
-| time                 | string               | no                   |
-+----------------------+----------------------+----------------------+
-| serie                | string               | no                   |
-+----------------------+----------------------+----------------------+
-| location             | object || geojson    | no                   |
-+----------------------+----------------------+----------------------+
-| metadata             | object               | no                   |
-+----------------------+----------------------+----------------------+
-
-Request
-
-.. code-block:: json
-
-    {
-        "unit" : "C"
-    }
-
 Delete Data
 ***********
 
